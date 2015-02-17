@@ -1,0 +1,99 @@
+\documentclass{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+% gensymb package, useful for general symbols, such as degrees celsius
+\usepackage{gensymb}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage[margin=2cm]{geometry}
+
+%% EW macros
+\newcommand{\mul}{\ensuremath{\mu}l }
+\newcommand{\mug}{\ensuremath{\mu}g }
+
+\begin{document}
+\title{Polysome Fractionation by Sucrose Gradient}
+\author{Edward Wallace, ewjwallace@gmail.com}
+\date{\today}
+\maketitle
+
+This protocol is for polysome fractionation by sucrose gradient, to view translational status of cells and ribosome-association of mRNas and proteins, using the BioComp gradient station (http://www.biocompinstruments.com/). It's based on the BioComp instructions, with help from Wesley Clark.
+
+\section{Components}
+
+Wet ingredients
+\begin{itemize}
+\item Sample: 200-500\mul cell lysate, with assembled polysomes, at $OD_{260} \approx 100 $
+\item Mammalian Polysome gradient buffer: 100mM KCl, 7.5mM MgCl2, 5mM Tris-HCl pH7.5, or
+\item Yeast Polysome gradient buffer: 140mM KCl, 5mM MgCl2, 5mM Tris-HCl pH7.5
+\item 50\% Sucrose buffer: .5g/ml sucrose in polysome gradient buffer
+\item 10\% Sucrose buffer: .1g/ml sucrose in polysome gradient buffer
+\end{itemize}
+
+%Dry ingredients:
+%\begin{itemize}
+%\item SW29 swinging bucket rotor (stored in cold room) with 6 buckets.
+%\end{itemize}
+
+
+\section{Prepare gradients}
+
+\begin{enumerate}
+  \item Layer sucrose into centrifuge tube: place a Seton open-top polyclear centrifuge tube  (part.no 7052) in the marker block. Pour 10\% sucrose buffer into the tube up to the top of the marker block (roughly 19.5ml). Load 50\% sucrose buffer into a 50ml Luer-lok syringe with a layering cannula (BioComp 106-211) attached; with the needle pointing upwards, expel air from the needle. Quickly and smoothly invert the syringe so the needle is in the bottom centre of the half-filled centrifuge tube. Slowly layer 50\% sucrose buffer at the bottom of the tube until the top of the meniscus is 2mm from the top of the tube (roughly 19ml), and carefully remove needle from tube. Place the capillary cap on top of the tube, ensuring tube is sealed round edges of cap. Repeat for desired number of tubes (2,4 or 6 total), and place filled tubes in magnetic tube rack.
+  \item Level the gradient maker platform on the gradient station: turn gradient-maker on, choose GMST menu option. The machine will prompt you to level the gradient-making platform. Place a bubble level on the platform with axis perpendicular to the side plate of the machine and use the UP and DOWN menu options to level the platform (the machine should already be level front to back); press DONE.
+  \item Make gradients: place magnetic tube rack on gradient-making platform. Select GRAD option to arrive at gradient menu. The first time, go to LIST and choose the SW28 rotor option. Press DOWN until arriving at the 10-50\% sucrose gradient option, and press USE. If the machine was used for 10-50\% sucrose gradient immediately previously, simply select LAST from the gradient menu. Press USE to start making gradients, which takes roughly 7 minutes. From this point onwards, keep the tubes upright and make no sudden movements with them, so as not to disturb the gradient. Remove capillary cap from tube and, using long-nosed pliers, place in rotor bucket, and place bucket in bucket rack.   
+  \item Balance the tubes: balance tube 1 with tube 4, 2 with 5, and 3 with 6. Placing bucket-tube assembly on scale, remove sucrose gradient from top of tube as necessary to ensure paired tubes are within 0.1g in mass. 
+  \end{enumerate}
+
+
+\section{Spin}
+
+\begin{enumerate}
+  \item Load sample and assemble rotor: take sample, rotor, bucket rack, and 1000\mul pipette to ultracentrifuge. Load sample in each tube by placing filled pipette tip in meniscus at side of tube, and pipetting slowly; you should see the sample spreading out across top of liquid. Gently place lid on tube and screw cap on bucket. Hang buckets in numbered slots on rotor, checking that both hooks are attached for every bucket.
+  \item Set up centrifuge: turn on centrifuge, break vacuum and open spin chamber. Select 27500rpm, 4hrs, 4\celsius, with vacuum, on centrifuge controls. Place rotor assembly on axle, and seal spin chamber. Start centrifuge and fill out centrifuge logbook. Check on the centrifuge after 15 minutes to ensure it is running smoothly.
+  \item After running for 4hrs, the centrifuge takes several minutes to brake. Once the centrifuge has stopped spinning, release the vacuum, carefully remove rotor from spin chamber and place buckets in bucket rack. 
+\end{enumerate}
+
+
+\section{Set up gradient station}
+
+\begin{enumerate}
+  \item Take bucket rack with gradients to gradient station. 
+  \item Turn on the gradient station, the UV monitor, the fraction collector, and the linked computer. Start the gradient profiler program on the computer and enter appropriate parameters.
+  \item Flush the line and calibrate the UV monitor: press DRAIN on fraction collector.  On the gradient station, from the initial screen press FRAC, then FRAC. Hold RINSE on gradient station to flush the line. Half-fill a centrifuge tube with 10\% sucrose buffer, turn dial so that vacuum plunger descends. Once plunger is in liquid and drips are coming out of the fraction collector, press AUTO ZERO on the UV monitor.  % Place 30x1.5ml tubes in the two middle rows of the tube holder, in the fraction collector.  Initialize fraction collector so it drips into the center of the tubes. Calibration calibration.
+%  \item Press record.
+
+\end{enumerate}
+
+
+\subsection{Collect fractions}
+
+For each ultracentrifuge tube with sample:
+\begin{enumerate}
+  \item Initialize fraction collector: ensure there are  30x clean 1.5ml tubes in the two middle rows of the tube holder. Pre-label the tubes if desired. Press END, then START, and make sure drip outlet is above tube 0.
+  \item Remove bucket cap, remove centrifuge from bucket using long-nosed pliers, and attach locking top to centrifuge tube. Place tube in tube holder on gradient station, locking the tube in place by rotating the cap to lock in place.  Slide tube holder onto mount on top of gradient station with window facing to the right, and turn clockwise so window is facing towards you. 
+  \item On gradient station, press FRAC once or twice to get to the fractionation menu, then SNGL for single run, and set the parameters to speed = 0.3, distance = 2.6, and 31 fractions. Rotate dial to full counterclockwise position. 
+Move plunger downwards by turning dial to the right; move plunger slowly as it approaches the gradient surface, so that you can stop (by turning dial fully left) as soon as the plunger has sealed on the gradient. Press RESET on gradient station
+  \item On the gradient profiler program on the computer, press RECORD. Then press START on gradient station. 
+  \item When finished, remove tubes from fraction collector and label them. Press EXIT 3 times on gradient station to return to fraction menu, and remove centrifuge tube from holder. Crucially, save the output on the computer, and press NEW RUN to record the next gradient.
+  \item Note that the first 1-3 tubes in the fraction collector are usually empty, so that the tube number on the rack is usually offset from that reported in the gradient profiler software. Both start number tubes at zero, and tube 0 according to the software is the first filled tube on the fraction collector. It is easiest to label the tubes accordingly, after the fractions are collected.
+\end{enumerate}
+
+\section{Cleanup}
+\begin{enumerate}
+  \item Check \textbf{all} equipment for potential sucrose gradient spills and clean thoroughly with damp cloth; this is a very sticky spill. In particular, clean the plunger and flush the tubing with water.
+    \item Store rotor and buckets in cold room, on rotor holding platform. 
+\end{enumerate}
+%
+%
+%\subsection{}
+
+
+
+\end{document}

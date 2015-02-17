@@ -1,0 +1,48 @@
+\documentclass{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+% gensymb package, useful for general symbols, such as degrees celsius
+\usepackage{gensymb}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage[margin=2cm]{geometry}
+
+%% EW macros
+\newcommand{\mul}{\ensuremath{\mu}l }
+\newcommand{\mug}{\ensuremath{\mu}g }
+
+\begin{document}
+\title{Yeast total RNA isolation protocol}
+\author{Edward Wallace (ewjwallace@gmail.com) and Evgeny Pilipenko}
+\date{November 2, 2012}
+\maketitle
+
+Use RNase-free dH$_2$O throughout.
+
+\begin{enumerate}
+  \item Grow up 5ml liquid yeast culture to OD 2.0. Spin at 3000g for 4min at room temperature. Remove supernatant and resuspend pellet in 500\mul RNA lysis buffer (10mM Tris-HCl pH8.5, 5mM EDTA, 2\% SDS, 2\% stock 2-mercaptoethanol).
+  \item Transfer liquid to 1.5ml tube and put on heat block at 83\celsius\ with 450rpm mixing for 20mins (to disrupt cells and denature proteins).
+  \item Spin down for 5mins at 12,000g.
+  \item Take supernatant into new tube and add 550\mul of Phenol pH8. Vortex for 15 mins\footnote{To find out how much sample is lost in the first centrifugation, resuspend pellet in 500\mul of RNA lysis buffer, and repeat 3 previous steps. Label tube distinctly  and proceed in parallel with the main sample.}.
+\item Spin down for 2mins at 12,000g. There should be a lower phenol phase, a cloudy interphase, and an upper aqueous phase: RNA partitions mostly into the upper phase. Transfer upper aqueous phase (roughly 200\mul) to new 1.5ml tube (labeled tube N). Add 250\mul RNA lysis buffer to previous tube (labeled tube P) and vortex tube P for 5mins.
+\item Add 250\mul chloroform to tube P to suck off phenol from water phase (This completes a phenol:chloroform extraction of RNA from the original sample). Vortex for 3 mins, then spin 2mins at 12,000g and transfer aqueous phase from tube P to tube N. Discard tube P.
+\item A second phenol extraction: add 550\mul phenol to tube N. Vortex 5mins, spin 2mins at 12,000g.
+\item Transfer aqueous phase to another 1.5ml tube, discard tube N. Add 550\mul phenol:chloroform pH4.5. Vortex 3mins, then spin 2mins at 12,000g.
+\item Transfer 450\mul aqueous phase to yet another 1.5ml tube, add 200\mul of 0.6M Sodium acetate pH4.5, mix by flicking, and spin briefly. Add 600 \mul of phenol:chloroform pH4.5. Vortex 5mins, then spin 2 mins at 12,000g.
+\item Transfer 350\mul aqueous phase to a fresh 1.5ml tube, add 30 \mul 5M Ammonium acetate and 1.1ml ethanol. Mix well, and precipitate at -80\celsius\ for 20mins. The sample may be left for longer, for example overnight, at this point if a pause is desired.
+\item Remove the sample from freezer. Cold spin (4\celsius) for 15 mins at 12,000g. 
+\item Thoroughly remove ethanol from pellet, and add 700\mul 80\% ethanol. Cold spin for 2 minutes at 12,000g. Repeat the ethanol wash and cold spin. This removes all traces of salt, SDS, etc.
+
+\item Dry pellets thoroughly, i.e., pipette off ethanol, removing all liquid. If necessary, dry with the tubes open on a 37\celsius\ heat block (if the RNA sample is pure, this should not degrade the RNA). Resuspend pellet in 50 \mul H$_2$O.
+
+\item To check the quality of the RNA, pour a 1\% agarose gel on RNA-free equipment, and run using NEB RNA loading dye. Heat loading dye and H$_2$O to 95\celsius\ for 5 minutes, and then cool, to reduce the possibility of contamination. Mix 1\mul sample, 5\mul H$_2$O, and 6\mul 2X loading dye for each well. Perform a 2X serial dilution of the sample for more precise quantification.
+\end{enumerate}
+
+
+\end{document}
