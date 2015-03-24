@@ -1,0 +1,183 @@
+\documentclass{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+% gensymb package, useful for general symbols, such as degrees celsius
+\usepackage{gensymb}
+% appropriate spaces after macro insertions
+\usepackage{xspace}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage[margin=2cm]{geometry}
+\usepackage{color}
+
+% enumitem allows continuous numbering across split lists.
+\usepackage{enumitem}
+
+%% EW macros
+\newcommand{\mul}{\ensuremath{\mu}L\xspace}
+\newcommand{\mug}{\ensuremath{\mu}g\xspace}
+\newcommand{\mum}{\ensuremath{\mu}m\xspace}
+\newcommand{\degC}{\celsius\xspace}
+\newcommand{\tb}[1]{\textcolor{blue}{#1}}
+
+%\newcounter{PExCounter}
+
+\begin{document}
+\title{\vspace{-.75in} Protein extraction of soluble and insoluble fractions from E. coli}
+\author{Edward Wallace}
+\date{\today}
+\maketitle
+
+%To do: 
+%\begin{itemize}
+%  \item Figures for all gels.
+%  \item GeneElute spin column?
+%\end{itemize}
+
+%\section*{Introduction}
+%
+%The aim is to find out which RNAs are sequestered in stress granules, by extracting both soluble and insoluble portions of lysed cells, with and without heat shock, and performing RNASeq on both fractions. The insoluble fraction of heat-shocked cells is enriched for stress granules. The observation that small subunit of ribosomal proteins are found in stress granules suggests that we should see more 18S rRNA (from the small subunit) than 28S rRNA (from the large) in stress-granule samples. The basic idea is to lyse cells, separate the lysate into soluble and insoluble fractions, and extract RNA from each fraction.
+
+This protocol is for harvesting of E. coli and separation of their proteins into soluble and insoluble fractions, for further analysis by SDS-PAGE, western blot,  mass spectrometry, etc. Based on Mike Dion and Allan Drummond's 2011 yeast protocols, with modifications by Edward Wallace and Matt Champion. This version forked after yeast version 2c.
+
+\subsection*{Prepare}
+
+%Prepare: 
+\begin{itemize}
+\item MOPS EZ Rich Defined Medium (Teknova M2105)
+  \item soluble protein buffer (SPB; 20mM HEPES-NaOH pH7.4, 120mM KCl, 2mM EDTA, 2mM DTT, 1:100 PMSF, 1:100 protease inhibitors cocktail IV.) Make stock of salt and buffer, and add DTT and inhibitors shortly before use, and chill.
+  \item insoluble protein buffer (IPB; 8M Urea, 20mM HEPES-NaOH pH7.4, 150mM NaCl, 2\% SDS, 10mM EDTA, 2mM DTT, 1:100 PMSF, 1:1000 protease inhibitors IV.). Mix fresh daily the urea, DTT, and inhibitors, and keep at room temperature:
+  
+%\begin{itemize}[itemsep=0pt,leftmargin=40pt]
+%  \item[0.96g\ ] urea
+%  \item[818\mul] H2O
+%  \item[200\mul] 20\% SDS (w/v)
+%  \item[\ 40\mul] 1M HEPES-NaOH pH7.4
+%  \item[\ 20\mul] 100mM PMSF
+%  \item[\ 20\mul] 200mM DTT
+%  \item[\ \ 2\mul] protease inhibitors
+%\end{itemize}
+\begin{tabular}{rrl}
+for 2mL & for 13mL & \\
+920\mul & 6.0mL & H2O \\
+75\mul &  390\mul & 5M NaCl \\
+40\mul &  260\mul & 0.5M EDTA \\
+200\mul & 1.3mL & 20\% SDS (w/v) \\
+\ 40\mul & 260\mul & 1M HEPES-NaOH pH7.4 \\
+\multicolumn{3}{l}{\tb{Or make IPB stock from above ingredients, and use:}} \\
+\tb{1.27 mL} & \tb{8.2mL} & \tb{IPB Stock} \\
+  0.96g &  6.24g & urea \\
+\ 20\mul & 130\mul & 100mM PMSF \\
+\ 4\mul & 26\mul & 1M DTT \\
+\ \ 2\mul & 13\mul & protease inhibitors \\
+\end{tabular}
+
+  Use 500\mul IPB per sample, and note that Urea is slow to dissolve, and foaming will make $\sim$25\% of the solution unusable. IPB solidifies at 4\degC due to urea and SDS; also, don't substitute KCl as it precipitates SDS even at RT.
+  
+    \item total protein buffer (TPB; 20mM HEPES-NaOH pH7.4, 150mM NaCl, 2mM EDTA, 0.2mM DTT, 1:100 PMSF, 1:100 protease inhibitors cocktail IV.) Make stock of salt and buffer, and add DTT and inhibitors shortly before use, and chill.
+
+  %  \item 
+%    \item For heat or stress treatment, prepare media in advance and pre-warm.
+ %     \item For heat treatment, pre-warm water bath to 46\celsius.
+ \item Vacuum filtration apparatus
+ \item 50mL conical tube with holes pierced in bottom, in dewar of LN.
+      \item Appropriate numbers of safe-lok tubes loaded with 7mm steel balls, racked in liquid nitrogen (LN2).
+      \item Ice-water bath and sonicator with small tip.
+    \item Label and lay out all tubes and equipment in advance as the protocol moves very quickly once started. Pause points are when cells have been flash-frozen, and after cells have been ground in mixer mill.
+\end{itemize}
+
+
+\subsection*{Sample Growth}
+\begin{enumerate}[resume]
+%Grow up several cultures of yeast (BY4741) to $4 \times 10^6$ cells/mL ($OD_{600} \approx 0.45$) at 30\celsius, in 100ml media in a 250ml flask. Pretreat cells as desired. For
+\item Streak out a culture of \textit{Escherichia coli} (MG1655) on an LB plate incubated at 37\celsius, for 12hours or overnight. Place the plate at 4\celsius\ for up to 24hrs if necessary, once colonies are grown up ($\sim.5$mm wide).
+\item Inoculate a single culture from the plate into 2mL MOPS medium, and grow to saturation at 30C overnight.
+\item Make a 1:250 dilution and grow up to $OD_{600} \approx 0.3$ ($ \approx 2 \times 10^8 $cells/mL) at 30\celsius, with 225rpm shaking: put 1mL of the overnight culture in 250ml MOPS medium in a 1000ml erlenmeyer flask. Growth takes about 3h.
+%\item For heat shock, prepare 2x 100mL of SC-complete medium in a 250ml flask and pre-warm at 42\celsius. For glucose withdrawal, prepare 2x100mL of SC-glc medium, substituting 2\% sorbitol for glucose, in a 250ml flask and pre-warm at 30\celsius. Prepare a control 2x 100ml of SC-complete at 30\celsius.
+%\item Set up a  cellulose filter (Millipore 1.2\mum RAWP09025) on a cleaned Kontes glass filtration apparatus. Wet filter with prewarmed medium.
+%\item For each treatment, pour 100ml of cell culture onto filter and drain under mild house vacuum; culture should take a few seconds to drain through and should never completely dry out. Wash immediately with 100ml treatment media. With tweezers, roll filter paper into almost a cylinder, insert longways into flask of 100ml treatment media, and agitate to resuspend yeast from filter. Place at appropriate incubation temperature with shaking.
+% \item At the desired treatment time (5 minutes or 60 minutes), harvest the cells as below. Take control after 5mins of incubation (length of shortest perturbation treatment), and stage all treatment times as closely as possible: set up heat-shock and take 5 min timepoint, then set up -glc and take 5min timepoint, then set up and take control timepoint, then longer timepoints.
+\end{enumerate}
+
+\subsection*{Sample Lysis for Soluble/Insoluble Fractionation}
+
+
+\begin{enumerate}[resume]
+\item Fill filter with preheated media. Turn on vacuum. Pour entire liquid culture onto filter. Scrape with cell scraper (Costar 3008) until sufficient material 
+\item Plunge cell pellet, on scraper, into conical tube of LN use another chilled cell scraper to displace pellet from first scraper. Place tube at -80\celsius; when all LN2 has boiled out of tube (listen -- if any popping or hissing, keep waiting), transfer cell pellet to reinforced eppendorf tube, with pre-chilled tweezers.
+\item Snap tube closed carefully, away from other tubes. Keep in LN2. 
+\item Rack the tube into the PTFE 2mL tube adaptor for the Retsch Mixer Mill MM400 (Retsch \#22.008.0005) and submerge the entire assembly in LN2.
+Agitate for $4\times 90$ seconds at 30 Hz in a Retsch Mixer Mill MM400, returning sample holder to LN2 between sessions. Complete lysis produces fine snowy powder in the tube.
+\item Remove sample tubes from LN2, tap on bench to release powder from lid, and pop the caps to relieve pressure.
+\item Add 400 \mul SPB to each tube, thaw on ice with occasional vortexing, and as soon as possible extract ball with a magnet. (We rinse balls in methanol and store in 50\% ethanol.)
+\item Sonicate (Fisher FM120) for 20s in 5s pulses, 20kHz, 40\% amplitude, with the tube suspended in ice-water bath. This step is to shear genomic DNA and reduce viscosity prior to sample clarification. (Alternatively, vortex 4 times on high in 10sec pulses, placing the sample on ice between pulses).  
+\item Take 20uL aliquot as total protein sample.
+\end{enumerate}
+
+\subsection*{Soluble fraction extraction}
+\begin{enumerate}[resume]
+  \item Spin at 10,000g for 30 seconds (clarification step) to remove whole cells and very large aggregates.
+  \item Gently remove whitish lipid layer floating on top, and discard. Decant clarified liquid into a 1.5mL microcentrifuge tube. If desired, keep the pellet and process it alongside the insoluble fraction; this end product is the \emph{unclarified fraction}.
+  \item Spin at 100,000g for 20 minutes (fixed-angle TLA-55 rotor at 40,309 rpm, 4\celsius, in a Beckman Coulter Optimax tabletop ultracentrifuge).
+  \item Decant supernatant into a 1.5mL microcentrifuge tube: this is the \emph{soluble fraction}. 
+  \item Take 10ul aliquot of soluble fraction and mix with Laemmli buffer; use this to run a protein gel and assess protein integrity.
+\end{enumerate}
+
+\subsection*{Insoluble fraction extraction}
+\begin{enumerate}[resume]
+  \item Violently snap pellet to clear remaining liquid.
+  \item Add 500 \mul soluble protein buffer (SPB) and vortex violently. (The pellet may not resuspend; that's fine.)
+  \item Spin at 100,000g for 20 minutes.
+  \item Discard supernatant, clear residual liquid with a hard snap.
+  \item Add 500 \mul insoluble protein buffer (IPB). Process samples in IPB at room temperature to maintain solubility of the Urea.
+  \item Dislodge the pellet with a pipet tip, Vortex until pellet dissolves, 10-15 minutes for clarified samples.
+  \item Spin at 20,000g, RT, for 5 minutes.
+  \item Decant supernatant into a 1.5mL microcentrifuge tube: this is the \emph{insoluble fraction}. If desired, keep the pellet, this is the \emph{leftover fraction}; boil the leftover thoroughly in Laemmli buffer before running a gel.
+  \item Run a 4-15\% SDS-page gel; load roughly 5-10\mul of total and soluble fractions and 2-4 times the quantity of insoluble fractions. Make aliquots for further analysis and continue to chloroform:methanol extraction.
+\end{enumerate}
+
+
+
+\subsection*{Lysis and extraction for total protein }
+
+
+\begin{enumerate}[resume]
+\item Transfer 50 mL of the cell culture cells to a 50mL conical tube. %(how many cells? ). 
+\item Spin at 4,000g for 2mins in a swinging bucket rotor at 4\celsius. %The end of this spin marks the start of the timed treatment duration. Gently decant and discard supernatant. For heat shock treatment, hold tube containing pellet in waterbath at desired temperature for desired time.
+Gently discard the supernatant.
+\item Resuspend pellet in 1ml ice-cold TPB, on ice, and transfer to 1.5ml tube.
+\item Spin at 10,000g, 4\celsius, for 1min.
+\item Resuspend new pellet in total of 1mL TPB.
+\item Sonicate at at 20\% intensity, 7 seconds on 7 seconds off, for 5mins, in ice bath.
+\item Add 1/10 vol of 20\% SDS. Vortex. Boil 5 mins. Place on ice.
+\item Spin 30s, 10,000g, 4\celsius, to clear membranes and debris. Take aliquot for SDS-PAGE, and continue to chloroform:methanol extraction.
+\end{enumerate}
+
+
+\subsection*{Chloroform:Methanol Extraction}
+For Mass Spectrometry runs, or shipping proteins at room temperature, first perform a precipitation. Detergents, like SDS, and salts, like NaCl, can disrupt LC-MS/MS runs. Precipitation with chloroform and methanol results in dry protein material, free of salt and detergent. Adapted from Wessel, D. and Flügge, U.I. (1984) Anal. Biochem. 138 141–143.
+
+\begin{enumerate}[resume]
+\item To 100\mul protein sample ($\sim100$\mug protein) in a 1.5mL tube:
+\item Add 400\mul methanol and vortex thoroughly.
+\item Add 100\mul chloroform and vortex.
+\item Add 300\mul H2O---mixture will become cloudy with precipitate---and vortex.
+\item Centrifuge 1 minute at 14,000g. Result is three layers: a large aqueous layer on top, a circular flake of protein in the interphase, and a smaller chloroform layer at the bottom.
+\item Remove top aqueous layer carefully, trying not to disturb the protein flake.
+\item Add 400\mul methanol and vortex.
+\item Centrifuge 5 minutes at 20,000g, which will slam dandruffy precipitate against the tube wall.
+\item Remove as much methanol as possible. Be careful, because the pellet is delicate. You should be able to remove all but a few uL of methanol with care, which will speed drying.
+\item Dry under vacuum, and seal tube. This may be stored at RT short-term or -20 long term, prior to resuspension.
+\end{enumerate}
+
+
+
+
+
+\end{document}

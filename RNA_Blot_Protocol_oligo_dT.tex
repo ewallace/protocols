@@ -1,0 +1,94 @@
+\documentclass{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+% gensymb package, useful for general symbols, such as degrees celsius
+\usepackage{gensymb}
+% appropriate spaces after macro insertions
+\usepackage{xspace} 
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage[margin=2cm]{geometry}
+\usepackage{color}
+
+% enumitem allows continuous numbering across split lists.
+\usepackage{enumitem}
+
+%% EW macros
+\newcommand{\mul}{\ensuremath{\mu}L\xspace}
+\newcommand{\mug}{\ensuremath{\mu}g\xspace}
+\newcommand{\mum}{\ensuremath{\mu}m\xspace}
+\newcommand{\muM}{\ensuremath{\mu}M\xspace}
+\newcommand{\degC}{\celsius\xspace}
+\newcommand{\tb}[1]{\textcolor{blue}{#1}}
+
+
+\begin{document}
+\title{\vspace{-.75in} Anti-RNA blotting with chemiluminescent detection}
+\author{Edward Wallace, ewjwallace@gmail.com}
+\date{\today}
+\maketitle
+
+
+This protocol is for northern blotting/dot-blotting to detect specific RNAs via chemiluminescence, using biotinylated oligo-dT probes.
+Much of it is adapted from ULTRAhyb-Oligo and Brightstar BioDetect protocols.
+
+
+\section*{Dot-blot}
+
+\begin{enumerate}[resume]
+\item Blot 10uL of each RNA sample on positively charged nylon membrane under vacuum.
+\end{enumerate}
+
+\section*{Hybridization}
+
+Ingredients:
+
+\begin{itemize}
+\item ULTRAhyb-Oligo\textregistered\ buffer (Life technologies AM8663)
+\item oligo-dT probes: 5' biotinylated, 36-45nt long, 60-75\degC hybridization temperature, 45-65\% GC-content, in 10\muM working solution.
+\item Wash buffer: 2X SSC (300mM NaCl, 30mM sodium citrate, pH 7.0), 0.5\% SDS. Make from 20X stock. % (800ml dH2O, RNase free, 175.3g NaCl (3M), 88.2g trisodium citrate (NaCit; 300mM; e.g. S4641); adjust the pH to 7.0 with a few drops of 1M HCl; adjust the volume to 1L with dH2O; filter sterilize or autoclave.
+  \item BrightStar\textregistered\ BioDetect\texttrademark\ Nonisotopic Detection Kit (Life technologies AM1930)
+  \item Positively Charged nylon membrane (e.g. BrightStar\texttrademark\ -Plus Positively Charged Nylon Membrane, or Roche 11-209-299-001)
+\end{itemize}
+
+Steps:
+
+\begin{enumerate}[resume]
+\item Preheat ULTRAhyb-Oligo to 42-68\degC to dissolve all precipitated material.
+\item Prehybridize the blot for 30 min at 42\degC. In the Drummond lab, use a yeast incubator at 42\degC, 40rpm shaking for this.Use 1 mL ULTRAhyb-Oligo Hybridization Buffer per 10 cm$^2$ of membrane. Be certain that enough solution is present to keep the membrane uniformly wet.
+\item Add 5nM of the end labeled oligonucleotide (0.5\mul of 10\muM working solution per mL of buffer). Since it is important that undiluted probe solution does not touch the membrane, pour the ULTRAhyb-Oligo solution from the prehybridization into a 50 mL conical tube, add the labeled probe, mix by swirling, and then immediately pour the solution back into the container with the blot.
+\item Hybridize overnight (14-24 hr) at 42\degC with gentle agitation.%It may be possible to reduce the hybridization time for detection of relatively abundant messages, but the minimum neces- sary hybridization time would have to be determined empirically.\item Wash the blot 2x30 min at 42\degC. Immediately pour at least 50 mL wash buffer onto the blot and incubate at 42\degC for 30 min with gentle agitation. Repeat with fresh wash buffer.
+\end{enumerate}
+
+\section*{Detection}
+\label{sec:detect}
+
+%The assay described below detects the biotin-labeled full length and protected probes generated in the RPA assay and blotted onto a nylon membrane using the Ambion BrightStar BioDetect kit. The procedure is based on high affinity binding of alkaline phosphatase-conjugated streptavidin to biotin-labeled RNA, and detection of complexes by chemiluminescence using the CDP-Star substrate. The amount of biotin-labeled RNA can be quantified, because the amount of chemiluminescence is proportional to the amount of biotin contained in the RNA blotted onto the membrane.
+
+\begin{enumerate}[resume]
+  \item Measure the surface area of your membrane to determine the amounts of the washing and assay buffers needed. Dissolve the precipitate in the 5X washing buffer at 37-65\degC. Dilute the 5X washing buffer and 10X assay buffer to 1X working buffers before the experiment, prepare enough for one experiment only (discard the unused diluted buffer after each experiment). For example, for a 10 x 10 cm membrane (100 cm2), 100 mL of washing buffer and 30 mL of assay buffer are needed (the volumes below are given for a 100 cm2 membrane). Place the membrane sample side up in a plastic box of similar size. Do not allow the membrane to dry throughout the entire procedure. The procedure is performed at room temperature on a rocking shaker at medium speed (10-20 rockings/min).
+\item Wash the membrane 2 times, 5 min each, in 20 mL 1X washing buffer. 
+\item Wash the membrane 2 times, 5 min each, in 10 mL 1X blocking buffer.
+\item Wash the membrane once for 30 min in 20 mL 1X blocking buffer. 
+\item Incubate the membrane for 30 min in 10 mL of the conjugate solution (10 mL
+blocking buffer plus 1 \mul of streptavidin-alkaline phosphatase conjugate).   
+\item Wash the membrane once for 15 min in 20 mL 1X blocking buffer. 
+\item Wash the membrane 3 times, 15 min each, in 20 mL 1X washing buffer. 
+\item Wash the membrane 2 times, 2 min each, in 15 mL 1X assay buffer. 
+\item Incubate the membrane in 5 mL CDP-star solution for 5 min. Make sure that the solution evenly covers the entire membrane, by rotating the box by hand. 
+\item Take out the membrane with forceps. Let the excess of CDP-star solution drip off, place the membrane in a transparent plastic bag, remove all the air, and heat-seal
+the bag. 
+\item Image the membrane on the Chemi-doc or other digital imager. Usually 1 min to 2h exposure is sufficient; the CDP-star reaches peak light emission in 2-4 h, and the light emission persists at the high level for several days. The image can also be obtained and quantified using Kodak Digital Science Image Station.
+\end{enumerate}
+
+%\begin{enumerate}[resume]
+%\item 
+%\end{enumerate}
+
+\end{document}
