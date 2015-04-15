@@ -1,0 +1,104 @@
+\documentclass{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+% gensymb package, useful for general symbols, such as degrees celsius
+\usepackage{gensymb}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage[margin=2cm]{geometry}
+
+%% EW macros
+\newcommand{\mul}{\ensuremath{\mu}l }
+\newcommand{\mug}{\ensuremath{\mu}g }
+
+% enumitem allows continuous numbering across split lists.
+\usepackage{enumitem}
+
+\begin{document}
+\title{RNA content of RNP granules in yeast}
+\author{Edward Wallace, ewjwallace@gmail.com}
+\date{\today}
+\maketitle
+
+
+\section*{Introduction}
+
+The aim is to find out which RNAs are sequestered in RNA-protein assemblies, by extracting both supernatant and pellet of 100,000g fractionated lysate. %The pellet fraction of heat-shocked cells is enriched for stress granules.
+
+%\subsection*{Overview}
+\subsection*{Prepare}
+
+\begin{itemize}
+  \item soluble RNA buffer (SRB; 20mM HEPES-NaOH pH7.4, 120mM KCl, 2mM EDTA, 0.2mM DTT, 1:100 Protease Inhibitors cocktail IV, RNAsin plus.) Make stock of salt and buffer, then chill and add DTT and inhibitors immediately before use.
+  \item insoluble RNA buffer (IRB; 20mM HEPES-NaOH pH7.4, 120mM NaCl, 5mM EDTA, 2\% SDS, 2mM DTT, 1:100 Protease Inhibitors cocktail IV, RNAsin plus.). 
+  %  \item 
+  \item Prepare appropriate numbers of safe-lok tubes loaded with 7mm steel balls, racked in LN, labeled on sides and top. Also, labeled tubes for all steps of protocol.
+  \item Waterbath at desired temperature, ice, chilled centrifuge rotors, etc.
+\end{itemize}
+
+\textbf{CAUTION:} Phenol and Phenol:Chloroform are extremely dangerous, causing chemical burns, and must be handled in a fume hood.
+
+\subsection*{Sample growth and lysis}
+\begin{enumerate}[resume]
+\item Grow up several cultures of yeast (BY4741) to $4 \times 10^6$ cells/mL ($OD_{600} \approx 0.4$) at 30\celsius, in 100ml media in a 250ml flask. 
+%
+\item Transfer $2 \times 10^8$ cells to a 50mL conical tube (50 mL of a $4 \times 10^6$ cells/mL culture). 
+\item Spin at 2500g for 30s. Gently decant and discard supernatant.
+%\item For heat shock treatment, add 50ml of pre-warmed media (for treatment) or 30\celsius media (control) to tube and shake to resuspend culture. Incubate for desired time (0,2,4,or 8mins). Spin at 3000g for 30s and discard supernatant.
+\item For short heat shock treatment, hold tube containing pellet in waterbath at desired temperature for desired time. 
+\item Resuspend pellet in 100 \mul  ice-cold SPB, on ice.
+\item Drip resuspended pellet onto upper wall of tube containing steel ball. Goal is to get a nugget of frozen material on the wall, and to avoid dripping the material around the ball and thus freezing the ball to the bottom of the tube; having some LN2 remaining in the tube helps.
+\item Place tubes at -80\celsius; when all LN2 has boiled out of tube (listen -- if any popping or hissing, keep waiting), snap tube closed carefully, away from other tubes. Keep in LN2. (Any remaining LN2 in tube will cause tube to explode open and fire the stainless steel ball into your iPad, brain, colleague, or other important equipment.)
+\item Rack the tube into the PTFE 2mL tube adaptor for the Retsch Mixer Mill MM400 (Retsch \#22.008.0005) and submerge the entire assembly in LN2.
+Agitate for $4\times 90$ seconds at 30 Hz in a Retsch Mixer Mill MM400, returning sample holder to LN2 between sessions. Complete lysis produces fine snowy powder in the tube.
+\item Remove sample tubes from LN2 and pop the caps to relieve pressure.
+\item Add 400 \mul SPB to each tube, and extract ball with a magnet. We rinse balls in methanol and store in 50\% ethanol.
+\end{enumerate}
+
+\subsection*{Soluble fraction extraction}
+\begin{enumerate}[resume]
+  \item Spin at 3000g for 30 seconds (clarification step) to remove whole cells and very large aggregates.
+  \item Decant clarified liquid into a 1.5mL microcentrifuge tube. If desired, keep the pellet and process it alongside the insoluble fraction; this end product is the \emph{unclarified fraction}.
+  \item Spin at 100,000g for 20 minutes (fixed-angle TLA-55 rotor at 40,309 rpm, 4\celsius, in a Beckman Coulter Optimax tabletop ultracentrifuge).
+  \item Decant supernatant into a 1.5mL microcentrifuge tube: this is the \emph{soluble fraction}. 
+  \item Take 10ul aliquot of soluble fraction and mix with Laemmli buffer; use this to run a protein gel and assess protein integrity.
+  \item Mix soluble fraction with 1/10 vol 2\% SDS, and equal volume Phenol, to denature proteins and begin RNA extraction.
+\end{enumerate}
+
+\subsection*{Insoluble fraction extraction}
+\begin{enumerate}[resume]
+  \item Violently snap pellet to clear remaining liquid.
+  \item Add 500 \mul soluble RNA buffer (SRB) and vortex violently. (The pellet may not resuspend; that's fine.)
+  \item Spin at 100,000g for 20 minutes.
+  \item Discard supernatant, clear residual liquid with a hard snap.
+  \item Add 500 \mul insoluble RNA buffer (IRB). Vortex briefly.
+%  \item Vortex until pellet dissolves, 10-15 minutes for clarified samples.
+%  \item Spin at 100,000g for 5 minutes.
+%  \item Decant supernatant into a 1.5mL microcentrifuge tube: this is the \emph{insoluble fraction}.
+ \item Add equal volume Phenol pH 8, vortex until pellet dissolves, begin RNA extraction.
+\end{enumerate}
+
+
+\subsection*{RNA extraction}
+Extract using standard phenol:chloroform method.
+\begin{enumerate}[resume]
+  \item Having mixed equal volumes of aqueous solution with Phenol, ensure tubes are vortexed thoroughly.
+  \item Spin at 14,000g for 2mins at 4\celsius. 
+  \item Transfer aqueous phase (roughly 200\mul) to new 1.5ml tube  (labeled tube N), avoiding cloudy interphase and lipids on top. Add 250\mul SPB to previous tube (labeled tube A) and vortex tube A for 5mins.
+\item Add 250\mul chloroform to tube P to suck off phenol from water phase. Vortex for 3 mins, then spin 2mins at 14,000g and transfer aqueous phase from tube A to tube N. Discard tube A.
+  \item Repeat extraction on tube N: mix with equal volume Phenol:Chloroform pH 4.5, vortex 30s, 14,000g for 2mins, remove aqueous phase to new tube. Repeat until interphase is no longer cloudy.
+  \item To final aqueous sample add 1/10 vol ammonium Acetate, 1.5 vol 100\% EtOH, and 1\mul GlycoBlue (use a master mix!). Mix gently, precipitate overnight at -20\celsius.
+  \item Remove the sample from freezer. Cold spin (4\celsius) for 15 mins at 14,000g. 
+\item Thoroughly remove ethanol from pellet, and add 700\mul 80\% ethanol. Cold spin for 2 minutes at 14,000g. Repeat the ethanol wash and cold spin. This removes all traces of salt, SDS, etc.
+\item Dry pellets thoroughly, i.e., pipette off ethanol, removing all liquid. If necessary, dry with the tubes open on a 37\celsius\ heat block (if the RNA sample is pure, this should not degrade the RNA). Resuspend pellet in 50 \mul H$_2$O.
+\item To check the quality of the RNA, pour a 1\% agarose-TBE gel on RNA-free equipment, and run using NEB RNA loading dye. Heat loading dye and H$_2$O to 95\celsius\ for 5 minutes, and then cool, to reduce the possibility of contamination. Mix 1\mul sample, 10\mul 1X loading dye for each well. Perform a 2X serial dilution of the sample for more precise quantification.
+\end{enumerate}
+
+
+\end{document}
