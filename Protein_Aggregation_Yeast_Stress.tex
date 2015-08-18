@@ -11,8 +11,8 @@
 
 % graphicx package, useful for including eps and pdf graphics
 % include graphics with the command \includegraphics
-\usepackage{graphicx}
-\usepackage{rotating}
+%\usepackage{graphicx}
+%\usepackage{rotating}
 \usepackage[margin=2cm]{geometry}
 \usepackage{color}
 
@@ -28,40 +28,21 @@
 %\newcounter{PExCounter}
 
 \begin{document}
-\title{\vspace{-.75in} Measurement of protein aggregation by fractionating yeast}
+\title{Measurement of protein aggregation by fractionating yeast}
 \author{Edward Wallace, ewjwallace@gmail.com}
 \date{\today}
 \maketitle
 
-%To do: 
-%\begin{itemize}
-%  \item Figures for all gels.
-%  \item GeneElute spin column?
-%\end{itemize}
-
-%\section*{Introduction}
-%
-%The aim is to find out which RNAs are sequestered in stress granules, by extracting both soluble and insoluble portions of lysed cells, with and without heat shock, and performing RNASeq on both fractions. The insoluble fraction of heat-shocked cells is enriched for stress granules. The observation that small subunit of ribosomal proteins are found in stress granules suggests that we should see more 18S rRNA (from the small subunit) than 28S rRNA (from the large) in stress-granule samples. The basic idea is to lyse cells, separate the lysate into soluble and insoluble fractions, and extract RNA from each fraction.
-
-This protocol is for harvesting of yeast and separation of their proteins into aggregate/membrane and soluble fractions, for further analysis by SDS-PAGE, western blot,  mass spectrometry, etc. Based on Mike Dion and Allan Drummond's 2011 protocols, with modifications by Edward Wallace\footnote{Previous versions of this file were called solubleInsolubleProtein*.*} and Quincey Justman. 
+This protocol is for harvesting of yeast and separation of their proteins into aggregate/membrane and soluble fractions, for further analysis by SDS-PAGE, western blot, mass spectrometry, etc. Based on Mike Dion and Allan Drummond's 2011 protocols, with extensive modifications by Edward Wallace with help from Quincey Justman. 
 
 \subsection*{Prepare}
 
 %Prepare: 
 \begin{itemize}
-  \item soluble protein buffer (SPB; 20mM HEPES-NaOH pH7.4, 120mM KCl, 2mM EDTA, 0.2mM DTT, 1:100 PMSF, 1:100 protease inhibitors cocktail IV). Make stock of salt and buffer, add DTT and inhibitors shortly before use, and chill.
+  \item soluble protein buffer (SPB; 20mM HEPES-KOH pH7.4, 120mM KCl, 2mM EDTA, 0.2mM DTT, 1:100 PMSF, 1:100 protease inhibitors cocktail IV). Make stock of salt and buffer, add DTT and inhibitors shortly before use, and chill.
 \item total protein buffer (TPB;   20mM HEPES-NaOH pH7.4, 150mM NaCl, 5mM EDTA, 3\% SDS, 1:100 PMSF, 2mM DTT, 1:1000 protease inhibitors IV). 
   \item insoluble protein buffer (IPB; 8M Urea, 20mM HEPES-NaOH pH7.4, 150mM NaCl, 2\% SDS, 2mM EDTA, 2mM DTT, 1:100 PMSF, 1:1000 protease inhibitors IV.). Mix fresh daily the urea, DTT, and inhibitors, and keep at room temperature:
   
-%\begin{itemize}[itemsep=0pt,leftmargin=40pt]
-%  \item[0.96g\ ] urea
-%  \item[818\mul] H2O
-%  \item[200\mul] 20\% SDS (w/v)
-%  \item[\ 40\mul] 1M HEPES-NaOH pH7.4
-%  \item[\ 20\mul] 100mM PMSF
-%  \item[\ 20\mul] 200mM DTT
-%  \item[\ \ 2\mul] protease inhibitors
-%\end{itemize}
 \begin{tabular}{rrl}
 for 2mL & for 13mL & \\
 950\mul & 6.2mL & H2O \\
@@ -91,15 +72,15 @@ for 2mL & for 13mL & \\
 
 \subsection*{Sample Growth}
 \begin{enumerate}[resume]
-%Grow up several cultures of yeast (BY4741) to $4 \times 10^6$ cells/mL ($OD_{600} \approx 0.45$) at 30\degC, in 100ml media in a 250ml flask. Pretreat cells as desired. For
-\item Grow up a culture of Saccharomyces cerevisiae (BY4741) to $4 \times 10^6$ cells/mL ($OD_{600} \approx 0.45$) at 30\degC, with 120rpm shaking, in 300ml SC-complete medium in a 1000ml erlenmeyer flask.
+\item For each strain, inoculate a 3 mL pre-culture of SC-complete medium with a single yeast colony and incubate overnight at 30\degC with shaking or rotation.
+\item Inoculate overnight culture to $OD_{600} \approx 0.01$  in SC-complete medium in a baffled flask, grow to $4 \times 10^6$ cells/mL ($OD_{600} \approx 0.45$) at 30\degC with 200rpm shaking.
 %\item For heat shock, prepare 2x 100mL of SC-complete medium in a 250ml flask and pre-warm at 42\degC. For glucose withdrawal, prepare 2x100mL of SC-glc medium, substituting 2\% sorbitol for glucose, in a 250ml flask and pre-warm at 30\degC. Prepare a control 2x 100ml of SC-complete at 30\degC.
 %\item Set up a  cellulose filter (Millipore 1.2\mum RAWP09025) on a cleaned Kontes glass filtration apparatus. Wet filter with prewarmed medium.
 %\item For each treatment, pour 100ml of cell culture onto filter and drain under mild house vacuum; culture should take a few seconds to drain through and should never completely dry out. Wash immediately with 100ml treatment media. With tweezers, roll filter paper into almost a cylinder, insert longways into flask of 100ml treatment media, and agitate to resuspend yeast from filter. Place at appropriate incubation temperature with shaking.
 % \item At the desired treatment time (5 minutes or 60 minutes), harvest the cells as below. Take control after 5mins of incubation (length of shortest perturbation treatment), and stage all treatment times as closely as possible: set up heat-shock and take 5 min timepoint, then set up -glc and take 5min timepoint, then set up and take control timepoint, then longer timepoints.
 \end{enumerate}
 
-\subsection*{Sample Lysis}
+\subsection*{Sample Harvesting and  Lysis}
 
 
 \begin{enumerate}[resume]
@@ -124,16 +105,16 @@ Remove sample tubes from LN2, tap on bench to release powder from lid, and pop t
 \subsection*{Soluble fraction extraction}
 \begin{enumerate}[resume]
   \item Spin at 3000g for 30 seconds (clarification step) to remove whole cells and very large aggregates.
-  \item Decant clarified liquid into a 1.5mL microcentrifuge tube. If desired, keep the pellet and process it alongside the insoluble fraction; this end product is the \emph{unclarified fraction}.
+  \item Decant clarified liquid into a 1.5mL microcentrifuge tube. If troubleshooting, keep the pellet and process it alongside the insoluble fraction; this end product is the \emph{unclarified fraction}.
   \item Spin at 100,000g for 20 minutes (fixed-angle TLA-55 rotor at 40,309 rpm, 4\degC, in a Beckman Coulter Optimax tabletop ultracentrifuge).
   \item Decant supernatant into a 1.5mL microcentrifuge tube: this is the \emph{soluble fraction}. 
-  \item Take 10ul aliquot of soluble fraction and mix with Laemmli buffer; use this to run a protein gel and assess protein integrity.
+  \item Take 10ul aliquot of soluble fraction and mix with 2X Laemmli buffer; use this to run a protein gel and assess protein integrity.
 \end{enumerate}
 
 \subsection*{Insoluble fraction extraction}
 \begin{enumerate}[resume]
   \item Violently snap pellet to clear remaining liquid.
-  \item Add 500 \mul soluble protein buffer (SPB) and vortex violently. (The pellet may not resuspend; that's fine.)
+  \item Add 500 \mul soluble protein buffer (SPB) and vortex. (The pellet may not resuspend; that's fine.)
   \item Spin at 100,000g for 20 minutes.
   \item Discard supernatant, clear residual liquid with a hard snap.
   \item Add 250 \mul insoluble protein buffer (IPB); note this means insoluble sample is relatively 2X concentrated to others. Process samples in IPB at room temperature to maintain solubility of the Urea.
@@ -145,7 +126,7 @@ Remove sample tubes from LN2, tap on bench to release powder from lid, and pop t
 
 \subsection*{Total protein extraction}
 \begin{enumerate}[resume]
-\item Add 400 \mul TPB to each total protein tube. Incubate at 95¡C with 500rpm mixing for 20 min.
+\item Add 400 \mul TPB to each total protein tube. Incubate at 95Â°C with 500rpm mixing for 20 min.
 \item Vortex vigorously for 15 min.
 \item Spin at 6000g, RT, 1 min. Take supernatant; this is the \emph{total protein fraction}. 
 \end{enumerate}
