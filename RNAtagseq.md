@@ -171,7 +171,7 @@ This protocol is for RNASeq library preparation using the RNATagSeq method of Sh
 
 4. Pooling step: RLT buffer + Zymo column
 NOTE: At this point, multiple samples with distinct RNAtag adaptors will be pooled on the same spin column. Do not exceed 5ug RNA per pool, the maximum binding capacity of columns. Attempt to normalize the amounts (using your QC in step3, or even 1) based on the amount of non-ribosomal RNA in each pool, or your other needs.
-- Add 60 uL of RLT buffer to each sample to inhibit ligase and mix well (80 uL total)
+- Add 60 uL of RLT buffer to each sample to inhibit ligase, and mix well (80 uL total)
 - Pooling and clean up using Zymo Clean & ConcentratorTM-5 column - follow manufacturer’s *200nt* cut off protocol:
 	- Add 2x reaction vol (160 uL=2x 80 uL) of 1:1 binding buffer: EtOH (100%) / reaction
 	- Carefully add reactions to be pooled to a single Zymo column.
@@ -228,9 +228,8 @@ NOTE: At this point, multiple samples with distinct RNAtag adaptors will be pool
 - Add 5 uL RNase/DNase free water to beads -- _KEEP BEADS AND TUBES, do not transfer_
 
 9. Second LIGATION (ssDNA/ssDNA): 3’ Linker Ligation with beads
-	NOTE: 3Tr3 adaptor: 5’ AGATCGGAAGAGCACACGTCTG 3’ = 55% GC, 22bp; Needs: 5’-P and 3’ ddC (or 3’-C3
-spacer)
-- Add 2 uL of 3Tr3 adaptor to cDNA
+	NOTE: 3Tr3 adaptor: 5’ AGATCGGAAGAGCACACGTCTG 3’ = 55% GC, 22bp; Needs: 5’-P and 3’ ddC (or 3’-C3 spacer). Make 40 uM stock.
+- Add 2 uL (80 pmoles) of 3Tr3 adaptor to cDNA 
 - Heat at 75°C for 3 min; Place on cold block on ice
 - Make ligation reaction master mix (can be prepared ahead of time, on ice):
 ￼￼
@@ -296,12 +295,11 @@ spacer)
 	- Add 0.5 uL of Pfu Ultra II Polymerase.
 
 - Mix well and aliquot 8 ul into each of 3 tubes
-- Place each in a thermal cycler with the following conditions
-Cycling conditions:
-	start: 98°C, 3min
-	cycle: 9, 12, 15 cycles (for test PCR)
+- Place each in a thermal cycler with cycling conditions:
+	- start: 98°C, 3min
+	- cycle: 9, 12, 15 cycles (for test PCR)
 		98°C, 30sec; 55°C, 30sec; 70°C, 30sec
-	end: 70°C, 2min; 4°C, hold
+	- end: 70°C, 2min; 4°C, hold
 
 13. SPRI clean up (1.5x) to remove reaction buffer and PCR primers:
 - increase reaction to 30uL with sterile water
@@ -326,6 +324,7 @@ Cycling conditions:
 - Set up a test PCR using 5 uL of ss cDNA sample and 9-12 cycles of PCR (based on experience with pool of 16 reactions, each starting with ~400ng total RNA)
 - Include a negative control (water) for each primer set
 - Make PCR Master Mix:
+
 		| Reagent (for PCR master mix)    |  1 rxn  | 
 		|---------------------------------|---------|
 		| Water, PCR-clean                | 28.6 uL |
@@ -342,16 +341,15 @@ Cycling conditions:
 	- Add 1 uL of Pfu Ultra II Polymerase.
 
 - Mix well and aliquot 10 ul into each of 5 wells of a 96-well plate (amplification is apparently more robust in smaller volumes), cap.
-- Place each in a thermal cycler with the following conditions
-Cycling conditions:
-	start: 98°C, 3min
-	cycle: # determined from test PCR
+- Place each in a thermal cycler with the cycling conditions:
+	- start: 98°C, 3min
+	- cycle: # determined from test PCR
 		98°C, 30sec; 55°C, 30sec; 70°C, 30sec
-	end: 70°C, 2min; 4°C, hold
+	- end: 70°C, 2min; 4°C, hold
 
 16. SPRI clean up (1.5x) to remove reaction buffer and PCR primers:
-- increase reaction to 30uL with sterile water
-- Add 1.5x reaction volume SPRI beads (45 uL) to the sample in new tubes, and mix up/down 10x
+- Pool PCR reaction and increase to 2x reaction volume (100 ul) with sterile water
+- Add 1.5x reaction volume SPRI beads (150 uL) to the sample in new tubes, and mix up/down 10x
 - Incubate at room temperature for 15min
 - Place on magnet for 5 min or until solution is clear
 - Pipette out and discard clear solution
