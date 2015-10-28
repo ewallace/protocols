@@ -142,7 +142,7 @@ This protocol is for RNASeq library preparation using the RNATagSeq method of Sh
 
 3. FIRST LIGATION (RNA/DNA) 3’ Linker Ligation
 
-- Add 1 uL of barcoded P7 adaptor (100 pmole= 1 uL of 100 uM) to 5 uL of dephosphorylated RNA
+- Add 1 uL of barcoded RNATag adaptor (100 pmole= 1 uL of 100 uM) to 5 uL of dephosphorylated RNA
 - Heat at 70°C for 2 min, place in cold block on ice
 - Set up Ligation master mix below
 	NOTE:
