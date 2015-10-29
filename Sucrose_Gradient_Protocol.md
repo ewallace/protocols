@@ -5,7 +5,8 @@ date: "28 October 2015"
 nickname: RNAtagseq
 tags: [RNA, Ribosome, Polysome, Gradient ]
 output: html_document
-shell_typeset: pandoc Sucrose_Gradient_Protocol.md -f markdown -t html -o Sucrose_Gradient_Protocol.html -s
+html_typeset: pandoc Sucrose_Gradient_Protocol.md -f markdown -t html -o Sucrose_Gradient_Protocol.html -s
+pdf_typeset: pandoc -V geometry:margin=0.5in Sucrose_Gradient_Protocol.md -f markdown -t latex -o Sucrose_Gradient_Protocol.pdf -s
 ---
 
 This protocol is for polysome fractionation by sucrose gradient, to view
@@ -92,7 +93,7 @@ operation, especially for troubleshooting.
 
 ## Spin ##
 
-1.  Load sample and assemble rotor: take sample, SW28.1 (or SW28) rotor, 
+6.  Load sample and assemble rotor: take sample, SW28.1 (or SW28) rotor, 
     bucket rack, and 200 ul pipette to ultracentrifuge. Load sample in
     each tube by placing filled pipette tip in meniscus at side of tube,
     and pipetting slowly; you should see the sample spreading out across
@@ -100,14 +101,14 @@ operation, especially for troubleshooting.
     Hang buckets in numbered slots on rotor, checking that both hooks
     are attached for every bucket.
 
-2.  Set up centrifuge: turn on centrifuge, break vacuum and open
+7.  Set up centrifuge: turn on centrifuge, break vacuum and open
     spin chamber. Select 27500 rpm, 3.5hrs, 4C, with vacuum, on
     centrifuge controls. Place rotor assembly on axle, and seal
     spin chamber. Start centrifuge and fill out centrifuge logbook.
     Check on the centrifuge after 15 minutes to ensure it is
     running smoothly.
 
-3.  After running for 3.5hrs, the centrifuge takes several minutes
+8.  After running for 3.5hrs, the centrifuge takes several minutes
     to brake. Once the centrifuge has stopped spinning, release the
     vacuum, carefully remove rotor from spin chamber and place buckets
     in bucket rack.
@@ -115,13 +116,13 @@ operation, especially for troubleshooting.
 
 ## Set up gradient station ##
 
-1.  Take bucket rack with gradients to gradient station, very gently.
+9.  Take bucket rack with gradients to gradient station, very gently.
 
-2.  Turn on the gradient station, the UV monitor, the fraction collector, 
+10. Turn on the gradient station, the UV monitor, the fraction collector, 
     and the linked computer. Connect the USB cable, start the gradient profiler
     program on the computer and enter appropriate parameters.
 
-3.  Flush the line and calibrate the UV monitor: press DRAIN on fraction
+11. Flush the line and calibrate the UV monitor: press DRAIN on fraction
     collector. On the gradient station, from the initial screen press FRAC, then
     FRAC. Hold RINSE on gradient station to flush the line. Half-fill a centrifuge
     tube with 10% sucrose buffer, turn front dial so that vacuum plunger descends at
@@ -133,19 +134,19 @@ operation, especially for troubleshooting.
 
 For each ultracentrifuge tube with sample:
 
-1.  Initialize fraction collector: ensure there are 30x clean 1.5ml
+12. Initialize fraction collector: ensure there are 30x clean 1.5ml
     tubes in the two middle rows of the tube holder. Pre-label the tubes
     if desired. Press END, then START, and make sure drip outlet is
     above tube 0.
 
-2.  Remove bucket cap, remove centrifuge from bucket using long-nosed
+13. Remove bucket cap, remove centrifuge from bucket using long-nosed
     pliers, and attach locking top to centrifuge tube. Place tube in
     tube holder on gradient station, locking the tube in place by
     rotating the cap to lock in place. Slide tube holder onto mount on
     top of gradient station with window facing to the right, and turn
     clockwise so window is facing towards you.
 
-3.  On gradient station, press FRAC once or twice to get to the fractionation
+14. On gradient station, press FRAC once or twice to get to the fractionation
     menu, then SNGL for single run, and set the parameters to speed = 0.3, distance
     = 3.2 (for SW28.1; 2.6 for SW28), and 31 fractions. Rotate front dial to full
     counterclockwise position. Move plunger downwards by turning dial to the right
@@ -155,15 +156,15 @@ For each ultracentrifuge tube with sample:
     subsequent tubes from same run, reset to same position -- i.e. 0.0 mm on display 
     -- from previous tube.
 
-4.  On the gradient profiler program on the computer, press RECORD. Then
+15. On the gradient profiler program on the computer, press RECORD. Then
     press START on gradient station.
 
-5.  When finished, remove tubes from fraction collector and label them.
+16. When finished, remove tubes from fraction collector and label them.
     Press EXIT 3 times on gradient station to return to fraction menu,
     and remove centrifuge tube from holder. *Crucially, save the output
     on the computer, and press NEW RUN to record the next gradient.*
 
-6.  Note that the first 1-3 tubes in the fraction collector are usually
+17. Note that the first 1-3 tubes in the fraction collector are usually
     empty, so that the tube number on the rack is offset from
     that reported in the gradient profiler software (BioComp 
     instructions suggest this is solvable: good luck!). Tube 0 according 
@@ -174,15 +175,15 @@ For each ultracentrifuge tube with sample:
 
 ## Cleanup ##
 
-1.  Check **all** equipment for potential sucrose gradient spills and
+18. Check **all** equipment for potential sucrose gradient spills and
     clean thoroughly with damp cloth and dilute ethanol; this is a very 
     sticky spill. In particular, clean the plunger and flush the tubing 
     with water. 
 
-2.  Run a dummy gradient with 50% Ethanol in the tube to disinfect and 
-    flush tubing (DRAIN on fraction collector, from FRAC screen on gradient 
-    station lower plunger at about 0.5 mm/s).
+19. Flush tubing with a full tube of 50% Ethanol to disinfect (DRAIN on 
+    fraction collector, from FRAC screen on gradient station lower plunger 
+    at about 0.5 mm/s).
 
-3.  Store rotor and buckets in cold room, on rotor holding platform.
+20. Store rotor and buckets in cold room, on rotor holding platform.
 
 
