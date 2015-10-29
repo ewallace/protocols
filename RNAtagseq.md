@@ -348,17 +348,17 @@ NOTE: At this point, multiple samples with distinct RNAtag adaptors will be pool
 	- end: 70°C, 2min; 4°C, hold
 
 16. SPRI clean up (1.5x) to remove reaction buffer and PCR primers:
-- Pool PCR reaction and increase to 2x reaction volume (100 ul) with sterile water
-- Add 1.5x reaction volume SPRI beads (150 uL) to the sample in new tubes, and mix up/down 10x
+- Pool PCR reaction (50 uL)
+- Add 1.5x reaction volume SPRI beads (75 uL) to the sample in new tubes, and mix up/down 10x
 - Incubate at room temperature for 15min
 - Place on magnet for 5 min or until solution is clear
 - Pipette out and discard clear solution
 - Wash: Add 200 uL fresh 80% EtOH without removing from magnet and incubate for 30 sec. Pipette off and discard the EtOH. 
 - Repeat 80% EtOH wash, and let air dry for 3min
-- Elute off beads with 30 uL water and transfer to new tubes.
+- Elute off beads with 50 uL water and transfer to new tubes.
 
-16. SPRI clean up (0.7x) to remove reaction buffer and PCR primers:
-- Add 0.7x reaction volume SPRI beads (21 uL) to the sample in new tubes, and mix up/down 10x
+17. SPRI clean up (0.7x) to remove reaction buffer and PCR primers:
+- Add 0.7x reaction volume SPRI beads (35 uL) to the sample in new tubes, and mix up/down 10x
 - Incubate at room temperature for 15min
 - Place on magnet for 5 min or until solution is clear
 - Pipette out and discard clear solution
@@ -366,7 +366,7 @@ NOTE: At this point, multiple samples with distinct RNAtag adaptors will be pool
 - Repeat 80% EtOH wash, and let air dry for 3min
 - Elute off beads with 25 uL 1x low TE (10 mM Tris, 0.1M EDTA)
 
-17. Proceed to sequence
+18. Proceed to sequence
 - Check quantity/quality on Bioanalyzer with Agilent DNA HS chip
 - Submit to genomics core for sequencing.
 - If desired to combine multiple libraries PCR'd separately, they must have different barcoded P7 primers. Amounts of sequenceable material must be carefully measured to ensure even coverage across libraries, e.g. with the KAPA biosystems kit (Cat. # KK4824). The genomics core can do this for a small fee.
