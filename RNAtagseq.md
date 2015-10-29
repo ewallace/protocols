@@ -9,7 +9,11 @@ output: html_document
 shell_typeset: pandoc RNAtagseq.md -f markdown -t html -o RNAtagseq.html -s
 ---
 
-This protocol is for RNASeq library preparation using the RNATagSeq method of Shishkin et al., Nature Methods 2015 (Broad institute). The protocol is mildly adapted by Edward Wallace, mostly increasing some volumes to make SPRI bead handling easier. Applies to batches of 4 to 32 samples.
+This protocol is for RNASeq library preparation using the RNATagSeq method of 
+Shishkin, et al. (2015). *Simultaneous generation of many RNA-seq libraries in a single reaction.* Nature Methods, 12(4), 323–325. http://doi.org/10.1038/nmeth.3313 (Broad institute).
+
+The protocol is mildly adapted by Edward Wallace, mostly increasing some volumes to make SPRI bead handling easier. Applies to batches of 4 to 32 samples.
+
 
 ## Reagents {#prepare .unnumbered}
 
@@ -63,7 +67,9 @@ This protocol is for RNASeq library preparation using the RNATagSeq method of Sh
 - 96R Ring Magnet Plate. Agencourt Cat#. A29164 or Alpaqua Cat.# A001219
 - 96-well Aluminum Cooler Blocks, Light Labs USA Cat#. A-7079
 
+
 ## Notes
+
 - Label everything and lay out tubes neurotically to avoid pipette error.
 - Observe RNase-free sample prep, for steps 1-8, also neurotically. Clean your workspace and pipettes with 50% Ethanol and RNAse-Zap, use reserved RNase-free pipettes, ensure all tubes and reagents (including water) are RNase-free. 
 - Avoid DNA contamination, _especially from other sequencing libraries_, for steps 8+. Use filter tips for PCR reactions.
@@ -82,6 +88,11 @@ This protocol is for RNASeq library preparation using the RNATagSeq method of Sh
 - TempPlate No-skirt PCR Plates, and strips cut from them, are flexible and may spring up when caps are put on or off, flicking your sample across the bench. Avoid this by firmly seating plates/strips in a tube rack before manipulating  the caps.
 
 - Barcoded adaptors should be chosen carefully: plan a spreadsheet listing the sample name, cconditions, and which RNAtag adaptor (step 3) and P7 adaptor (step, after pooling) will be used. In each set of sequencing libraries combined on an Illumina sequencing run, there must be at least 3 distinct nt in all of the initial 4 nt of the sequenced adaptor for the sequencing machine to recognize clusters properly. (e.g. ATTA, GCAC, CAGT work, ATTA, GTAC, CTGT don't.)
+
+- Control oligos: 
+    - Tag33FAM /5Phos/AG AAC GAT TAG ATC GGA AGA GCG TCG TGT A/36-FAM/
+    is a fluorescent positive control oligo for First ligation and sample pooling. Use in place of a barcoded adaptor, for one sample, in step 3.
+    - TagDNActrl is a 200bp oligo as positive control for 2nd ligation through PCR. Its 3' end resembles a cDNA product for a library with Tag barcode CTGACTGA (distinct from 1-32), and the insert is "random" (elephant Pab1 orf start).
 
 
 ## Procedure:
@@ -369,4 +380,4 @@ NOTE: At this point, multiple samples with distinct RNAtag adaptors will be pool
 18. Proceed to sequence
 - Check quantity/quality on Bioanalyzer with Agilent DNA HS chip
 - Submit to genomics core for sequencing.
-- If desired to combine multiple libraries PCR'd separately, they must have different barcoded P7 primers. Amounts of sequenceable material must be carefully measured to ensure even coverage across libraries, e.g. with the KAPA biosystems kit (Cat. # KK4824). The genomics core can do this for a small fee.
+- If desired to combine multiple libraries PCR'd separately, they must have different barcoded P7 primers. Amounts of sequenceable material must be carefully measured to ensure even coverage across libraries, e.g. with the KAPA biosystems kit (Cat. # KK4824). The genomics core can do this for a fee.
