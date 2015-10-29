@@ -88,12 +88,12 @@ The protocol is mildly adapted by Edward Wallace, mostly increasing some volumes
 - for First Ligation, set up RNA/barcoded adaptor in single tube or use the TempPlate No-skirt PCR Plates for batched samples (these rigid plates are easy to handle and can mix well by flicking by hand) – with a razor, cut a column (for 8 samples) or row (for 12 samples) and use as strip and cover with the Flat PCR 12-cap strips (these strips fit tightly on these plates and will not leak).
 - TempPlate No-skirt PCR Plates, and strips cut from them, are flexible and may spring up when caps are put on or off, flicking your sample across the bench. Avoid this by firmly seating plates/strips in a tube rack before manipulating  the caps.
 
-- Barcoded adaptors should be chosen carefully: plan a spreadsheet listing the sample name, cconditions, and which RNAtag adaptor (step 3) and P7 adaptor (step, after pooling) will be used. In each set of sequencing libraries combined on an Illumina sequencing run, there must be at least 3 distinct nt in all of the initial 4 nt of the sequenced adaptor for the sequencing machine to recognize clusters properly. (e.g. ATTA, GCAC, CAGT work, ATTA, GTAC, CTGT don't.)
+- Barcoded adaptors are listed in appendix, requiring 5' Phos (/5Phos/) and 3' blocking spacer (/3SpC3/). The combination to use should be chosen carefully: plan a spreadsheet listing the sample name, conditions, and which RNAtag adaptor (step 3) and P7 adaptor (step 12/15, PCR after pooling) will be used. In each set of sequencing libraries combined on an Illumina sequencing run, there must be at least 3 distinct nt in all of the initial 4 nt of the sequenced adaptor for the sequencing machine to recognize clusters properly. (e.g. ATTA, GCAC, CAGT work, ATTA, GTAC, CTGT don't.)
 
 - Control oligos: 
     - Tag33FAM /5Phos/AG AAC GAT TAG ATC GGA AGA GCG TCG TGT A/36-FAM/
     is a fluorescent positive control oligo for First ligation and sample pooling. Use in place of a barcoded adaptor, for one sample, in step 3.
-    - TagDNActrl is a 200bp oligo as positive control for 2nd ligation through PCR. Its 3' end resembles a cDNA product for a library with Tag barcode CTGACTGA (distinct from 1-32), and the insert is "random" (elephant Pab1 orf start).
+    - TagDNA+ is a 200bp oligo as positive control for 2nd ligation through PCR. Its 3' end resembles a cDNA product for a library with Tag barcode CTGACTGA (distinct from Tag1-32, Tag33FAM), and the insert is "random" (elephant PABP 1st exon).
 
 
 ## Procedure:
@@ -286,7 +286,7 @@ NOTE: At this point, multiple samples with distinct RNAtag adaptors will be pool
 	_PAUSE POINT_
 
 12. PCR Amplification TEST to determine final cycle number
-
+	NOTE: P5 primer: P5_RNATag, 5’ AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT 3’ = 52% GC, 58bp; standard DNA oligo. Make 100uM dilution and 12.5uM working stock.
 - Set up a test PCR using 5 uL of ss cDNA sample and 9-12 cycles of PCR (based on experience with pool of 16 reactions, each starting with ~400ng total RNA)
 - Include a negative control (water) for each primer set
 - Make PCR Master Mix:
@@ -382,3 +382,61 @@ NOTE: At this point, multiple samples with distinct RNAtag adaptors will be pool
 - Check quantity/quality on Bioanalyzer with Agilent DNA HS chip
 - Submit to genomics core for sequencing.
 - If desired to combine multiple libraries PCR'd separately, they must have different barcoded P7 primers. Amounts of sequenceable material must be carefully measured to ensure even coverage across libraries, e.g. with the KAPA biosystems kit (Cat. # KK4824). The genomics core can do this for a fee.
+
+
+
+## Appendix: Barcode Tag Oligos
+
+| id       | Well | barcode sequence (5'-3') | oligo sequence                 | 8 base Barcode Read + T | IDTorder                                               | 
+|----------|------|--------------------------|--------------------------------|-------------------------|--------------------------------------------------------| 
+| Tag01    | A1   | CCCGTCTT                 | ACCCGTCTTAGATCGGAAGAGCGTCGTGTA | AAGACGGGT               | /5Phos/ACC CGT CTT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag02    | A2   | CGGCACTT                 | ACGGCACTTAGATCGGAAGAGCGTCGTGTA | AAGTGCCGT               | /5Phos/ACG GCA CTT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag03    | A3   | ACATTATT                 | AACATTATTAGATCGGAAGAGCGTCGTGTA | AATAATGTT               | /5Phos/AAC ATT ATT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag04    | A4   | GAGATTGT                 | AGAGATTGTAGATCGGAAGAGCGTCGTGTA | ACAATCTCT               | /5Phos/AGA GAT TGT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag05    | A5   | GGTCCTCT                 | AGGTCCTCTAGATCGGAAGAGCGTCGTGTA | AGAGGACCT               | /5Phos/AGG TCC TCT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag06    | A6   | CTCTAACT                 | ACTCTAACTAGATCGGAAGAGCGTCGTGTA | AGTTAGAGT               | /5Phos/ACT CTA ACT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag07    | A7   | AGAATTAT                 | AAGAATTATAGATCGGAAGAGCGTCGTGTA | ATAATTCTT               | /5Phos/AAG AAT TAT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag08    | A8   | TACAACAT                 | ATACAACATAGATCGGAAGAGCGTCGTGTA | ATGTTGTAT               | /5Phos/ATA CAA CAT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag09    | C1   | AAGTGTTG                 | AAAGTGTTGAGATCGGAAGAGCGTCGTGTA | CAACACTTT               | /5Phos/AAA GTG TTG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag10    | C2   | ATCACTTG                 | AATCACTTGAGATCGGAAGAGCGTCGTGTA | CAAGTGATT               | /5Phos/AAT CAC TTG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag11    | C3   | TCATCGTG                 | ATCATCGTGAGATCGGAAGAGCGTCGTGTA | CACGATGAT               | /5Phos/ATC ATC GTG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag12    | C4   | TACAGATG                 | ATACAGATGAGATCGGAAGAGCGTCGTGTA | CATCTGTAT               | /5Phos/ATA CAG ATG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag13    | C5   | TCCCGCGG                 | ATCCCGCGGAGATCGGAAGAGCGTCGTGTA | CCGCGGGAT               | /5Phos/ATC CCG CGG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag14    | C6   | CCAAGTCG                 | ACCAAGTCGAGATCGGAAGAGCGTCGTGTA | CGACTTGGT               | /5Phos/ACC AAG TCG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag15    | C7   | CTGGATCG                 | ACTGGATCGAGATCGGAAGAGCGTCGTGTA | CGATCCAGT               | /5Phos/ACT GGA TCG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag16    | C8   | GTCTGGCG                 | AGTCTGGCGAGATCGGAAGAGCGTCGTGTA | CGCCAGACT               | /5Phos/AGT CTG GCG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag17    | E1   | TTACCACG                 | ATTACCACGAGATCGGAAGAGCGTCGTGTA | CGTGGTAAT               | /5Phos/ATT ACC ACG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag18    | E2   | TGAACCAG                 | ATGAACCAGAGATCGGAAGAGCGTCGTGTA | CTGGTTCAT               | /5Phos/ATG AAC CAG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag19    | E3   | CCCTACAG                 | ACCCTACAGAGATCGGAAGAGCGTCGTGTA | CTGTAGGGT               | /5Phos/ACC CTA CAG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag20    | E4   | GGCCCAAG                 | AGGCCCAAGAGATCGGAAGAGCGTCGTGTA | CTTGGGCCT               | /5Phos/AGG CCC AAG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag21    | E5   | GAGCCATC                 | AGAGCCATCAGATCGGAAGAGCGTCGTGTA | GATGGCTCT               | /5Phos/AGA GCC ATC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag22    | E6   | GTAACTGC                 | AGTAACTGCAGATCGGAAGAGCGTCGTGTA | GCAGTTACT               | /5Phos/AGT AAC TGC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag23    | E7   | CGGAGGGC                 | ACGGAGGGCAGATCGGAAGAGCGTCGTGTA | GCCCTCCGT               | /5Phos/ACG GAG GGC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag24    | E8   | CCCTCGGC                 | ACCCTCGGCAGATCGGAAGAGCGTCGTGTA | GCCGAGGGT               | /5Phos/ACC CTC GGC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag25    | G1   | CAACTCGC                 | ACAACTCGCAGATCGGAAGAGCGTCGTGTA | GCGAGTTGT               | /5Phos/ACA ACT CGC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag26    | G2   | TACCGGCC                 | ATACCGGCCAGATCGGAAGAGCGTCGTGTA | GGCCGGTAT               | /5Phos/ATA CCG GCC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag27    | G3   | CCGGTACC                 | ACCGGTACCAGATCGGAAGAGCGTCGTGTA | GGTACCGGT               | /5Phos/ACC GGT ACC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag28    | G4   | CTCGGTAC                 | ACTCGGTACAGATCGGAAGAGCGTCGTGTA | GTACCGAGT               | /5Phos/ACT CGG TAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag29    | G5   | ATATGGAC                 | AATATGGACAGATCGGAAGAGCGTCGTGTA | GTCCATATT               | /5Phos/AAT ATG GAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag30    | G6   | TGGGAGAC                 | ATGGGAGACAGATCGGAAGAGCGTCGTGTA | GTCTCCCAT               | /5Phos/ATG GGA GAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag31    | G7   | GCAGCCAC                 | AGCAGCCACAGATCGGAAGAGCGTCGTGTA | GTGGCTGCT               | /5Phos/AGC AGC CAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag32    | G8   | TTTCTAAC                 | ATTTCTAACAGATCGGAAGAGCGTCGTGTA | GTTAGAAAT               | /5Phos/ATT TCT AAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+|          |      |                          |                                |                         |                                                        | 
+| Tag33FAM | H12  | GAACGATT                 | AGAACGATTAGATCGGAAGAGCGTCGTGTA | AATCGTTCT               | /5Phos/AGA ACG ATT AGA TCG GAA GAG CGT CGT GTA/36-FAM/ | 
+|          |      |                          |                                |                         |                                                        | 
+
+Note: 3Tr3 primer (/5Phos/AGA TCG GAA GAG CAC ACG TCT G/3SpC3/) is in well A12 of the IDT plate.
+
+
+## Appendix: P7 Bindex Oligos
+
+| Name  | P7 Enrichment Primer Sequence (5' --> 3') with barcode             | barcodes (BC) | BC READ (reverse complement) | 
+|-------|--------------------------------------------------------------------|---------------|------------------------------| 
+| P7_B1 | CAAGCAGAAGACGGCATACGAGATTCGTGTGCGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | TCGTGTGC      | GCACACGA                     | 
+| P7_B2 | CAAGCAGAAGACGGCATACGAGATTCGCCAGAGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | TCGCCAGA      | TCTGGCGA                     | 
+| P7_B3 | CAAGCAGAAGACGGCATACGAGATTCGCTATGGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | TCGCTATG      | CATAGCGA                     | 
+| P7_B4 | CAAGCAGAAGACGGCATACGAGATGGCTCCTGGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | GGCTCCTG      | CAGGAGCC                     | 
+| P7_B5 | CAAGCAGAAGACGGCATACGAGATATCCGACAGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | ATCCGACA      | TGTCGGAT                     | 
+| P7_B6 | CAAGCAGAAGACGGCATACGAGATAACATAATGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | AACATAAT      | ATTATGTT                     | 
+| P7_B7 | CAAGCAGAAGACGGCATACGAGATATGGTAGGGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | ATGGTAGG      | CCTACCAT                     | 
+| P7_B8 | CAAGCAGAAGACGGCATACGAGATGCTAAGTAGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | GCTAAGTA      | TACTTAGC                     | 
