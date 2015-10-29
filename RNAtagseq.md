@@ -6,7 +6,8 @@ shortref: "Shishkin et al. Nature Methods 2015"
 nickname: RNAtagseq
 tags: [RNA, NGS, RNASeq, Library prep]
 output: html_document
-shell_typeset: pandoc RNAtagseq.md -f markdown -t html -o RNAtagseq.html -s
+htmll_typeset: pandoc RNAtagseq.md -f markdown -t html -o RNAtagseq.html -s
+pdf_typeset: pandoc RNAtagseq.md -V geometry:margin=0.5in  -f markdown -t latex -o RNAtagseq.pdf -s
 ---
 
 This protocol is for RNASeq library preparation using the RNATagSeq method of 
