@@ -81,7 +81,7 @@ Use RNase-free water, reagents, and equipment throughout.
     ribosomal RNA (25S/18S), also a blur at ~80nt for tRNA, and good gels 
     show the 5S and 5.8S rRNAs at ~150nt.
     Perform a 2X serial dilution of the sample for more
-    precise quantification, or run on Agilent Bioanalyzer RNA.
+    precise quantification, or run on Agilent Bioanalyzer RNA Nano chip.
 
 [^1]: To find out how much sample is lost in the first centrifugation,
     resuspend pellet in 500 ul of RNA lysis buffer, and
