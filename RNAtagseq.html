@@ -15,9 +15,10 @@
 <h2 class="author">Edward Wallace</h2>
 <h3 class="date">19 October 2015</h3>
 </div>
-<p>This protocol is for RNASeq library preparation using the RNATagSeq method of Shishkin, et al. (2015). <em>Simultaneous generation of many RNA-seq libraries in a single reaction.</em> Nature Methods, 12(4), 323–325. http://doi.org/10.1038/nmeth.3313 (Broad institute).</p>
+<p>This protocol is for RNA sequencing (RNASeq) library preparation using the RNATagSeq method of Shishkin, et al. (2015). <em>Simultaneous generation of many RNA-seq libraries in a single reaction.</em> Nature Methods, 12(4), 323–325. http://doi.org/10.1038/nmeth.3313 (Broad institute).</p>
 <p>The protocol is mildly adapted by Edward Wallace, mostly increasing some volumes to make SPRI bead handling easier. Applies to batches of 4 to 32 samples.</p>
-<h2 id="prepare" class="unnumbered">Reagents</h2>
+<p>The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introduction to RNASeq.</p>
+<h2 id="reagents">Reagents</h2>
 <h3 id="wet-reagents">Wet reagents</h3>
 <ul>
 <li>Turbo DNase; Ambion/Applied Biosystems, Cat.# AM2239</li>
@@ -66,9 +67,11 @@
 </ul>
 <h3 id="instruments">Instruments:</h3>
 <ul>
-<li>2100 Electrophoresis Bioanalyzer Instrument; Agilent, Cat.# G2939AA (at functional genomics core)</li>
+<li>2100 Electrophoresis Bioanalyzer Instrument; Agilent, Cat.# G2939AA (at functional genomics core)
+<ul>
 <li>Agilent RNA 6000 Pico Kit; Agilent, Cat.# 5067-1513</li>
 <li>Agilent DNA HS Kit; Agilent, Cat.# 5067-4626</li>
+</ul></li>
 <li>QIAvac 24 Plus Vacuum manifold (1-24 spin columns; Qiagen cat# 19413)</li>
 <li>Thermocycler</li>
 <li>10uL, 100uL, 200uL pipettes.</li>
@@ -78,7 +81,7 @@
 <h2 id="notes">Notes</h2>
 <ul>
 <li>Label everything and lay out tubes neurotically to avoid pipette error.</li>
-<li>Observe RNase-free sample prep, for steps 1-8, also neurotically. Clean your workspace and pipettes with 50% Ethanol and RNAse-Zap, use reserved RNase-free pipettes, ensure all tubes and reagents (including water) are RNase-free.</li>
+<li>Observe RNase-free sample prep, for steps 1-8, also neurotically. Clean your workspace and pipettes with 50% Ethanol and RNAse-Zap, use reserved RNase-free pipettes and/or filter tips, ensure all tubes and reagents (including water) are RNase-free.</li>
 <li>Avoid DNA contamination, <em>especially from other sequencing libraries</em>, for steps 8+. Use filter tips for PCR reactions.</li>
 <li>Points where the in-process libraries may be frozen at -80 C while you pause, are indicated as <em>PAUSE POINT</em>.</li>
 <li>SPRI/XP beads take a bit of skill. &quot;SPRI (2x)&quot; or &quot;SPRI (1.5x)&quot; refers to the ratio of beads to aqueous solution containing nucleic acids (NA); this ratio controls the size of NA retained (see http://core-genomics.blogspot.com/2012/04/how-do-spri-beads-work.html). Be patient; wait for binding and for magnetisation. Prepare fresh 80% ethanol solution every day or two; the concentration drifts over time due to evaporation (manufacturer recommends 70% EtOH). Some reactions (2nd ligation step 9) happen on-bead so change the elution step. Manufacturer's protocol with tweaks is below; practice SPRI extraction on a DNA ladder or RNA ladder and ensure full recovery.
@@ -93,13 +96,13 @@
 <li>Elute: remove from magnet, pipette 40uL water or low TE buffer onto beads, pipette up and down 10X, replace on magnet and wait 5min (this is easiest with at least 40uL, hellish with 10uL).</li>
 <li>Unless otherwise specified, take clear liquid to new tube, carefully not disturbing beads.</li>
 </ul></li>
-<li>for First Ligation, set up RNA/barcoded adaptor in single tube or use the TempPlate No-skirt PCR Plates for batched samples (these rigid plates are easy to handle and can mix well by flicking by hand) – with a razor, cut a column (for 8 samples) or row (for 12 samples) and use as strip and cover with the Flat PCR 12-cap strips (these strips fit tightly on these plates and will not leak).</li>
+<li>For first ligation, set up RNA/barcoded adaptor in single tube or use the TempPlate No-skirt PCR Plates for batched samples (these rigid plates are easy to handle and can mix well by flicking by hand) – with a razor, cut a column (for 8 samples) or row (for 12 samples) and use as strip and cover with the Flat PCR 12-cap strips (these strips fit tightly on these plates and will not leak).</li>
 <li><p>TempPlate No-skirt PCR Plates, and strips cut from them, are flexible and may spring up when caps are put on or off, flicking your sample across the bench. Avoid this by firmly seating plates/strips in a tube rack before manipulating the caps.</p></li>
 <li><p>Barcoded adaptors are listed in appendix, requiring 5' Phos (/5Phos/) and 3' blocking spacer (/3SpC3/). The combination to use should be chosen carefully: plan a spreadsheet listing the sample name, conditions, and which RNAtag adaptor (step 3) and P7 adaptor (step 12/15, PCR after pooling) will be used. In each set of sequencing libraries combined on an Illumina sequencing run, there must be at least 3 distinct nt in all of the initial 4 nt of the sequenced adaptor for the sequencing machine to recognize clusters properly. (e.g. ATTA, GCAC, CAGT work, ATTA, GTAC, CTGT don't.)</p></li>
 <li>Control oligos:
 <ul>
-<li>Tag33FAM /5Phos/AG AAC GAT TAG ATC GGA AGA GCG TCG TGT A/36-FAM/ is a fluorescent positive control oligo for First ligation and sample pooling. Use in place of a barcoded adaptor, for one sample, in step 3.</li>
-<li>TagDNA+ is a 200bp oligo as positive control for 2nd ligation through PCR. Its 3' end resembles a cDNA product for a library with Tag barcode CTGACTGA (distinct from Tag1-32, Tag33FAM), and the insert is &quot;random&quot; (elephant PABP 1st exon).</li>
+<li>Tag33FAM /5Phos/AG AAC GAT TAG ATC GGA AGA GCG TCG TGT A/36-FAM/ is a fluorescent positive control oligo for first ligation and sample pooling. Use in place of a barcoded adaptor, for one sample, in step 3. Success is indicated if fluorescence appears in 200-500nt smear.</li>
+<li>TagDNA+ is a 200bp oligo as positive control for 2nd ligation through PCR. Use 1.25uM (0.5uL of 100uM stock). Its 3' end resembles a cDNA product for a library with Tag barcode CTGACTGA (distinct from Tag1-32, Tag33FAM), and the insert is &quot;random&quot; (elephant PABP 1st exon): 5'-TAC ACG ACG CTC TTC CGA TCT TCA GTC AGT ATG TAC GCG TAG CGC AGC GAG CGG CGG GTG GCC ACG TCG CGG CAC ACG CGG ATG GAC AGG ATC GGG CCG GCG GGC AGG AAC TTC TCG TAG AGC ATG GCC TCG GTC ACG TCG GCG TGC AGG TCG CCC ACG TAG AGC GAG GCC AGC GGG TAC CCC GGG CCG CTG GCG TTC AT - 3'</li>
 </ul></li>
 </ul>
 <h2 id="procedure">Procedure:</h2>
@@ -314,13 +317,13 @@
 </ol>
 <ul>
 <li>Add 14 uL of sterile water to each reaction for a final volume of 40 uL</li>
-<li>Transfer to new tubes (NaOH will start degrading tubes)</li>
+<li>Transfer to new tubes (NaOH may start degrading tubes)</li>
 <li>Add 2x reaction volume SPRI beads (80uL) to the sample in new tubes, and mix up/down 10x</li>
 <li>Incubate at room temperature for 15min</li>
 <li>Place on magnet for 5 min or until solution is clear</li>
 <li>Pipette out and discard clear solution</li>
-<li>Wash: Add 200 uL fresh 80% EtOH without removing from magnet and incubate for 30 sec. Pipette off discard the EtOH.</li>
-<li>Repeat 80% EtOH wash, and let air dry for 3min</li>
+<li>Wash: Add 200 uL fresh 80% EtOH without removing from magnet and incubate for 30 sec. Pipette off and discard the EtOH.</li>
+<li>Repeat 80% EtOH wash, and let air dry for 3min, remove from magnet.</li>
 <li>Add 5 uL RNase/DNase free water to beads -- <em>KEEP BEADS AND TUBES, do not transfer</em></li>
 </ul>
 <ol start="9" style="list-style-type: decimal">
@@ -379,15 +382,15 @@
 <ul>
 <li>Set up a test PCR using 5 uL of ss cDNA sample and 9-12 cycles of PCR (based on experience with pool of 16 reactions, each starting with ~400ng total RNA)</li>
 <li>Include a negative control (water) for each primer set</li>
-<li><p>Make PCR Master Mix:</p>
-<pre><code>| Reagent (for PCR master mix)    |  1 rxn  | 
-|---------------------------------|---------|
-| Water, PCR-clean                | 14.3 uL |
-| 10X Pfu Ultra II Buffer         |  2.5 uL |
-| dNTP mix (10mM each)            |  0.7 uL |
-| P5 primer (P5_RNATag, 12.5 uM)  |  1   uL |
-|---------------------------------|---------|
-|Total                            | 18.5 uL |</code></pre>
+<li><p>Make PCR Master Mix (4 rxns=2 libraries, +ve ctrl, -ve ctrl):</p>
+<pre><code>| Reagent (for PCR master mix)    |  1 rxn  |  4 rxns | 
+|---------------------------------|---------|---------|
+| Water, PCR-clean                | 14.3 uL | 57.2 uL |
+| 10X Pfu Ultra II Buffer         |  2.5 uL | 10   uL |
+| dNTP mix (10mM each)            |  0.7 uL |  2.8 uL |
+| P5 primer (P5_RNATag, 12.5 uM)  |  1   uL |  4   uL |
+|---------------------------------|---------|---------|
+|Total                            | 18.5 uL | 74   uL |</code></pre>
 <ul>
 <li>Mix well</li>
 <li>Aliquot 18.5 uL / sample into PCR tubes</li>
@@ -407,8 +410,8 @@
 <li>SPRI clean up (1.5x) to remove reaction buffer and PCR primers:</li>
 </ol>
 <ul>
-<li>increase reaction to 30uL with sterile water</li>
-<li>Add 1.5x reaction volume SPRI beads (45 uL) to the sample in new tubes, and mix up/down 10x</li>
+<li>increase reaction to 40uL with sterile water</li>
+<li>Add 1.5x reaction volume SPRI beads (60 uL) to the sample in new tubes, and mix up/down 10x</li>
 <li>Incubate at room temperature for 15min</li>
 <li>Place on magnet for 5 min or until solution is clear</li>
 <li>Pipette out and discard clear solution</li>
@@ -422,25 +425,24 @@
 <ul>
 <li>Based on test results change the cycle number, if necessary, and set up more reactions to provide enough material to send for sequencing</li>
 <li>UChicago functional genomics core asks for ~15 uL of 10 nM library; aim for at least 25 uL = 0.25 pmol = 60 ng of 400nt dsDNA (~250 kDa).</li>
-<li><p>To pass QC, library should should smooth profile 200-500nt long; visible single bands indicate PCR artefacts.</p>
+<li><p>To pass QC, library should have smooth profile 200-500nt long; visible single bands, or a &quot;shoulder&quot; of larger products, indicate PCR artefacts.</p>
 <p><em>PAUSE POINT</em></p></li>
 </ul>
 <ol start="15" style="list-style-type: decimal">
 <li>PCR for Sequencing library</li>
 </ol>
 <ul>
-<li><p>Choose the optimal PCR cycle # based on Bioanalyzer QC and amplify</p></li>
-<li>Set up a test PCR using 5 uL of ss cDNA sample and 9-12 cycles of PCR (based on experience with pool of 16 reactions, each starting with ~400ng total RNA)</li>
+<li>Choose the optimal PCR cycle # based on Bioanalyzer QC of test (step 14).</li>
 <li>Include a negative control (water) for each primer set</li>
-<li><p>Make PCR Master Mix:</p>
-<pre><code>| Reagent (for PCR master mix)    |  1 rxn  | 
-|---------------------------------|---------|
-| Water, PCR-clean                | 28.6 uL |
-| 10X Pfu Ultra II Buffer         |  5   uL |
-| dNTP mix (10mM each)            |  1.4 uL |
-| P5 primer (P5_RNATag, 12.5 uM)  |  2   uL |
-|---------------------------------|---------|
-|Total                            | 39   uL |</code></pre>
+<li><p>Make PCR Master Mix (3 rxns=2 libraries, half size +ve ctrl, half size -ve ctrl):</p>
+<pre><code>| Reagent (for PCR master mix)    |  1 rxn  |  3 rxns  | 
+|---------------------------------|---------|----------|
+| Water, PCR-clean                | 28.6 uL |  85.8 uL |
+| 10X Pfu Ultra II Buffer         |  5   uL |  15   uL |
+| dNTP mix (10mM each)            |  1.4 uL |   4.2 uL |
+| P5 primer (P5_RNATag, 12.5 uM)  |  2   uL |   6   uL |
+|---------------------------------|---------|----------|
+|Total                            | 37   uL | 111   uL |</code></pre>
 <ul>
 <li>Mix well</li>
 <li>Aliquot 39 uL / sample into PCR tubes</li>
@@ -470,10 +472,10 @@
 <li>Elute off beads with 50 uL water and transfer to new tubes.</li>
 </ul>
 <ol start="17" style="list-style-type: decimal">
-<li>SPRI clean up (0.7x) to remove reaction buffer and PCR primers:</li>
+<li>SPRI clean up (0.8x) to remove reaction buffer and PCR primers:</li>
 </ol>
 <ul>
-<li>Add 0.7x reaction volume SPRI beads (35 uL) to the sample in new tubes, and mix up/down 10x</li>
+<li>Add 0.8x reaction volume SPRI beads (40 uL) to the sample in new tubes, and mix up/down 10x</li>
 <li>Incubate at room temperature for 15min</li>
 <li>Place on magnet for 5 min or until solution is clear</li>
 <li>Pipette out and discard clear solution</li>
@@ -490,361 +492,54 @@
 <li>If desired to combine multiple libraries PCR'd separately, they must have different barcoded P7 primers. Amounts of sequenceable material must be carefully measured to ensure even coverage across libraries, e.g. with the KAPA biosystems kit (Cat. # KK4824). The genomics core can do this for a fee.</li>
 </ul>
 <h2 id="appendix-barcode-tag-oligos">Appendix: Barcode Tag Oligos</h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">id</th>
-<th align="left">Well</th>
-<th align="left">barcode sequence (5'-3')</th>
-<th align="left">oligo sequence</th>
-<th align="left">8 base Barcode Read + T</th>
-<th align="left">IDTorder</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Tag01</td>
-<td align="left">A1</td>
-<td align="left">CCCGTCTT</td>
-<td align="left">ACCCGTCTTAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">AAGACGGGT</td>
-<td align="left">/5Phos/ACC CGT CTT AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag02</td>
-<td align="left">A2</td>
-<td align="left">CGGCACTT</td>
-<td align="left">ACGGCACTTAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">AAGTGCCGT</td>
-<td align="left">/5Phos/ACG GCA CTT AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag03</td>
-<td align="left">A3</td>
-<td align="left">ACATTATT</td>
-<td align="left">AACATTATTAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">AATAATGTT</td>
-<td align="left">/5Phos/AAC ATT ATT AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag04</td>
-<td align="left">A4</td>
-<td align="left">GAGATTGT</td>
-<td align="left">AGAGATTGTAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">ACAATCTCT</td>
-<td align="left">/5Phos/AGA GAT TGT AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag05</td>
-<td align="left">A5</td>
-<td align="left">GGTCCTCT</td>
-<td align="left">AGGTCCTCTAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">AGAGGACCT</td>
-<td align="left">/5Phos/AGG TCC TCT AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag06</td>
-<td align="left">A6</td>
-<td align="left">CTCTAACT</td>
-<td align="left">ACTCTAACTAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">AGTTAGAGT</td>
-<td align="left">/5Phos/ACT CTA ACT AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag07</td>
-<td align="left">A7</td>
-<td align="left">AGAATTAT</td>
-<td align="left">AAGAATTATAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">ATAATTCTT</td>
-<td align="left">/5Phos/AAG AAT TAT AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag08</td>
-<td align="left">A8</td>
-<td align="left">TACAACAT</td>
-<td align="left">ATACAACATAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">ATGTTGTAT</td>
-<td align="left">/5Phos/ATA CAA CAT AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag09</td>
-<td align="left">C1</td>
-<td align="left">AAGTGTTG</td>
-<td align="left">AAAGTGTTGAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">CAACACTTT</td>
-<td align="left">/5Phos/AAA GTG TTG AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag10</td>
-<td align="left">C2</td>
-<td align="left">ATCACTTG</td>
-<td align="left">AATCACTTGAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">CAAGTGATT</td>
-<td align="left">/5Phos/AAT CAC TTG AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag11</td>
-<td align="left">C3</td>
-<td align="left">TCATCGTG</td>
-<td align="left">ATCATCGTGAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">CACGATGAT</td>
-<td align="left">/5Phos/ATC ATC GTG AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag12</td>
-<td align="left">C4</td>
-<td align="left">TACAGATG</td>
-<td align="left">ATACAGATGAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">CATCTGTAT</td>
-<td align="left">/5Phos/ATA CAG ATG AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag13</td>
-<td align="left">C5</td>
-<td align="left">TCCCGCGG</td>
-<td align="left">ATCCCGCGGAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">CCGCGGGAT</td>
-<td align="left">/5Phos/ATC CCG CGG AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag14</td>
-<td align="left">C6</td>
-<td align="left">CCAAGTCG</td>
-<td align="left">ACCAAGTCGAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">CGACTTGGT</td>
-<td align="left">/5Phos/ACC AAG TCG AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag15</td>
-<td align="left">C7</td>
-<td align="left">CTGGATCG</td>
-<td align="left">ACTGGATCGAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">CGATCCAGT</td>
-<td align="left">/5Phos/ACT GGA TCG AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag16</td>
-<td align="left">C8</td>
-<td align="left">GTCTGGCG</td>
-<td align="left">AGTCTGGCGAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">CGCCAGACT</td>
-<td align="left">/5Phos/AGT CTG GCG AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag17</td>
-<td align="left">E1</td>
-<td align="left">TTACCACG</td>
-<td align="left">ATTACCACGAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">CGTGGTAAT</td>
-<td align="left">/5Phos/ATT ACC ACG AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag18</td>
-<td align="left">E2</td>
-<td align="left">TGAACCAG</td>
-<td align="left">ATGAACCAGAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">CTGGTTCAT</td>
-<td align="left">/5Phos/ATG AAC CAG AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag19</td>
-<td align="left">E3</td>
-<td align="left">CCCTACAG</td>
-<td align="left">ACCCTACAGAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">CTGTAGGGT</td>
-<td align="left">/5Phos/ACC CTA CAG AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag20</td>
-<td align="left">E4</td>
-<td align="left">GGCCCAAG</td>
-<td align="left">AGGCCCAAGAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">CTTGGGCCT</td>
-<td align="left">/5Phos/AGG CCC AAG AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag21</td>
-<td align="left">E5</td>
-<td align="left">GAGCCATC</td>
-<td align="left">AGAGCCATCAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">GATGGCTCT</td>
-<td align="left">/5Phos/AGA GCC ATC AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag22</td>
-<td align="left">E6</td>
-<td align="left">GTAACTGC</td>
-<td align="left">AGTAACTGCAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">GCAGTTACT</td>
-<td align="left">/5Phos/AGT AAC TGC AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag23</td>
-<td align="left">E7</td>
-<td align="left">CGGAGGGC</td>
-<td align="left">ACGGAGGGCAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">GCCCTCCGT</td>
-<td align="left">/5Phos/ACG GAG GGC AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag24</td>
-<td align="left">E8</td>
-<td align="left">CCCTCGGC</td>
-<td align="left">ACCCTCGGCAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">GCCGAGGGT</td>
-<td align="left">/5Phos/ACC CTC GGC AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag25</td>
-<td align="left">G1</td>
-<td align="left">CAACTCGC</td>
-<td align="left">ACAACTCGCAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">GCGAGTTGT</td>
-<td align="left">/5Phos/ACA ACT CGC AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag26</td>
-<td align="left">G2</td>
-<td align="left">TACCGGCC</td>
-<td align="left">ATACCGGCCAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">GGCCGGTAT</td>
-<td align="left">/5Phos/ATA CCG GCC AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag27</td>
-<td align="left">G3</td>
-<td align="left">CCGGTACC</td>
-<td align="left">ACCGGTACCAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">GGTACCGGT</td>
-<td align="left">/5Phos/ACC GGT ACC AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag28</td>
-<td align="left">G4</td>
-<td align="left">CTCGGTAC</td>
-<td align="left">ACTCGGTACAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">GTACCGAGT</td>
-<td align="left">/5Phos/ACT CGG TAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag29</td>
-<td align="left">G5</td>
-<td align="left">ATATGGAC</td>
-<td align="left">AATATGGACAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">GTCCATATT</td>
-<td align="left">/5Phos/AAT ATG GAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag30</td>
-<td align="left">G6</td>
-<td align="left">TGGGAGAC</td>
-<td align="left">ATGGGAGACAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">GTCTCCCAT</td>
-<td align="left">/5Phos/ATG GGA GAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left">Tag31</td>
-<td align="left">G7</td>
-<td align="left">GCAGCCAC</td>
-<td align="left">AGCAGCCACAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">GTGGCTGCT</td>
-<td align="left">/5Phos/AGC AGC CAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="even">
-<td align="left">Tag32</td>
-<td align="left">G8</td>
-<td align="left">TTTCTAAC</td>
-<td align="left">ATTTCTAACAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">GTTAGAAAT</td>
-<td align="left">/5Phos/ATT TCT AAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">Tag33FAM</td>
-<td align="left">H12</td>
-<td align="left">GAACGATT</td>
-<td align="left">AGAACGATTAGATCGGAAGAGCGTCGTGTA</td>
-<td align="left">AATCGTTCT</td>
-<td align="left">/5Phos/AGA ACG ATT AGA TCG GAA GAG CGT CGT GTA/36-FAM/</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
+<pre><code>| id       | Well | barcode sequence (5&#39;-3&#39;) | oligo sequence                 | 8 base Barcode Read + T | IDTorder                                               | 
+|----------|------|--------------------------|--------------------------------|-------------------------|--------------------------------------------------------| 
+| Tag01    | A1   | CCCGTCTT                 | ACCCGTCTTAGATCGGAAGAGCGTCGTGTA | AAGACGGGT               | /5Phos/ACC CGT CTT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag02    | A2   | CGGCACTT                 | ACGGCACTTAGATCGGAAGAGCGTCGTGTA | AAGTGCCGT               | /5Phos/ACG GCA CTT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag03    | A3   | ACATTATT                 | AACATTATTAGATCGGAAGAGCGTCGTGTA | AATAATGTT               | /5Phos/AAC ATT ATT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag04    | A4   | GAGATTGT                 | AGAGATTGTAGATCGGAAGAGCGTCGTGTA | ACAATCTCT               | /5Phos/AGA GAT TGT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag05    | A5   | GGTCCTCT                 | AGGTCCTCTAGATCGGAAGAGCGTCGTGTA | AGAGGACCT               | /5Phos/AGG TCC TCT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag06    | A6   | CTCTAACT                 | ACTCTAACTAGATCGGAAGAGCGTCGTGTA | AGTTAGAGT               | /5Phos/ACT CTA ACT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag07    | A7   | AGAATTAT                 | AAGAATTATAGATCGGAAGAGCGTCGTGTA | ATAATTCTT               | /5Phos/AAG AAT TAT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag08    | A8   | TACAACAT                 | ATACAACATAGATCGGAAGAGCGTCGTGTA | ATGTTGTAT               | /5Phos/ATA CAA CAT AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag09    | C1   | AAGTGTTG                 | AAAGTGTTGAGATCGGAAGAGCGTCGTGTA | CAACACTTT               | /5Phos/AAA GTG TTG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag10    | C2   | ATCACTTG                 | AATCACTTGAGATCGGAAGAGCGTCGTGTA | CAAGTGATT               | /5Phos/AAT CAC TTG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag11    | C3   | TCATCGTG                 | ATCATCGTGAGATCGGAAGAGCGTCGTGTA | CACGATGAT               | /5Phos/ATC ATC GTG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag12    | C4   | TACAGATG                 | ATACAGATGAGATCGGAAGAGCGTCGTGTA | CATCTGTAT               | /5Phos/ATA CAG ATG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag13    | C5   | TCCCGCGG                 | ATCCCGCGGAGATCGGAAGAGCGTCGTGTA | CCGCGGGAT               | /5Phos/ATC CCG CGG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag14    | C6   | CCAAGTCG                 | ACCAAGTCGAGATCGGAAGAGCGTCGTGTA | CGACTTGGT               | /5Phos/ACC AAG TCG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag15    | C7   | CTGGATCG                 | ACTGGATCGAGATCGGAAGAGCGTCGTGTA | CGATCCAGT               | /5Phos/ACT GGA TCG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag16    | C8   | GTCTGGCG                 | AGTCTGGCGAGATCGGAAGAGCGTCGTGTA | CGCCAGACT               | /5Phos/AGT CTG GCG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag17    | E1   | TTACCACG                 | ATTACCACGAGATCGGAAGAGCGTCGTGTA | CGTGGTAAT               | /5Phos/ATT ACC ACG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag18    | E2   | TGAACCAG                 | ATGAACCAGAGATCGGAAGAGCGTCGTGTA | CTGGTTCAT               | /5Phos/ATG AAC CAG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag19    | E3   | CCCTACAG                 | ACCCTACAGAGATCGGAAGAGCGTCGTGTA | CTGTAGGGT               | /5Phos/ACC CTA CAG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag20    | E4   | GGCCCAAG                 | AGGCCCAAGAGATCGGAAGAGCGTCGTGTA | CTTGGGCCT               | /5Phos/AGG CCC AAG AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag21    | E5   | GAGCCATC                 | AGAGCCATCAGATCGGAAGAGCGTCGTGTA | GATGGCTCT               | /5Phos/AGA GCC ATC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag22    | E6   | GTAACTGC                 | AGTAACTGCAGATCGGAAGAGCGTCGTGTA | GCAGTTACT               | /5Phos/AGT AAC TGC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag23    | E7   | CGGAGGGC                 | ACGGAGGGCAGATCGGAAGAGCGTCGTGTA | GCCCTCCGT               | /5Phos/ACG GAG GGC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag24    | E8   | CCCTCGGC                 | ACCCTCGGCAGATCGGAAGAGCGTCGTGTA | GCCGAGGGT               | /5Phos/ACC CTC GGC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag25    | G1   | CAACTCGC                 | ACAACTCGCAGATCGGAAGAGCGTCGTGTA | GCGAGTTGT               | /5Phos/ACA ACT CGC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag26    | G2   | TACCGGCC                 | ATACCGGCCAGATCGGAAGAGCGTCGTGTA | GGCCGGTAT               | /5Phos/ATA CCG GCC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag27    | G3   | CCGGTACC                 | ACCGGTACCAGATCGGAAGAGCGTCGTGTA | GGTACCGGT               | /5Phos/ACC GGT ACC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag28    | G4   | CTCGGTAC                 | ACTCGGTACAGATCGGAAGAGCGTCGTGTA | GTACCGAGT               | /5Phos/ACT CGG TAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag29    | G5   | ATATGGAC                 | AATATGGACAGATCGGAAGAGCGTCGTGTA | GTCCATATT               | /5Phos/AAT ATG GAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag30    | G6   | TGGGAGAC                 | ATGGGAGACAGATCGGAAGAGCGTCGTGTA | GTCTCCCAT               | /5Phos/ATG GGA GAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag31    | G7   | GCAGCCAC                 | AGCAGCCACAGATCGGAAGAGCGTCGTGTA | GTGGCTGCT               | /5Phos/AGC AGC CAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+| Tag32    | G8   | TTTCTAAC                 | ATTTCTAACAGATCGGAAGAGCGTCGTGTA | GTTAGAAAT               | /5Phos/ATT TCT AAC AGA TCG GAA GAG CGT CGT GTA/3SpC3/  | 
+|          |      |                          |                                |                         |                                                        | 
+| Tag33FAM | H12  | GAACGATT                 | AGAACGATTAGATCGGAAGAGCGTCGTGTA | AATCGTTCT               | /5Phos/AGA ACG ATT AGA TCG GAA GAG CGT CGT GTA/36-FAM/ | 
+|          |      |                          |                                |                         |                                                        | </code></pre>
 <p>Note: 3Tr3 primer (/5Phos/AGA TCG GAA GAG CAC ACG TCT G/3SpC3/) is in well A12 of the IDT plate.</p>
 <h2 id="appendix-p7-bindex-oligos">Appendix: P7 Bindex Oligos</h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Name</th>
-<th align="left">P7 Enrichment Primer Sequence (5' --&gt; 3') with barcode</th>
-<th align="left">barcodes (BC)</th>
-<th align="left">BC READ (reverse complement)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">P7_B1</td>
-<td align="left">CAAGCAGAAGACGGCATACGAGATTCGTGTGCGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT</td>
-<td align="left">TCGTGTGC</td>
-<td align="left">GCACACGA</td>
-</tr>
-<tr class="even">
-<td align="left">P7_B2</td>
-<td align="left">CAAGCAGAAGACGGCATACGAGATTCGCCAGAGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT</td>
-<td align="left">TCGCCAGA</td>
-<td align="left">TCTGGCGA</td>
-</tr>
-<tr class="odd">
-<td align="left">P7_B3</td>
-<td align="left">CAAGCAGAAGACGGCATACGAGATTCGCTATGGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT</td>
-<td align="left">TCGCTATG</td>
-<td align="left">CATAGCGA</td>
-</tr>
-<tr class="even">
-<td align="left">P7_B4</td>
-<td align="left">CAAGCAGAAGACGGCATACGAGATGGCTCCTGGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT</td>
-<td align="left">GGCTCCTG</td>
-<td align="left">CAGGAGCC</td>
-</tr>
-<tr class="odd">
-<td align="left">P7_B5</td>
-<td align="left">CAAGCAGAAGACGGCATACGAGATATCCGACAGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT</td>
-<td align="left">ATCCGACA</td>
-<td align="left">TGTCGGAT</td>
-</tr>
-<tr class="even">
-<td align="left">P7_B6</td>
-<td align="left">CAAGCAGAAGACGGCATACGAGATAACATAATGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT</td>
-<td align="left">AACATAAT</td>
-<td align="left">ATTATGTT</td>
-</tr>
-<tr class="odd">
-<td align="left">P7_B7</td>
-<td align="left">CAAGCAGAAGACGGCATACGAGATATGGTAGGGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT</td>
-<td align="left">ATGGTAGG</td>
-<td align="left">CCTACCAT</td>
-</tr>
-<tr class="even">
-<td align="left">P7_B8</td>
-<td align="left">CAAGCAGAAGACGGCATACGAGATGCTAAGTAGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT</td>
-<td align="left">GCTAAGTA</td>
-<td align="left">TACTTAGC</td>
-</tr>
-</tbody>
-</table>
+<pre><code>| Name  | P7 Enrichment Primer Sequence (5&#39; --&gt; 3&#39;) with barcode             | barcodes (BC) | BC READ (reverse complement) | 
+|-------|--------------------------------------------------------------------|---------------|------------------------------| 
+| P7_B1 | CAAGCAGAAGACGGCATACGAGATTCGTGTGCGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | TCGTGTGC      | GCACACGA                     | 
+| P7_B2 | CAAGCAGAAGACGGCATACGAGATTCGCCAGAGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | TCGCCAGA      | TCTGGCGA                     | 
+| P7_B3 | CAAGCAGAAGACGGCATACGAGATTCGCTATGGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | TCGCTATG      | CATAGCGA                     | 
+| P7_B4 | CAAGCAGAAGACGGCATACGAGATGGCTCCTGGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | GGCTCCTG      | CAGGAGCC                     | 
+| P7_B5 | CAAGCAGAAGACGGCATACGAGATATCCGACAGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | ATCCGACA      | TGTCGGAT                     | 
+| P7_B6 | CAAGCAGAAGACGGCATACGAGATAACATAATGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | AACATAAT      | ATTATGTT                     | 
+| P7_B7 | CAAGCAGAAGACGGCATACGAGATATGGTAGGGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | ATGGTAGG      | CCTACCAT                     | 
+| P7_B8 | CAAGCAGAAGACGGCATACGAGATGCTAAGTAGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | GCTAAGTA      | TACTTAGC                     | </code></pre>
 </body>
 </html>
