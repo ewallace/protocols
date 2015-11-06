@@ -41,7 +41,7 @@
 <li>SPRI beads:
 <ul>
 <li>RNAClean XP beads; Agencourt/Beckman, Cat.# A63987 (40mL); (mix well, make 1.5mL and 0.5mL aliquots, store at 4 °C)</li>
-<li>For steps 8 onwards can use non-RNA certified, AMPure XP beads Cat.# A63881.</li>
+<li>For steps after cDNA synthesis, can use non-RNA certified, AMPure XP beads Cat.# A63881.</li>
 </ul></li>
 <li>Ribo-Zero:
 <ul>
@@ -82,9 +82,9 @@
 <ul>
 <li>Label everything and lay out tubes neurotically to avoid pipette error.</li>
 <li>Observe RNase-free sample prep, for steps 1-8, also neurotically. Clean your workspace and pipettes with 50% Ethanol and RNAse-Zap, use reserved RNase-free pipettes and/or filter tips, ensure all tubes and reagents (including water) are RNase-free.</li>
-<li>Avoid DNA contamination, <em>especially from other sequencing libraries</em>, for steps 8+. Use filter tips for PCR reactions.</li>
+<li>Avoid DNA contamination, <em>especially from other sequencing libraries</em> for steps 8+. Use filter tips for PCR reactions.</li>
 <li>Points where the in-process libraries may be frozen at -80 C while you pause, are indicated as <em>PAUSE POINT</em>.</li>
-<li>SPRI/XP beads take a bit of skill. &quot;SPRI (2x)&quot; or &quot;SPRI (1.5x)&quot; refers to the ratio of beads to aqueous solution containing nucleic acids (NA); this ratio controls the size of NA retained (see http://core-genomics.blogspot.com/2012/04/how-do-spri-beads-work.html). Be patient; wait for binding and for magnetisation. Prepare fresh 80% ethanol solution every day or two; the concentration drifts over time due to evaporation (manufacturer recommends 70% EtOH). Some reactions (2nd ligation step 9) happen on-bead so change the elution step. Manufacturer's protocol with tweaks is below; practice SPRI extraction on a DNA ladder or RNA ladder and ensure full recovery.
+<li>SPRI/XP beads take a bit of skill. &quot;2x SPRI&quot; refers to the ratio of beads to aqueous solution containing nucleic acids (NA); this ratio controls the size of NA retained (see http://core-genomics.blogspot.com/2012/04/how-do-spri-beads-work.html). Be patient; wait for binding and for magnetisation. Prepare fresh 80% ethanol solution every day or two; the concentration drifts over time due to evaporation (manufacturer recommends 70% EtOH). Some reactions (2nd ligation, step 11) happen on-bead so change the elution step. Manufacturer's protocol with tweaks is below; practice SPRI extraction on a DNA ladder or RNA ladder and ensure full recovery.
 <ul>
 <li>Add appropriate ratio of beads to sample in PCR tube, pipette up and down 10x gently.</li>
 <li>Incubate beads and sample at room temperature for 15min to bind NA.</li>
@@ -96,40 +96,49 @@
 <li>Elute: remove from magnet, pipette 40uL water or low TE buffer onto beads, pipette up and down 10X, replace on magnet and wait 5min (this is easiest with at least 40uL, hellish with 10uL).</li>
 <li>Unless otherwise specified, take clear liquid to new tube, carefully not disturbing beads.</li>
 </ul></li>
-<li>For first ligation, set up RNA/barcoded adaptor in single tube or use the TempPlate No-skirt PCR Plates for batched samples (these rigid plates are easy to handle and can mix well by flicking by hand) – with a razor, cut a column (for 8 samples) or row (for 12 samples) and use as strip and cover with the Flat PCR 12-cap strips (these strips fit tightly on these plates and will not leak).</li>
+<li>For first ligation (step 5), set up RNA/barcoded adaptor in single tube or use the TempPlate No-skirt PCR Plates for batched samples (these rigid plates are easy to handle and can mix well by flicking by hand) – with a razor, cut a column (for 8 samples) or row (for 12 samples) and use as strip and cover with the Flat PCR 12-cap strips (these strips fit tightly on these plates and will not leak).</li>
 <li><p>TempPlate No-skirt PCR Plates, and strips cut from them, are flexible and may spring up when caps are put on or off, flicking your sample across the bench. Avoid this by firmly seating plates/strips in a tube rack before manipulating the caps.</p></li>
 <li><p>Barcoded adaptors are listed in appendix, requiring 5' Phos (/5Phos/) and 3' blocking spacer (/3SpC3/). The combination to use should be chosen carefully: plan a spreadsheet listing the sample name, conditions, and which RNAtag adaptor (step 3) and P7 adaptor (step 12/15, PCR after pooling) will be used. In each set of sequencing libraries combined on an Illumina sequencing run, there must be at least 3 distinct nt in all of the initial 4 nt of the sequenced adaptor for the sequencing machine to recognize clusters properly. (e.g. ATTA, GCAC, CAGT work, ATTA, GTAC, CTGT don't.)</p></li>
 <li>Control oligos:
 <ul>
-<li>Tag33FAM /5Phos/AG AAC GAT TAG ATC GGA AGA GCG TCG TGT A/36-FAM/ is a fluorescent positive control oligo for first ligation and sample pooling. Use in place of a barcoded adaptor, for one sample, in step 3. Success is indicated if fluorescence appears in 200-500nt smear.</li>
-<li>TagDNA+ is a 200bp oligo as positive control for 2nd ligation through PCR. Use 1.25uM (0.5uL of 100uM stock). Its 3' end resembles a cDNA product for a library with Tag barcode CTGACTGA (distinct from Tag1-32, Tag33FAM), and the insert is &quot;random&quot; (elephant PABP 1st exon): 5'-TAC ACG ACG CTC TTC CGA TCT TCA GTC AGT ATG TAC GCG TAG CGC AGC GAG CGG CGG GTG GCC ACG TCG CGG CAC ACG CGG ATG GAC AGG ATC GGG CCG GCG GGC AGG AAC TTC TCG TAG AGC ATG GCC TCG GTC ACG TCG GCG TGC AGG TCG CCC ACG TAG AGC GAG GCC AGC GGG TAC CCC GGG CCG CTG GCG TTC AT - 3'</li>
+<li>Tag33FAM<br />
+5' - /5Phos/AG AAC GAT TAG ATC GGA AGA GCG TCG TGT A/36-FAM/ - 3'<br />
+is a fluorescent positive control oligo for first ligation and sample pooling. Use in place of a barcoded adaptor, for one sample, in first ligation, step 5. Success is indicated if fluorescence appears in 200-500nt smear:</li>
+<li>TagDNA+<br />
+5'-TAC ACG ACG CTC TTC CGA TCT TCA GTC AGT ATG TAC GCG TAG CGC AGC GAG CGG CGG GTG GCC ACG TCG CGG CAC ACG CGG ATG GAC AGG ATC GGG CCG GCG GGC AGG AAC TTC TCG TAG AGC ATG GCC TCG GTC ACG TCG GCG TGC AGG TCG CCC ACG TAG AGC GAG GCC AGC GGG TAC CCC GGG CCG CTG GCG TTC AT - 3'<br />
+is a 200bp oligo as positive control for 2nd ligation through PCR. Use 1.25uM (0.5uL of 100uM stock) in place of cDNA in control reaction in step 11. Its 3' end resembles a cDNA product for a library with Tag barcode CTGACTGA (distinct from Tag1-32, Tag33FAM), and the insert is &quot;random&quot; (elephant PABP 1st exon):</li>
 </ul></li>
 </ul>
 <h2 id="procedure">Procedure:</h2>
 <ol style="list-style-type: decimal">
-<li>Control quality and quantity of RNA with Agilent Bioanalyzer</li>
-</ol>
+<li>Control quality and quantity of RNA with Agilent Bioanalyzer
 <ul>
-<li>Check RNA quality by running on the Agilent Bioanalyzer</li>
-<li>Place 0.5-5 ug of total RNA in a tube. For large numbers of samples, the input per sample could be reduced as to not exceed the maximum input of RiboZero (5ug) at step 5. Since about 25% of the input remains prior to adaptor ligation, less than 20ug total RNA per pool (end of step 4) is recommended. For smaller number of samples, higher input is recommended to ensure sufficient material remains after rRNA depletion.</li>
-<li>Increase the volume to 30uL with Nuclease free water</li>
-<li>Add 2uL of SUPERase-IN (20U/uL)</li>
-<li>Final total volume = 32uL (25ng/uL)</li>
-<li><p>Continue to next step or freeze at -80C until ready to process samples</p>
+<li>Check RNA quality by running on the Agilent Bioanalyzer<br />
+</li>
+<li>Place 0.5-5 ug of total RNA in a tube. For large numbers of samples, the input per sample could be reduced as to not exceed the maximum input of RiboZero (5ug) at step 5. Since about 25% of the input remains prior to adaptor ligation, less than 20ug total RNA per pool (end of step 4) is recommended. For smaller number of samples, higher input is recommended to ensure sufficient material remains after rRNA depletion.<br />
+</li>
+<li>Increase the volume to 30uL with Nuclease free water<br />
+</li>
+<li>Add 2uL of SUPERase-IN (20U/uL)<br />
+</li>
+<li>Final total volume = 32uL (25ng/uL)<br />
+</li>
+<li>Continue to next step or freeze at -80C until ready to process samples</li>
+</ul>
 <p><em>PAUSE POINT</em></p></li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li><p>Fragmentation and DNase-FastAP combination step</p>
-2.1. Fragmentation using 2x FastAP buffer
+<li>Fragment RNA using 2x FastAP buffer
 <ul>
-<li>Add 8 uL of 10X FastAP buffer to 32 uL RNA from step 1 (up to 1 ug) and mix well.</li>
-<li>Incubate on <em>preheated</em> thermal cycler for 3 min at 94°C</li>
-<li>If RNA is partially degraded (RIN&lt;7), fragment 3 min at 92°C, prevents over-fragmenting samples.</li>
-<li>Place on cold block on ice</li>
-</ul>
-2.2. DNase and FastAP treatment
+<li>Add 8 uL of 10X FastAP buffer to 32 uL RNA from step 1 (up to 1 ug) and mix well.<br />
+</li>
+<li>Incubate on <em>preheated</em> thermal cycler for 3 min at 94°C.<br />
+</li>
+<li>If RNA is partially degraded (RIN&lt;7), fragment 3 min at 92°C, prevents over-fragmenting samples.<br />
+</li>
+<li>Place on cold block on ice.</li>
+</ul></li>
+<li>Digest DNA and repair RNA: Combination DNase/FastAP treatment
 <ul>
-<li><p>Make a FastAP master mix, 40uL per sample:</p>
+<li><p>Make a DNase/FastAP master mix, 40uL per sample:</p>
 <table>
 <thead>
 <tr class="header">
@@ -140,24 +149,24 @@
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">nuclease-free water</td>
+<td align="left">10 uL</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
 <td align="left">RNase Inhibitor, Murine (40U/uL)</td>
 <td align="left">2 uL</td>
 <td align="left">20U</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">TURBO DNase (2U/uL)</td>
 <td align="left">8 uL</td>
 <td align="left">16U</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">FastAP (1U/uL)</td>
 <td align="left">20 uL</td>
 <td align="left">20U</td>
-</tr>
-<tr class="even">
-<td align="left">nuclease-free water</td>
-<td align="left">10 uL</td>
-<td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">----------------------------------</td>
@@ -170,13 +179,17 @@
 <td align="left">2X</td>
 </tr>
 </tbody>
-</table></li>
-<li>Make FastAP master mix and mix well</li>
-<li>Aliquot 40 uL into each tube/well with the 40uL of fragmented RNA from step 1.</li>
+</table>
+<ul>
 <li>Mix well</li>
+</ul></li>
+<li>Aliquot 40 uL into each tube/well with the 40uL of fragmented RNA from step 1.<br />
+</li>
+<li>Mix well<br />
+</li>
 <li><p>Incubate on preheated thermal cycler for 30 min at 37°C</p></li>
-</ul>
-<p>2.3. SPRI (2x) to remove enzymes and reaction buffer</p>
+</ul></li>
+<li>Cleanup (2x SPRI) to remove enzymes and reaction buffer
 <ul>
 <li>Add 2.0x reaction volume of Agencourt RNAClean XP beads (160 uL) and capture RNA on beads:
 <ul>
@@ -196,12 +209,11 @@
 </ul></li>
 </ul>
 <p><em>PAUSE POINT</em></p></li>
-<li><p>FIRST LIGATION (RNA/DNA) 3’ Linker Ligation</p></li>
-</ol>
+<li>Ligate 3’ barcoded Adaptor: First Ligation (ssRNA/ssDNA)
 <ul>
-<li>Add 1 uL of barcoded RNATag adaptor (100 pmole= 1 uL of 100 uM) to 5 uL of dephosphorylated RNA</li>
+<li>Add 1 uL of barcoded RNATag adaptor (100 pmole = 1 uL of 100 uM) to 5 uL of dephosphorylated RNA</li>
 <li>Heat at 70°C for 2 min, place in cold block on ice</li>
-<li>Set up Ligation master mix below NOTE:
+<li>Set up First Ligation master mix below NOTE:
 <ul>
 <li>All reagents except enzymes (-20°C ) should be stored at -80°C in single use aliquots and brought to room temp just before use</li>
 <li>Make up mix <em>at room temp</em> so the reagents don’t start precipitating when combined (if DMSO is added directly into cold buffer it will precipitate)</li>
@@ -259,62 +271,93 @@
 <li>Add 1.8 uL of T4 RNA Ligase 1 (30,000U/mL) to each tube/well. 20.1 uL reaction volume total.</li>
 <li>Mix well <em>many</em> times; mix by flicking since the solution is very viscous</li>
 <li>Incubate at 22°C (room temp) for 1 hour 30 minutes.</li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li>Pooling step: RLT buffer + Zymo column NOTE: At this point, multiple samples with distinct RNAtag adaptors will be pooled on the same spin column. Do not exceed 5ug RNA per pool, the maximum binding capacity of columns. Attempt to normalize the amounts (using your QC in step3, or even 1) based on the amount of non-ribosomal RNA in each pool, or your other needs.</li>
-</ol>
+</ul></li>
+<li>Pool barcoded RNA: RLT buffer + Zymo column<br />
+NOTE: At this point, multiple samples with distinct RNAtag adaptors will be pooled on the same spin column. Do not exceed 5ug RNA per pool, the maximum binding capacity of columns. Attempt to normalize the amounts (using your QC in step 4, or even 1) based on the amount of non-ribosomal RNA in each pool, or your other needs.
 <ul>
 <li>Add 60 uL of RLT buffer to each sample to inhibit ligase, and mix well (80 uL total)</li>
 <li>Pooling and clean up using Zymo Clean &amp; ConcentratorTM-5 column - follow manufacturer’s <em>200nt</em> cut off protocol:
 <ul>
 <li>Add 2x reaction vol (160 uL=2x 80 uL) of 1:1 binding buffer: EtOH (100%) / reaction</li>
-<li>Carefully add reactions to be pooled to a single Zymo column. NOTE: When pooling &gt;700 uL onto Zymo column use a vacuum manifold then proceed to centrifugation steps according to the manual</li>
+<li>Carefully add reactions to be pooled to a single Zymo column.<br />
+NOTE: When pooling &gt;700 uL onto Zymo column use a vacuum manifold then proceed to centrifugation steps according to the manual</li>
 <li>Wash and spin 1 min 12,000 g, then discard flow-through, once with 400 uL RNA Prep buffer, once with 800 uL RNA Wash buffer, once with 400uL Wash buffer, spin another 1min with no buffer.</li>
 </ul></li>
-<li>Elute 2 times with 16 uL nuclease free water for a total volume of 32 uL NOTE: 2 elutions help improve recovery/yield of RNA</li>
-<li><p>Save 2 uL for QC-Run on Agilent RNA pico chip to check quantity and fragmentation profile</p>
-<p><em>PAUSE POINT</em></p></li>
+<li>Elute 2 times with 16 uL nuclease free water for a total volume of 32 uL<br />
+NOTE: 2 elutions help improve recovery/yield of RNA</li>
+<li>Save 2 uL for QC-Run on Agilent RNA pico chip to check quantity and fragmentation profile</li>
 </ul>
-<ol start="5" style="list-style-type: decimal">
-<li>Quick Protocol for Ribo-ZeroTM</li>
-</ol>
+<p><em>PAUSE POINT</em></p></li>
+<li>Deplete ribosomal RNA: Quick Protocol for Ribo-ZeroTM
 <ul>
 <li>See Manufacturer's instructions</li>
-</ul>
-<ol start="6" style="list-style-type: decimal">
-<li>First Strand cDNA</li>
-</ol>
+</ul></li>
+<li>Synthesize First Strand cDNA
 <ul>
 <li>Take 12 uL rRNA depleted RNA (use all the material from Ribo-Zero)</li>
 <li>Add 2 uL (50 pmoles) of AR2 primer (25 μM) 5’TACACGACGCTCTTCCGAT3’—AR2–53%GC,19bp,</li>
 <li>Mix well</li>
 <li>Heat the mixture to 70°C for 2 min and immediately place on cold block on ice</li>
-<li><p>Make RT master mix below: add in order on ice:</p>
-<pre><code>| Reagent (for RT master)          |  1 rxn  | 2.5 rxns |
-|----------------------------------|---------|----------|
-| 10× AffinityScript RT Buffer     |  2   uL |   5   uL |
-| DTT (0.1M)                       |  2   uL |   5   uL |
-| 25mM dNTP Mix (25mM each)        |  0.8 uL |   2   uL |
-| RNase inhibitor, murine (40U/uL) |  0.4 uL |   1   uL |
-|----------------------------------|---------|----------|
-|Total                             |  5.2 uL |  13   uL |</code></pre></li>
+<li>Make RT master mix
+<ul>
+<li><p>Add in order on ice</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Reagent (for RT master)</th>
+<th align="left">1 rxn</th>
+<th align="left">2.5 rxns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">10× AffinityScript RT Buffer</td>
+<td align="left">2 uL</td>
+<td align="left">5 uL</td>
+</tr>
+<tr class="even">
+<td align="left">DTT (0.1M)</td>
+<td align="left">2 uL</td>
+<td align="left">5 uL</td>
+</tr>
+<tr class="odd">
+<td align="left">25mM dNTP Mix (25mM each)</td>
+<td align="left">0.8 uL</td>
+<td align="left">2 uL</td>
+</tr>
+<tr class="even">
+<td align="left">RNase inhibitor, murine (40U/uL)</td>
+<td align="left">0.4 uL</td>
+<td align="left">1 uL</td>
+</tr>
+<tr class="odd">
+<td align="left">----------------------------------</td>
+<td align="left">---------</td>
+<td align="left">----------</td>
+</tr>
+<tr class="even">
+<td align="left">Total</td>
+<td align="left">5.2 uL</td>
+<td align="left">13 uL</td>
+</tr>
+</tbody>
+</table></li>
+<li>Mix well</li>
+</ul></li>
 <li>Add 5.2 uL of RT mix to the 14 uL rRNA depleted RNA + AR2 RTprimer on ice</li>
 <li>Add 0.8 uL of AffinityScript RT Enzyme</li>
 <li>Mix well and spin for 5 sec</li>
-<li><p>Place in <em>preheated</em> (55 °C) incubator or thermocycler. Incubate at 55 °C for 55 minutes.</p></li>
-</ul>
-<ol start="7" style="list-style-type: decimal">
-<li>RNA degradation after Reverse Transcription NOTE: make fresh working stock solutions of NaOH and Acetic Acid</li>
-</ol>
+<li>Place in <em>preheated</em> (55 °C) incubator or thermocycler. Incubate at 55 °C for 55 minutes.</li>
+</ul></li>
+<li>Degrade RNA after reverse transcription<br />
+NOTE: make fresh working stock solutions of NaOH and Acetic Acid
 <ul>
 <li>Add 10% reaction vol. of 1M NaOH (2 uL) to each reaction</li>
 <li>Incubate at 70 °C for 12 minutes</li>
 <li>Neutralize with 4 uL of 0.5M Acetic Acid; mix well</li>
 <li>Total volume = 26 uL</li>
-</ul>
-<ol start="8" style="list-style-type: decimal">
-<li>Reverse Transcription primer cleanup (2x SPRI) to remove enzyme and reaction buffer</li>
-</ol>
+</ul></li>
+<li>Cleanup reverse transcription (2x SPRI) to remove enzyme, primers, and reaction buffer
 <ul>
 <li>Add 14 uL of sterile water to each reaction for a final volume of 40 uL</li>
 <li>Transfer to new tubes (NaOH may start degrading tubes)</li>
@@ -325,35 +368,73 @@
 <li>Wash: Add 200 uL fresh 80% EtOH without removing from magnet and incubate for 30 sec. Pipette off and discard the EtOH.</li>
 <li>Repeat 80% EtOH wash, and let air dry for 3min, remove from magnet.</li>
 <li>Add 5 uL RNase/DNase free water to beads -- <em>KEEP BEADS AND TUBES, do not transfer</em></li>
-</ul>
-<ol start="9" style="list-style-type: decimal">
-<li>Second LIGATION (ssDNA/ssDNA): 3’ Linker Ligation with beads NOTE: 3Tr3 adaptor: 5’ AGATCGGAAGAGCACACGTCTG 3’ = 55% GC, 22bp; Needs: 5’-P and 3’ ddC (or 3’-C3 spacer). Make 40 uM stock.</li>
-</ol>
+</ul></li>
+<li>Ligate 3’ Universal Adaptor: Second Ligation (ssDNA/ssDNA) with beads<br />
+NOTE: 3Tr3 adaptor: 5’ AGATCGGAAGAGCACACGTCTG 3’ = 55% GC, 22bp; Needs: 5’-P and 3’ ddC (or 3’-C3 spacer). Make 40 uM stock.
 <ul>
 <li>Add 2 uL (80 pmoles) of 3Tr3 adaptor to cDNA</li>
 <li>Heat at 75°C for 3 min; Place on cold block on ice</li>
-<li>Make ligation reaction master mix (can be prepared ahead of time, on ice): ￼￼</li>
-<li><p>2nd Ligation Master Mix: mix in order:</p>
-<pre><code>| Reagent (for Ligation 2 master)  |  1 rxn  | 2.5 rxns |
-|----------------------------------|---------|----------|
-| 10× T4 RNA Ligase Buffer         |    2 uL |   5   uL |
-| DMSO (100%)                      |  0.8 uL |   2   uL |
-| ATP (100 mM)                     |  0.2 uL |   0.5 uL |
-| PEG 8000 (50%)                   |  8.5 uL |  21.3 uL |
-| T4 RNA Ligase 1 (30,000U/mL)     |  1.5 uL |   3.8 uL |
-|----------------------------------|---------|----------|
-|Total                             | 13.0 uL |  32.6 uL |</code></pre>
+<li>Make ligation reaction master mix (can be prepared ahead of time, on ice):</li>
+<li>2nd Ligation Master Mix:
 <ul>
-<li>Mix really well by extensive vortexing tube since the solution is very viscous, then spin down briefly in microfuge</li>
+<li>Mix in order</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Reagent (for Ligation 2 master)</th>
+<th align="left">1 rxn</th>
+<th align="left">2.5 rxns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">10× T4 RNA Ligase Buffer</td>
+<td align="left">2 uL</td>
+<td align="left">5 uL</td>
+</tr>
+<tr class="even">
+<td align="left">DMSO (100%)</td>
+<td align="left">0.8 uL</td>
+<td align="left">2 uL</td>
+</tr>
+<tr class="odd">
+<td align="left">ATP (100 mM)</td>
+<td align="left">0.2 uL</td>
+<td align="left">0.5 uL</td>
+</tr>
+<tr class="even">
+<td align="left">PEG 8000 (50%)</td>
+<td align="left">8.5 uL</td>
+<td align="left">21.3 uL</td>
+</tr>
+<tr class="odd">
+<td align="left">T4 RNA Ligase 1 (30,000U/mL)</td>
+<td align="left">1.5 uL</td>
+<td align="left">3.8 uL</td>
+</tr>
+<tr class="even">
+<td align="left">----------------------------------</td>
+<td align="left">---------</td>
+<td align="left">----------</td>
+</tr>
+<tr class="odd">
+<td align="left">Total</td>
+<td align="left">13.0 uL</td>
+<td align="left">32.6 uL</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Mix really well by extensive vortexing tube since the solution is very viscous</li>
+<li>Spin down briefly in microfuge</li>
 </ul></li>
 <li>Swirl the 7uL cDNA/beads/water with pipet tip, THEN add 13 uL ligation 2 master mix.</li>
 <li>Mix well by pipetting up and down 20x or cap tubes and flick several times; solution is viscous</li>
 <li>Quick spin (low speed centrifuge, to get everything to bottom of tube)</li>
-<li><p>Incubate overnight at 22 °C</p></li>
-</ul>
-<ol start="10" style="list-style-type: decimal">
-<li>SPRI clean up (2x) to remove adaptors</li>
-</ol>
+<li>Incubate overnight at 22 °C</li>
+</ul></li>
+<li>Cleanup (2x SPRI) to remove adaptors
 <ul>
 <li>Add 2x reaction volume SPRI beads (80uL) to the sample in new tubes, and mix up/down 10x</li>
 <li>Incubate at room temperature for 15min</li>
@@ -362,10 +443,8 @@
 <li>Wash: Add 200 uL fresh 80% EtOH without removing from magnet and incubate for 30 sec. Pipette off discard the EtOH.</li>
 <li>Repeat 80% EtOH wash, and let air dry for 3min</li>
 <li>Elute DNA by adding 30 uL RNase/DNase free water, transfer to new tube.</li>
-</ul>
-<ol start="11" style="list-style-type: decimal">
-<li>2nd SPRI clean up (1.5x) to remove the remaining adaptors</li>
-</ol>
+</ul></li>
+<li>2nd Cleanup (1.5x SPRI) to remove the remaining adaptors
 <ul>
 <li>Add 1.5x reaction volume SPRI beads (45 uL) to the sample in new tubes, and mix up/down 10x</li>
 <li>Incubate at room temperature for 15min</li>
@@ -373,31 +452,66 @@
 <li>Pipette out and discard clear solution</li>
 <li>Wash: Add 200 uL fresh 80% EtOH without removing from magnet and incubate for 30 sec. Pipette off and discard the EtOH.</li>
 <li>Repeat 80% EtOH wash, and let air dry for 3min</li>
-<li><p>Elute DNA by adding 25 uL RNase/DNase free water, transfer to new tube.</p>
-<p><em>PAUSE POINT</em></p></li>
+<li>Elute DNA by adding 25 uL RNase/DNase free water, transfer to new tube.</li>
 </ul>
-<ol start="12" style="list-style-type: decimal">
-<li>PCR Amplification TEST to determine final cycle number NOTE: P5 primer: P5_RNATag, 5’ AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT 3’ = 52% GC, 58bp; standard DNA oligo. Make 100uM dilution and 12.5uM working stock.</li>
-</ol>
+<p><em>PAUSE POINT</em></p></li>
+<li>TEST PCR Amplification to determine final cycle number<br />
+NOTE: P5 primer: P5_RNATag, 5’ AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT 3’ = 52% GC, 58bp; standard DNA oligo. Make 100uM dilution and 12.5uM working stock.
 <ul>
 <li>Set up a test PCR using 5 uL of ss cDNA sample and 9-12 cycles of PCR (based on experience with pool of 16 reactions, each starting with ~400ng total RNA)</li>
 <li>Include a negative control (water) for each primer set</li>
-<li><p>Make PCR Master Mix (4 rxns=2 libraries, +ve ctrl, -ve ctrl):</p>
-<pre><code>| Reagent (for PCR master mix)    |  1 rxn  |  4 rxns | 
-|---------------------------------|---------|---------|
-| Water, PCR-clean                | 14.3 uL | 57.2 uL |
-| 10X Pfu Ultra II Buffer         |  2.5 uL | 10   uL |
-| dNTP mix (10mM each)            |  0.7 uL |  2.8 uL |
-| P5 primer (P5_RNATag, 12.5 uM)  |  1   uL |  4   uL |
-|---------------------------------|---------|---------|
-|Total                            | 18.5 uL | 74   uL |</code></pre>
+<li>Make PCR Master Mix (4 rxns=2 libraries, +ve ctrl, -ve ctrl):
+<ul>
+<li>Add in order:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Reagent (for PCR master mix)</th>
+<th align="left">1 rxn</th>
+<th align="left">4 rxns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Water, PCR-clean</td>
+<td align="left">14.3 uL</td>
+<td align="left">57.2 uL</td>
+</tr>
+<tr class="even">
+<td align="left">10X Pfu Ultra II Buffer</td>
+<td align="left">2.5 uL</td>
+<td align="left">10 uL</td>
+</tr>
+<tr class="odd">
+<td align="left">dNTP mix (10mM each)</td>
+<td align="left">0.7 uL</td>
+<td align="left">2.8 uL</td>
+</tr>
+<tr class="even">
+<td align="left">P5 primer (P5_RNATag, 12.5 uM)</td>
+<td align="left">1 uL</td>
+<td align="left">4 uL</td>
+</tr>
+<tr class="odd">
+<td align="left">---------------------------------</td>
+<td align="left">---------</td>
+<td align="left">---------</td>
+</tr>
+<tr class="even">
+<td align="left">Total</td>
+<td align="left">18.5 uL</td>
+<td align="left">74 uL</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>Mix well</li>
 <li>Aliquot 18.5 uL / sample into PCR tubes</li>
+</ul></li>
 <li>Add 1 uL of appropriate P7 index primer to each well</li>
 <li>Add 5 uL of ss cDNA from step 11, or water (for negative control)</li>
 <li>Add 0.5 uL of Pfu Ultra II Polymerase.</li>
-</ul></li>
 <li>Mix well and aliquot 8 ul into each of 3 tubes</li>
 <li>Place each in a thermal cycler with cycling conditions:
 <ul>
@@ -405,10 +519,8 @@
 <li>cycle: 9, 12, 15 cycles (for test PCR) 98°C, 30sec; 55°C, 30sec; 70°C, 30sec</li>
 <li>end: 70°C, 2min; 4°C, hold</li>
 </ul></li>
-</ul>
-<ol start="13" style="list-style-type: decimal">
-<li>SPRI clean up (1.5x) to remove reaction buffer and PCR primers:</li>
-</ol>
+</ul></li>
+<li>Cleanup (1.5x SPRI) to remove reaction buffer and PCR primers:
 <ul>
 <li>increase reaction to 40uL with sterile water</li>
 <li>Add 1.5x reaction volume SPRI beads (60 uL) to the sample in new tubes, and mix up/down 10x</li>
@@ -418,38 +530,70 @@
 <li>Wash: Add 200 uL fresh 80% EtOH without removing from magnet and incubate for 30 sec. Pipette off and discard the EtOH.</li>
 <li>Repeat 80% EtOH wash, and let air dry for 3min</li>
 <li>Elute off beads with 10 uL 1x low TE (10 mM Tris, 0.1M EDTA)</li>
-</ul>
-<ol start="14" style="list-style-type: decimal">
-<li>QC test PCR amplification on Agilent DNA HS chip</li>
-</ol>
+</ul></li>
+<li>QC test PCR amplification on Agilent DNA HS chip
 <ul>
 <li>Based on test results change the cycle number, if necessary, and set up more reactions to provide enough material to send for sequencing</li>
 <li>UChicago functional genomics core asks for ~15 uL of 10 nM library; aim for at least 25 uL = 0.25 pmol = 60 ng of 400nt dsDNA (~250 kDa).</li>
-<li><p>To pass QC, library should have smooth profile 200-500nt long; visible single bands, or a &quot;shoulder&quot; of larger products, indicate PCR artefacts.</p>
-<p><em>PAUSE POINT</em></p></li>
+<li>To pass QC, library should have smooth profile 200-500nt long; visible single bands, or a &quot;shoulder&quot; of larger products, indicate PCR artefacts.</li>
 </ul>
-<ol start="15" style="list-style-type: decimal">
-<li>PCR for Sequencing library</li>
-</ol>
+<p><em>PAUSE POINT</em></p></li>
+<li>PCR for Sequencing library
 <ul>
-<li>Choose the optimal PCR cycle # based on Bioanalyzer QC of test (step 14).</li>
+<li>Choose the optimal PCR cycle # based on Bioanalyzer QC of test (step 15).</li>
 <li>Include a negative control (water) for each primer set</li>
-<li><p>Make PCR Master Mix (3 rxns=2 libraries, half size +ve ctrl, half size -ve ctrl):</p>
-<pre><code>| Reagent (for PCR master mix)    |  1 rxn  |  3 rxns  | 
-|---------------------------------|---------|----------|
-| Water, PCR-clean                | 28.6 uL |  85.8 uL |
-| 10X Pfu Ultra II Buffer         |  5   uL |  15   uL |
-| dNTP mix (10mM each)            |  1.4 uL |   4.2 uL |
-| P5 primer (P5_RNATag, 12.5 uM)  |  2   uL |   6   uL |
-|---------------------------------|---------|----------|
-|Total                            | 37   uL | 111   uL |</code></pre>
+<li>Make PCR Master Mix (3 rxns=2 libraries, half size +ve ctrl, half size -ve ctrl):
+<ul>
+<li>Add in order:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Reagent (for PCR master mix)</th>
+<th align="left">1 rxn</th>
+<th align="left">3 rxns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Water, PCR-clean</td>
+<td align="left">28.6 uL</td>
+<td align="left">85.8 uL</td>
+</tr>
+<tr class="even">
+<td align="left">10X Pfu Ultra II Buffer</td>
+<td align="left">5 uL</td>
+<td align="left">15 uL</td>
+</tr>
+<tr class="odd">
+<td align="left">dNTP mix (10mM each)</td>
+<td align="left">1.4 uL</td>
+<td align="left">4.2 uL</td>
+</tr>
+<tr class="even">
+<td align="left">P5 primer (P5_RNATag, 12.5 uM)</td>
+<td align="left">2 uL</td>
+<td align="left">6 uL</td>
+</tr>
+<tr class="odd">
+<td align="left">---------------------------------</td>
+<td align="left">---------</td>
+<td align="left">----------</td>
+</tr>
+<tr class="even">
+<td align="left">Total</td>
+<td align="left">37 uL</td>
+<td align="left">111 uL</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>Mix well</li>
-<li>Aliquot 39 uL / sample into PCR tubes</li>
+<li>Aliquot 37 uL / sample into PCR tubes</li>
+</ul></li>
 <li>Add 2 uL of appropriate P7 index primer to each well</li>
 <li>Add 10 uL of ss cDNA from step 11, or water (for negative control)</li>
 <li>Add 1 uL of Pfu Ultra II Polymerase.</li>
-</ul></li>
 <li>Mix well and aliquot 10 ul into each of 5 wells of a 96-well plate (amplification is apparently more robust in smaller volumes), cap.</li>
 <li>Place each in a thermal cycler with the cycling conditions:
 <ul>
@@ -457,10 +601,8 @@
 <li>cycle: # determined from test PCR 98°C, 30sec; 55°C, 30sec; 70°C, 30sec</li>
 <li>end: 70°C, 2min; 4°C, hold</li>
 </ul></li>
-</ul>
-<ol start="16" style="list-style-type: decimal">
-<li>SPRI clean up (1.5x) to remove reaction buffer and PCR primers:</li>
-</ol>
+</ul></li>
+<li>Cleanup (1.5x SPRI) to remove reaction buffer and PCR primers:
 <ul>
 <li>Pool PCR reaction (50 uL)</li>
 <li>Add 1.5x reaction volume SPRI beads (75 uL) to the sample in new tubes, and mix up/down 10x</li>
@@ -470,10 +612,8 @@
 <li>Wash: Add 200 uL fresh 80% EtOH without removing from magnet and incubate for 30 sec. Pipette off and discard the EtOH.</li>
 <li>Repeat 80% EtOH wash, and let air dry for 3min</li>
 <li>Elute off beads with 50 uL water and transfer to new tubes.</li>
-</ul>
-<ol start="17" style="list-style-type: decimal">
-<li>SPRI clean up (0.8x) to remove reaction buffer and PCR primers:</li>
-</ol>
+</ul></li>
+<li>Last Cleanup (0.8x SPRI) to remove remaining PCR primers:
 <ul>
 <li>Add 0.8x reaction volume SPRI beads (40 uL) to the sample in new tubes, and mix up/down 10x</li>
 <li>Incubate at room temperature for 15min</li>
@@ -482,15 +622,14 @@
 <li>Wash: Add 200 uL fresh 80% EtOH without removing from magnet and incubate for 30 sec. Pipette off and discard the EtOH.</li>
 <li>Repeat 80% EtOH wash, and let air dry for 3min</li>
 <li>Elute off beads with 25 uL 1x low TE (10 mM Tris, 0.1M EDTA)</li>
-</ul>
-<ol start="18" style="list-style-type: decimal">
-<li>Proceed to sequence</li>
-</ol>
+</ul></li>
+<li>Proceed to sequence
 <ul>
 <li>Check quantity/quality on Bioanalyzer with Agilent DNA HS chip</li>
 <li>Submit to genomics core for sequencing.</li>
 <li>If desired to combine multiple libraries PCR'd separately, they must have different barcoded P7 primers. Amounts of sequenceable material must be carefully measured to ensure even coverage across libraries, e.g. with the KAPA biosystems kit (Cat. # KK4824). The genomics core can do this for a fee.</li>
-</ul>
+</ul></li>
+</ol>
 <h2 id="appendix-barcode-tag-oligos">Appendix: Barcode Tag Oligos</h2>
 <pre><code>| id       | Well | barcode sequence (5&#39;-3&#39;) | oligo sequence                 | 8 base Barcode Read + T | IDTorder                                               | 
 |----------|------|--------------------------|--------------------------------|-------------------------|--------------------------------------------------------| 
