@@ -171,7 +171,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
             | PEG 8000 (50%)                   |    8 uL |  320 uL |
             | RNase inhibitor, Murine (40U/uL) |  0.3 uL |   12 uL |
             |----------------------------------|---------|---------|
-            |Total                             | 12.3 uL |         |
+            |Total                             | 12.3 uL |  492 uL |
         
         - Mix really well by extensive vortexing tube since the solution is very viscous, then spin down briefly in microfuge
     - Add 12.3 uL of ligation master mix to each tube/well containing 6 uL denatured RNA + adaptor.
@@ -198,8 +198,8 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 
 7. Synthesize First Strand cDNA
     - Take 12 uL rRNA depleted RNA (use all the material from Ribo-Zero)
-    - Add 2 uL (50 pmoles) of AR2 primer (25 μM)
-         5’TACACGACGCTCTTCCGAT3’—AR2–53%GC,19bp,
+    - Add 2 uL (50 pmoles) of AR2 primer (25 uM)
+         5’-TAC ACG ACG CTC TTC CGA T-3' AR2, 53% GC, 19bp.
     - Mix well
     - Heat the mixture to 70°C for 2 min and immediately place on cold block on ice
     - Make RT master mix
@@ -239,7 +239,8 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Add 5 uL RNase/DNase free water to beads -- _KEEP BEADS AND TUBES, do not transfer_
 
 10. Ligate 3’ Universal Adaptor: Second Ligation (ssDNA/ssDNA) with beads  
-	NOTE: 3Tr3 adaptor: 5’ AGATCGGAAGAGCACACGTCTG 3’ = 55% GC, 22bp; Needs: 5’-P and 3’ ddC (or 3’-C3 spacer). Make 40 uM stock.
+	NOTE: 3Tr3 adaptor: 5’-/5Phos/AGA TCG GAA GAG CAC ACG TCT G-/3SpC3/ 3’, 55% GC, 22bp, 5’-Phos and 3’-C3 spacer (or ddC, or dye). Make 40 uM stock.
+	
     - Add 2 uL (80 pmoles) of 3Tr3 adaptor to cDNA 
     - Heat at 75°C for 3 min; Place on cold block on ice
     - Make ligation reaction master mix (can be prepared ahead of time, on ice):
@@ -284,7 +285,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 	_PAUSE POINT_
 
 13. TEST PCR Amplification to determine final cycle number  
-	NOTE: P5 primer: P5_RNATag, 5’ AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT 3’ = 52% GC, 58bp; standard DNA oligo. Make 100uM dilution and 12.5uM working stock.
+	NOTE: P5 primer: P5_RNATag, 5’-AAT GAT ACG GCG ACC ACC GAG ATC TAC ACT CTT TCC CTA CAC GAC GCT CTT CCG ATC T-3’, 52% GC, 58bp; standard DNA oligo. Make 100uM stock and 12.5uM working stock.
     - Set up a test PCR using 5 uL of ss cDNA sample and 9-12 cycles of PCR (based on experience with pool of 16 reactions, each starting with ~400ng total RNA)
     - Include a negative control (water) for each primer set
     - Make PCR Master Mix (4 rxns=2 libraries, +ve ctrl, -ve ctrl):
