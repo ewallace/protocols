@@ -45,7 +45,7 @@ Ingredients {#ingredients .unnumbered}
 
 -   ULTRAhyb-Oligo buffer (Life/ThermoFisher AM8663)
 
--   DNA oligo probes: 5’ biotinylated, 36-45nt long, 60-75hybridization
+-   DNA oligo probes: 5’ biotinylated, 36-45nt long, 60-75C hybridization
     temperature, 45-65% GC-content, in
     10uM working solution. Or use biotinylated oligo-dT
     probes (Promega #Z5261) at 5 pmol/uL for mRNA.
