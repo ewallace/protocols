@@ -6,7 +6,7 @@ shortref: "Shishkin et al. Nature Methods 2015"
 nickname: RNAtagseq
 tags: [RNA, NGS, RNASeq, Library prep]
 output: html_document
-htmll_typeset: pandoc RNAtagseq.md -f markdown -t html -o RNAtagseq.html -s
+html_typeset: pandoc RNAtagseq.md -f markdown -t html -o RNAtagseq.html -s
 pdf_typeset: pandoc RNAtagseq.md -V geometry:margin=0.5in  -f markdown -t latex -o RNAtagseq.pdf -s
 ---
 
@@ -73,10 +73,11 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 
 ## Notes
 
+- **This is not a protocol where you can cut corners. To save time and anguish, plan thoroughly, work cleanly, QC your samples and intermediate steps.**
 - Label everything and lay out tubes neurotically to avoid pipette error.
-- Observe RNase-free sample prep, for steps 1-8, also neurotically. Clean your workspace and pipettes with 50% Ethanol and RNAse-Zap, use reserved RNase-free pipettes and/or filter tips, ensure all tubes and reagents (including water) are RNase-free. 
+- Observe RNase-free sample prep, for steps 1-8, also neurotically. Clean your workspace and pipettes with 50% Ethanol and RNAse-Zap, use reserved RNase-free pipettes and RNAse-free (non-autoclaved) tips, ensure all tubes and reagents (including water) are RNase-free. 
 - Avoid DNA contamination, _especially from other sequencing libraries_ for steps 8+. Use filter tips for PCR reactions.
-- Points where the in-process libraries may be frozen at -80 C while you pause, are indicated as _PAUSE POINT_.
+- Points where the in-process libraries may be frozen at -80 C while you pause, are indicated as _PAUSE POINT_. Don't take the risk of pausing elsewhere.
 - SPRI/XP beads take a bit of skill. "2x SPRI" refers to the ratio of beads to aqueous solution containing nucleic acids (NA); this ratio controls the size of NA retained (see http://core-genomics.blogspot.com/2012/04/how-do-spri-beads-work.html). Be patient; wait for binding and for magnetisation. Prepare fresh 80% ethanol solution every day or two; the concentration drifts over time due to evaporation (manufacturer recommends 70% EtOH). Some reactions (2nd ligation, step 11) happen on-bead so change the elution step. Manufacturer's protocol with tweaks is below; practice SPRI extraction on a DNA ladder or RNA ladder and ensure full recovery.
 	- Add appropriate ratio of beads to sample in PCR tube, pipette up and down 10x gently.
 	- Incubate beads and sample at room temperature  for 15min to bind NA.
@@ -89,8 +90,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 	- Unless otherwise specified, take clear liquid to new tube, carefully not disturbing beads. 
 - For first ligation (step 5), set up RNA/barcoded adaptor in single tube or use the TempPlate No-skirt PCR Plates for batched samples (these rigid plates are easy to handle and can mix well by flicking by hand) – with a razor, cut a column (for 8 samples) or row (for 12 samples) and use as strip and cover with the Flat PCR 12-cap strips (these strips fit tightly on these plates and will not leak).
 - TempPlate No-skirt PCR Plates, and strips cut from them, are flexible and may spring up when caps are put on or off, flicking your sample across the bench. Avoid this by firmly seating plates/strips in a tube rack before manipulating  the caps.
-
-- Barcoded adaptors are listed in appendix, requiring 5' Phos (/5Phos/) and 3' blocking spacer (/3SpC3/). The combination to use should be chosen carefully: plan a spreadsheet listing the sample name, conditions, and which RNAtag adaptor (step 3) and P7 adaptor (step 12/15, PCR after pooling) will be used. In each set of sequencing libraries combined on an Illumina sequencing run, there must be at least 3 distinct nt in all of the initial 4 nt of the sequenced adaptor for the sequencing machine to recognize clusters properly. (e.g. ATTA, GCAC, CAGT work, ATTA, GTAC, CTGT don't.)
+- Barcoded adaptors are listed in appendix, requiring 5' Phosphate group (/5Phos/) and 3' blocking spacer (/3SpC3/). The combination to use should be chosen carefully: plan a spreadsheet listing the sample name, conditions, and which RNAtag adaptor (step 3) and P7 adaptor (step 14/17, PCR after pooling) will be used. In each set of sequencing libraries combined on an Illumina sequencing run, there must be at least 3 distinct nt in all of the initial 4 nt of the sequenced adaptor for the sequencing machine to recognize clusters properly. (e.g. ATTA, GCAC, CAGT work, ATTA, GTAC, CTGT don't due to the common T.)
 
 - Control oligos: 
     - Tag33FAM  
@@ -98,7 +98,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     is a fluorescent positive control oligo for first ligation and sample pooling. Use in place of a barcoded adaptor, for one sample, in first ligation, step 5. Success is indicated if fluorescence appears in 200-500nt smear:
     - TagDNA+  
         5'-TAC ACG ACG CTC TTC CGA TCT TCA GTC AGT ATG TAC GCG TAG CGC AGC GAG CGG CGG GTG GCC ACG TCG CGG CAC ACG CGG ATG GAC AGG ATC GGG CCG GCG GGC AGG AAC TTC TCG TAG AGC ATG GCC TCG GTC ACG TCG GCG TGC AGG TCG CCC ACG TAG AGC GAG GCC AGC GGG TAC CCC GGG CCG CTG GCG TTC AT - 3'  
-    is a 200bp oligo as positive control for 2nd ligation through PCR. Use 1.25uM (0.5uL of 100uM stock) in place of cDNA in control reaction in step 11. Its 3' end resembles a cDNA product for a library with Tag barcode CTGACTGA (distinct from Tag1-32, Tag33FAM), and the insert is "random" (elephant PABP 1st exon):
+    is a 200bp oligo as positive control for 2nd ligation through PCR. Use 1.25uM (0.5uL of 100uM stock) in place of cDNA in control reaction in step 11. Its 3' end resembles a cDNA product for a library with Tag barcode CTGACTGA (distinct from Tag1-32, Tag33FAM), and the insert is "random" (elephant PABP 1st exon).
 
 
 
@@ -179,7 +179,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Mix well *many* times; mix by flicking since the solution is very viscous
     - Incubate at 22°C (room temp) for 1 hour 30 minutes.
 
-5. Pool barcoded RNA: RLT buffer + Zymo column  
+6. Pool barcoded RNA: RLT buffer + Zymo column  
     NOTE: At this point, multiple samples with distinct RNAtag adaptors will be pooled on the same spin column. Do not exceed 5ug RNA per pool, the maximum binding capacity of columns. Attempt to normalize the amounts (using your QC in step 4, or even 1) based on the amount of non-ribosomal RNA in each pool, or your other needs.  
     - Add 60 uL of RLT buffer to each sample to inhibit ligase, and mix well (80 uL total)
     - Pooling and clean up using Zymo Clean & ConcentratorTM-5 column - follow manufacturer’s *200nt* cut off protocol:
@@ -193,10 +193,11 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 
 	_PAUSE POINT_
 
-6. Deplete ribosomal RNA: Quick Protocol for Ribo-ZeroTM  
-    - See Manufacturer's instructions
+7. Deplete ribosomal RNA with RiboZero (optional)
+    - See Manufacturer's instructions Quick Protocol for Ribo-ZeroTM
+    - End with 1.8x SPRI cleanup, elute into 14 uL water, save 2 uL for QC
 
-7. Synthesize First Strand cDNA
+8. Synthesize First Strand cDNA
     - Take 12 uL rRNA depleted RNA (use all the material from Ribo-Zero)
     - Add 2 uL (50 pmoles) of AR2 primer (25 uM)
          5’-TAC ACG ACG CTC TTC CGA T-3' AR2, 53% GC, 19bp.
@@ -220,14 +221,14 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Mix well and spin for 5 sec
     - Place in _preheated_ (55 °C) incubator or thermocycler. Incubate at 55 °C for 55 minutes.
 
-8. Degrade RNA after reverse transcription  
+9. Degrade RNA after reverse transcription  
 	NOTE: make fresh working stock solutions of NaOH and Acetic Acid
     - Add 10% reaction vol. of 1M NaOH (2 uL) to each reaction
     - Incubate at 70 °C for 12 minutes
     - Neutralize with 4 uL of 0.5M Acetic Acid; mix well
     - Total volume = 26 uL
 
-9. Cleanup reverse transcription (2x SPRI) to remove enzyme, primers, and reaction buffer
+10. Cleanup reverse transcription (2x SPRI) to remove enzyme, primers, and reaction buffer
     - Add 14 uL of sterile water to each reaction for a final volume of 40 uL
     - Transfer to new tubes (NaOH may start degrading tubes)
     - Add 2x reaction volume SPRI beads (80uL) to the sample in new tubes, and mix up/down 10x
@@ -236,14 +237,14 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Pipette out and discard clear solution
     - Wash: Add 200 uL fresh 80% EtOH without removing from magnet and incubate for 30 sec. Pipette off and discard the EtOH. 
     - Repeat 80% EtOH wash, and let air dry for 3min, remove from magnet.
-    - Add 5 uL RNase/DNase free water to beads -- _KEEP BEADS AND TUBES, do not transfer_
+    - Add 5 uL RNase/DNase free water to beads -- _KEEP BEADS AND TUBES, do not transfer, do not pause_
 
-10. Ligate 3’ Universal Adaptor: Second Ligation (ssDNA/ssDNA) with beads  
+11. Ligate 3’ Universal Adaptor: Second Ligation (ssDNA/ssDNA) with beads  
 	NOTE: 3Tr3 adaptor: 5’-/5Phos/AGA TCG GAA GAG CAC ACG TCT G-/3SpC3/ 3’, 55% GC, 22bp, 5’-Phos and 3’-C3 spacer (or ddC, or dye). Make 40 uM stock.
 	
     - Add 2 uL (80 pmoles) of 3Tr3 adaptor to cDNA 
     - Heat at 75°C for 3 min; Place on cold block on ice
-    - Make ligation reaction master mix (can be prepared ahead of time, on ice):
+    - Make ligation reaction master mix (can be prepared ahead of time, at RT):
     - 2nd Ligation Master Mix: 
         - Mix in order
         
@@ -264,7 +265,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Quick spin (low speed centrifuge, to get everything to bottom of tube)
     - Incubate overnight at 22 °C
 
-11. Cleanup (2x SPRI) to remove adaptors
+12. Cleanup (2x SPRI) to remove adaptors
     - Add 2x reaction volume SPRI beads (80uL) to the sample in new tubes, and mix up/down 10x
     - Incubate at room temperature for 15min
     - Place on magnet for 5 min or until solution is clear
@@ -273,7 +274,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Repeat 80% EtOH wash, and let air dry for 3min
     - Elute DNA by adding 30 uL RNase/DNase free water, transfer to new tube.
 
-12. 2nd Cleanup (1.5x SPRI) to remove the remaining adaptors
+13. 2nd Cleanup (1.5x SPRI) to remove the remaining adaptors
     - Add 1.5x reaction volume SPRI beads (45 uL) to the sample in new tubes, and mix up/down 10x
     - Incubate at room temperature for 15min
     - Place on magnet for 5 min or until solution is clear
@@ -284,7 +285,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 
 	_PAUSE POINT_
 
-13. TEST PCR Amplification to determine final cycle number  
+14. TEST PCR Amplification to determine final cycle number  
 	NOTE: P5 primer: P5_RNATag, 5’-AAT GAT ACG GCG ACC ACC GAG ATC TAC ACT CTT TCC CTA CAC GAC GCT CTT CCG ATC T-3’, 52% GC, 58bp; standard DNA oligo. Make 100uM stock and 12.5uM working stock.
     - Set up a test PCR using 5 uL of ss cDNA sample and 9-12 cycles of PCR (based on experience with pool of 16 reactions, each starting with ~400ng total RNA)
     - Include a negative control (water) for each primer set
@@ -312,7 +313,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
             98°C, 30sec; 55°C, 30sec; 70°C, 30sec
         - end: 70°C, 2min; 4°C, hold
 
-14. Cleanup (1.5x SPRI) to remove reaction buffer and PCR primers:
+15. Cleanup (1.5x SPRI) to remove reaction buffer and PCR primers:
     - increase reaction to 40uL with sterile water
     - Add 1.5x reaction volume SPRI beads (60 uL) to the sample in new tubes, and mix up/down 10x
     - Incubate at room temperature for 15min
@@ -322,14 +323,14 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Repeat 80% EtOH wash, and let air dry for 3min
     - Elute off beads with 10 uL 1x low TE (10 mM Tris, 0.1M EDTA)
 
-15. QC test PCR amplification on Agilent DNA HS chip
+16. QC test PCR amplification on Agilent DNA HS chip
     - Based on test results change the cycle number, if necessary, and set up more reactions to provide enough material to send for sequencing
     - UChicago functional genomics core asks for ~15 uL of 10 nM library; aim for at least 25 uL = 0.25 pmol = 60 ng of 400nt dsDNA (~250 kDa).
     - To pass QC, library should have smooth profile 200-500nt long; visible single bands, or a "shoulder" of larger products, indicate PCR artefacts.
 
 	_PAUSE POINT_
 	
-16. PCR for Sequencing library
+17. PCR for Sequencing library
     - Choose the optimal PCR cycle # based on Bioanalyzer QC of test (step 15).
     - Include a negative control (water) for each primer set
     - Make PCR Master Mix (3 rxns=2 libraries, half size +ve ctrl, half size -ve ctrl):
@@ -356,7 +357,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
             98°C, 30sec; 55°C, 30sec; 70°C, 30sec
         - end: 70°C, 2min; 4°C, hold
 
-17. Cleanup (1.5x SPRI) to remove reaction buffer and PCR primers:
+18. Cleanup (1.5x SPRI) to remove reaction buffer and PCR primers:
     - Pool PCR reaction (50 uL)
     - Add 1.5x reaction volume SPRI beads (75 uL) to the sample in new tubes, and mix up/down 10x
     - Incubate at room temperature for 15min
@@ -366,7 +367,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Repeat 80% EtOH wash, and let air dry for 3min
     - Elute off beads with 50 uL water and transfer to new tubes.
 
-18. Last Cleanup (0.8x SPRI) to remove remaining PCR primers:
+19. Final Cleanup (0.8x SPRI) to remove remaining PCR primers:
     - Add 0.8x reaction volume SPRI beads (40 uL) to the sample in new tubes, and mix up/down 10x
     - Incubate at room temperature for 15min
     - Place on magnet for 5 min or until solution is clear
@@ -375,8 +376,8 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Repeat 80% EtOH wash, and let air dry for 3min
     - Elute off beads with 25 uL 1x low TE (10 mM Tris, 0.1M EDTA)
 
-18. Proceed to sequence
-    - Check quantity/quality on Bioanalyzer with Agilent DNA HS chip
+20. Proceed to sequence
+    - Check quantity/quality on Bioanalyzer with Agilent DNA HS chip as step 16
     - Submit to genomics core for sequencing.
     - If desired to combine multiple libraries PCR'd separately, they must have different barcoded P7 primers. Amounts of sequenceable material must be carefully measured to ensure even coverage across libraries, e.g. with the KAPA biosystems kit (Cat. # KK4824). The genomics core can do this for a fee.
 
