@@ -13,7 +13,9 @@ pdf_typeset: pandoc RNAtagseq.md -V geometry:margin=0.5in  -f markdown -t latex 
 
 This protocol is for RNA sequencing (RNASeq) library preparation using the RNATagSeq method of Shishkin, et al. (2015). *Simultaneous generation of many RNA-seq libraries in a single reaction.* Nature Methods, 12(4), 323–325. http://doi.org/10.1038/nmeth.3313 (Broad institute).
 
-The protocol is mildly adapted by Edward Wallace, mostly increasing some volumes to make SPRI bead handling easier. Applies to batches of 4 to 32 samples.
+The protocol is mildly adapted by Edward Wallace, mostly increasing some volumes to make SPRI bead handling easier. 
+Further adapted to put a random barcoded on the read 2 (3Tr3) adaptor, and rationalize the barcoded adaptors to lower costs.
+Applies to batches of 4 to 32 samples.
 
 The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introduction to RNASeq.
 
@@ -29,7 +31,6 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 	- ATP(100mM) (make 10uL aliquots and store at -80°C, always use fresh aliquot)
 	- PEG8000,50% in water
 	- DMSO (100%); Sigma, Cat.# D8418-50ML for Molecular Biology
-- RNase Inhibitor, Murine (40U/uL); NEB, Cat.# M0314S (3,000 units)
 - SUPERase-IN 20U/uL (Ambion; AM2694; 2500U)
 - AffinityScript Multiple Temperature cDNA Synthesis Kit, 50 reaction; Agilent, Cat.# 200436. includes the 
 	- dNTPs, 10x RT buffer, RNase Block Ribonuclease Inhibitor (40U/uL)
@@ -57,11 +58,12 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 - Flat PCR 12-cap strips, Optically clear; USA Scientific, Cat.# 1400-3120
 - TempPlate No-skirt PCR Plates, 96 wells, 10 plates; USA Scientific, Cat.# 1402-9608
 - 0.2 ml TempAssure PCR tube, attached flat cap, natural; USA Scientific, Cat.# 1402-8100
-- wide-orifice pipette tips for PEG-8000
+- Wide-orifice pipette tips, 20uL and 200uL (for pipetting PEG-8000)
+- RNA Clean & ConcentratorTM-5 kit; Zymo Cat.#R1015
 
 ### Instruments:
 
-- 2100 Electrophoresis Bioanalyzer Instrument; Agilent, Cat.# G2939AA (at functional genomics core)
+- 2100 Electrophoresis Bioanalyzer Instrument; Agilent, Cat.# G2939AA
     - Agilent RNA 6000 Pico Kit; Agilent, Cat.# 5067-1513
     - Agilent DNA HS Kit; Agilent, Cat.# 5067-4626
 - QIAvac 24 Plus Vacuum manifold (1-24 spin columns; Qiagen cat# 19413)
@@ -126,7 +128,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
         | Reagent (for 2X FastAP master)   | Amount | Final |
         |----------------------------------|--------|-------|
         | nuclease-free water              |  10 uL |       |
-        | RNase Inhibitor, Murine (40U/uL) |   2 uL |   20U |
+        | SUPERase-IN (20U/uL)             |   2 uL |   20U |
         | TURBO DNase (2U/uL)              |   8 uL |   16U |
         | FastAP (1U/uL)                   |  20 uL |   20U |
         |----------------------------------|--------|-------|
@@ -169,7 +171,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
             | DMSO (100%)                      |  1.8 uL |   72 uL |
             | ATP (100 mM)                     |  0.2 uL |    8 uL |
             | PEG 8000 (50%)                   |    8 uL |  320 uL |
-            | RNase inhibitor, Murine (40U/uL) |  0.3 uL |   12 uL |
+            | SUPERase-IN (20U/uL)             |  0.3 uL |   12 uL |
             |----------------------------------|---------|---------|
             |Total                             | 12.3 uL |  492 uL |
         
@@ -182,7 +184,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 6. Pool barcoded RNA: RLT buffer + Zymo column  
     NOTE: At this point, multiple samples with distinct RNAtag adaptors will be pooled on the same spin column. Do not exceed 5ug RNA per pool, the maximum binding capacity of columns. Attempt to normalize the amounts (using your QC in step 4, or even 1) based on the amount of non-ribosomal RNA in each pool, or your other needs.  
     - Add 60 uL of RLT buffer to each sample to inhibit ligase, and mix well (80 uL total)
-    - Pooling and clean up using Zymo Clean & ConcentratorTM-5 column - follow manufacturer’s *200nt* cut off protocol:
+    - Pooling and clean up using Zymo Clean & Concentrator-5 column - follow manufacturer’s *200nt* cut off protocol:
         - Add 2x reaction vol (160 uL=2x 80 uL) of 1:1 binding buffer: EtOH (100%) / reaction
         - Carefully add reactions to be pooled to a single Zymo column.  
             NOTE: When pooling >700 uL onto Zymo column use a vacuum manifold then proceed to centrifugation steps according to the manual
@@ -211,7 +213,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
             | 10× AffinityScript RT Buffer     |  2   uL |   5   uL |
             | DTT (0.1M)                       |  2   uL |   5   uL |
             | 25mM dNTP Mix (25mM each)        |  0.8 uL |   2   uL |
-            | RNase inhibitor, murine (40U/uL) |  0.4 uL |   1   uL |
+            | SUPERase-IN (20U/uL)             |  0.4 uL |   1   uL |
             |----------------------------------|---------|----------|
             |Total                             |  5.2 uL |  13   uL |
             
@@ -240,7 +242,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Add 5 uL RNase/DNase free water to beads -- _KEEP BEADS AND TUBES, do not transfer, do not pause_
 
 11. Ligate 3’ Universal Adaptor: Second Ligation (ssDNA/ssDNA) with beads  
-	NOTE: 3Tr3 adaptor: 5’-/5Phos/AGA TCG GAA GAG CAC ACG TCT G-/3SpC3/ 3’, 55% GC, 22bp, 5’-Phos and 3’-C3 spacer (or ddC, or dye). Make 40 uM stock.
+	NOTE: 3Tr3 adaptor: 5’-/5Phos/NNN NNA GAT CGG AAG AGC ACA CG TCTG-/3SpC3/ 3’, 55% GC, 22bp, 5’-Phos and 3’-C3 spacer (or ddC, or dye). Make 40 uM stock.
 	
     - Add 2 uL (80 pmoles) of 3Tr3 adaptor to cDNA 
     - Heat at 75°C for 3 min; Place on cold block on ice
@@ -423,7 +425,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     | Tag33FAM | H12  | GAACGATT                 | AGAACGATTAGATCGGAAGAGCGTCGTGTA | AATCGTTCT               | /5Phos/AGA ACG ATT AGA TCG GAA GAG CGT CGT GTA/36-FAM/ | 
     |          |      |                          |                                |                         |                                                        | 
 
-Note: 3Tr3 primer (/5Phos/AGA TCG GAA GAG CAC ACG TCT G/3SpC3/) is in well A12 of the IDT plate.
+
 
 
 ## Appendix: P7 Bindex Oligos
