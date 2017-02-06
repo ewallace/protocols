@@ -37,8 +37,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 	- 10X AffinityScript RT buffer; Agilent, Cat.# 600100-52
 	- RNA Clean & ConcentratorTM-5 columns; Zymo Research, Cat. #R1015 (50 preps)
 - SPRI beads:
-	- RNAClean XP beads; Agencourt/Beckman, Cat.# A63987 (40mL); (mix well, make 1.5mL and 0.5mL aliquots, store at 4 °C)
-	- For steps after cDNA synthesis, can use non-RNA certified, AMPure XP beads Cat.# A63881.
+	- SPRI beads / AMPure XP beads; Beckman/Agencourt, Cat.# A63881 (60mL). (mix well, make 1.5mL and 0.5mL aliquots, store at 4 °C). Original protocol recommended RNAClean XP beads, which are the same, just tested for no RNase activity.
 - Ribo-Zero:
 	- Bacteria:
 	Ribo-ZeroTM Magnetic Gold Kit (Bacteria); Epicentre/Illumina, Cat.# MRZMB126
@@ -69,7 +68,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 - QIAvac 24 Plus Vacuum manifold (1-24 spin columns; Qiagen cat# 19413)
 - Thermocycler
 - 10uL, 100uL, 200uL pipettes.
-- 96R Ring Magnet Plate. Agencourt Cat#. A29164 or Alpaqua Cat.# A001219
+- 96R Ring Magnet Plate. Beckman/Agencourt Cat#. A29164 or Alpaqua Cat.# A001219
 - 96-well Aluminum Cooler Blocks, Light Labs USA Cat#. A-7079
 
 
@@ -140,7 +139,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Incubate on preheated thermal cycler for 30 min at 37°C  
 
 4. Cleanup (2x SPRI) to remove enzymes and reaction buffer  
-    - Add 2.0x reaction volume of Agencourt RNAClean XP beads (160 uL) and  capture RNA on beads:
+    - Add 2.0x reaction volume of SPRI beads (160 uL) and  capture RNA on beads:
         - Incubate at room temperature for 15min to bind RNA
         - Place on magnet for 5min, until solution is clear
         - Pipette out and discard clear solution
@@ -305,7 +304,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     
         - Mix well
         - Aliquot 18.5 uL / sample into PCR tubes
-    - Add 1 uL of appropriate P7 index primer to each well
+    - Add 1 uL of appropriate P7 index primer (12.5uM) to each well
     - Add 5 uL of ss cDNA from step 11, or water (for negative control)
     - Add 0.5 uL of Pfu Ultra II Polymerase.
     - Mix well and aliquot 8 ul into each of 3 tubes

@@ -39,8 +39,7 @@
 </ul></li>
 <li>SPRI beads:
 <ul>
-<li>RNAClean XP beads; Agencourt/Beckman, Cat.# A63987 (40mL); (mix well, make 1.5mL and 0.5mL aliquots, store at 4 °C)</li>
-<li>For steps after cDNA synthesis, can use non-RNA certified, AMPure XP beads Cat.# A63881.</li>
+<li>SPRI beads / AMPure XP beads; Beckman/Agencourt, Cat.# A63881 (60mL). (mix well, make 1.5mL and 0.5mL aliquots, store at 4 °C). Original protocol recommended RNAClean XP beads, which are the same, just tested for no RNase activity.</li>
 </ul></li>
 <li>Ribo-Zero:
 <ul>
@@ -75,7 +74,7 @@
 <li>QIAvac 24 Plus Vacuum manifold (1-24 spin columns; Qiagen cat# 19413)</li>
 <li>Thermocycler</li>
 <li>10uL, 100uL, 200uL pipettes.</li>
-<li>96R Ring Magnet Plate. Agencourt Cat#. A29164 or Alpaqua Cat.# A001219</li>
+<li>96R Ring Magnet Plate. Beckman/Agencourt Cat#. A29164 or Alpaqua Cat.# A001219</li>
 <li>96-well Aluminum Cooler Blocks, Light Labs USA Cat#. A-7079</li>
 </ul>
 <h2 id="notes">Notes</h2>
@@ -192,7 +191,7 @@ is a 200bp oligo as positive control for 2nd ligation through PCR. Use 1.25uM (0
 </ul></li>
 <li>Cleanup (2x SPRI) to remove enzymes and reaction buffer
 <ul>
-<li>Add 2.0x reaction volume of Agencourt RNAClean XP beads (160 uL) and capture RNA on beads:
+<li>Add 2.0x reaction volume of SPRI beads (160 uL) and capture RNA on beads:
 <ul>
 <li>Incubate at room temperature for 15min to bind RNA</li>
 <li>Place on magnet for 5min, until solution is clear</li>
@@ -511,7 +510,7 @@ NOTE: P5 primer: P5_RNATag, 5’-AAT GAT ACG GCG ACC ACC GAG ATC TAC ACT CTT TCC
 <li>Mix well</li>
 <li>Aliquot 18.5 uL / sample into PCR tubes</li>
 </ul></li>
-<li>Add 1 uL of appropriate P7 index primer to each well</li>
+<li>Add 1 uL of appropriate P7 index primer (12.5uM) to each well</li>
 <li>Add 5 uL of ss cDNA from step 11, or water (for negative control)</li>
 <li>Add 0.5 uL of Pfu Ultra II Polymerase.</li>
 <li>Mix well and aliquot 8 ul into each of 3 tubes</li>
@@ -633,8 +632,12 @@ NOTE: P5 primer: P5_RNATag, 5’-AAT GAT ACG GCG ACC ACC GAG ATC TAC ACT CTT TCC
 </ul></li>
 </ol>
 <h2 id="appendix-barcode-tag-oligos">Appendix: Barcode Tag Oligos</h2>
-<p>id = name of oligo. bc_read = barcode read (5'-3'), including trailing &quot;T&quot; oligo_seq = sequence of oligo to order (add 5'Phos and 3' Spacer) bc_seq = barcode sequence within oligo sequence old_id = id/name of oligo in original version of protocol (Shishkin et al).</p>
-<p>These are numbered so that blocks of 4 (1-4,5-8,etc) have nucleotide diversity at every position.</p>
+<pre><code>- id = name of oligo.
+- bc_read = barcode read (5&#39;-3&#39;), including trailing &quot;T&quot;
+- oligo_seq = sequence of oligo to order (add 5&#39;Phos and 3&#39; Spacer)
+- bc_seq = barcode sequence within oligo sequence
+- old_id = id/name of oligo in original version of protocol (Shishkin et al).</code></pre>
+<p>These are numbered so that blocks of 8 (1-8,9-16,etc) AND paired blocks of 4 (1-4 + 9-12, etc.) have at least 3 different nucleotides at every position.</p>
 <pre><code>|-----|-----------|--------------------------------|----------|--------|
 |id   | bc_read   | oligo_seq                      | bc_seq   | old_id |
 |-----|-----------|--------------------------------|----------|--------|
@@ -672,6 +675,7 @@ NOTE: P5 primer: P5_RNATag, 5’-AAT GAT ACG GCG ACC ACC GAG ATC TAC ACT CTT TCC
 |T_32 | CAAGTGATT | AATCACTTGAGATCGGAAGAGCGTCGTGTA | ATCACTTG | Tag10  |
 |-----|-----------|--------------------------------|----------|--------|</code></pre>
 <h2 id="appendix-p7-barcode-index-oligos">Appendix: P7 Barcode-index Oligos</h2>
+<p>Newly designed by EW in December 2016.</p>
 <pre><code>| Name  | P7 Enrichment Primer Sequence (5&#39; --&gt; 3&#39;) with barcode             | barcodes (BC) | BC READ (reverse complement) | 
 |-------|--------------------------------------------------------------------|---------------|------------------------------| 
 | PBI_1 | CAAGCAGAAGACGGCATACGAGATGAGTGTGCGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT | GAGTGTGC      | GCACACTC                     |
