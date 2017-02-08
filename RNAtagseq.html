@@ -5,7 +5,6 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Edward Wallace" />
-  <meta name="date" content="2015-10-19" />
   <title>RNATagSeq Library Preparation Protocol</title>
   <style type="text/css">code{white-space: pre;}</style>
 </head>
@@ -13,10 +12,17 @@
 <div id="header">
 <h1 class="title">RNATagSeq Library Preparation Protocol</h1>
 <h2 class="author">Edward Wallace</h2>
-<h3 class="date">19 October 2015</h3>
+<h3 class="date">9 February 2017</h3>
 </div>
 <p>This protocol is for RNA sequencing (RNASeq) library preparation using the RNATagSeq method of Shishkin, et al. (2015). <em>Simultaneous generation of many RNA-seq libraries in a single reaction.</em> Nature Methods, 12(4), 323–325. http://doi.org/10.1038/nmeth.3313 (Broad institute).</p>
-<p>The protocol is mildly adapted by Edward Wallace, mostly increasing some volumes to make SPRI bead handling easier. Further adapted to put a random barcoded on the read 2 (3Tr3) adaptor, and rationalize the barcoded adaptors to lower costs. Applies to batches of 4 to 32 samples.</p>
+<p>The protocol is adapted by Edward Wallace, 2015-7</p>
+<pre><code>- increasing some volumes to make SPRI bead handling easier. 
+- use AMPure XP beads as only SPRI beads
+- use SuperAse-In as only RNase inhibitor 
+- put a random barcoded on the read 2 (3Tr3) adaptor
+- re-number the barcoded adaptors (T_xx) so that consecutive groups of 4 are colour-balanced
+- redesign P7 index primers.</code></pre>
+<p>Applies to batches of 4 to 32 samples.</p>
 <p>The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introduction to RNASeq.</p>
 <h2 id="reagents">Reagents</h2>
 <h3 id="wet-reagents">Wet reagents</h3>
@@ -82,7 +88,7 @@
 <li><strong>This is not a protocol where you can cut corners. To save time and anguish, plan thoroughly, work cleanly, QC your samples and intermediate steps.</strong></li>
 <li>Label everything and lay out tubes neurotically to avoid pipette error.</li>
 <li>Observe RNase-free sample prep, for steps 1-8, also neurotically. Clean your workspace and pipettes with 50% Ethanol and RNAse-Zap, use reserved RNase-free pipettes and RNAse-free (non-autoclaved) tips, ensure all tubes and reagents (including water) are RNase-free.</li>
-<li>Avoid DNA contamination, <em>especially from other sequencing libraries</em> for steps 8+. Use filter tips for PCR reactions.</li>
+<li>Avoid DNA contamination, <em>especially from other sequencing libraries</em> for steps 8+. Use filter tips for PCR reactions. Consider using separate pipettes and a laminar flow hood with UV decontamination.</li>
 <li>Points where the in-process libraries may be frozen at -80 C while you pause, are indicated as <em>PAUSE POINT</em>. Don't take the risk of pausing elsewhere.</li>
 <li>SPRI/XP beads take a bit of skill. &quot;2x SPRI&quot; refers to the ratio of beads to aqueous solution containing nucleic acids (NA); this ratio controls the size of NA retained (see http://core-genomics.blogspot.com/2012/04/how-do-spri-beads-work.html). Be patient; wait for binding and for magnetisation. Prepare fresh 80% ethanol solution every day or two; the concentration drifts over time due to evaporation (manufacturer recommends 70% EtOH). Some reactions (2nd ligation, step 11) happen on-bead so change the elution step. Manufacturer's protocol with tweaks is below; practice SPRI extraction on a DNA ladder or RNA ladder and ensure full recovery.
 <ul>
