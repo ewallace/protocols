@@ -106,7 +106,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     is a fluorescent positive control oligo for first ligation and sample pooling. Use in place of a barcoded adaptor, for one sample, in first ligation, step 5. Success is indicated if fluorescence appears in 200-500nt smear:
     - TagDNA+  
         5'-TAC ACG ACG CTC TTC CGA TCT TCA GTC AGT ATG TAC GCG TAG CGC AGC GAG CGG CGG GTG GCC ACG TCG CGG CAC ACG CGG ATG GAC AGG ATC GGG CCG GCG GGC AGG AAC TTC TCG TAG AGC ATG GCC TCG GTC ACG TCG GCG TGC AGG TCG CCC ACG TAG AGC GAG GCC AGC GGG TAC CCC GGG CCG CTG GCG TTC AT - 3'  
-    is a 200bp oligo as positive control for 2nd ligation through PCR. Use 1.25uM (0.5uL of 100uM stock) in place of cDNA in control reaction in step 11. Its 3' end resembles a cDNA product for a library with Tag barcode CTGACTGA (distinct from Tag1-32, Tag33FAM), and the insert is "random" (elephant PABP 1st exon).
+    is a 200bp oligo as positive control for 2nd ligation through PCR. Use 50 pmol (0.5uL of 100uM stock) in place of cDNA in control reaction in step 11. Its 3' end resembles a cDNA product for a library with Tag barcode CTGACTGA (distinct from Tag1-32, Tag33FAM), and the insert is "random" (elephant PABP 1st exon).
 
 
 
@@ -207,6 +207,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 
 8. Synthesize First Strand cDNA
     - Take 12 uL rRNA depleted RNA (use all the material from Ribo-Zero)
+    - Include negative control sample, 12 uL H2O.
     - Add 2 uL (50 pmoles) of AR2 primer (25 uM)
          5’-TAC ACG ACG CTC TTC CGA T-3' AR2, 53% GC, 19bp.
     - Mix well
@@ -214,14 +215,14 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Make RT master mix
         - Add in order on ice
     
-            | Reagent (for RT master)          |  1 rxn  | 2.5 rxns |
+            | Reagent (for RT master)          |  1 rxn  |   5 rxns |
             |----------------------------------|---------|----------|
-            | 10× AffinityScript RT Buffer     |  2   uL |   5   uL |
-            | DTT (0.1M)                       |  2   uL |   5   uL |
-            | 25mM dNTP Mix (25mM each)        |  0.8 uL |   2   uL |
-            | SUPERase-IN (20U/uL)             |  0.4 uL |   1   uL |
+            | 10× AffinityScript RT Buffer     |  2   uL |  10   uL |
+            | DTT (0.1M)                       |  2   uL |  10   uL |
+            | 25mM dNTP Mix (25mM each)        |  0.8 uL |   4   uL |
+            | SUPERase-IN (20U/uL)             |  0.4 uL |   2   uL |
             |----------------------------------|---------|----------|
-            |Total                             |  5.2 uL |  13   uL |
+            |Total                             |  5.2 uL |  26   uL |
             
         - Mix well
     - Add 5.2 uL of RT mix to the 14 uL rRNA depleted RNA + AR2 RTprimer on ice
@@ -230,7 +231,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Place in _preheated_ (55 °C) incubator or thermocycler. Incubate at 55 °C for 55 minutes.
 
 9. Degrade RNA after reverse transcription  
-	NOTE: make fresh working stock solutions of NaOH and Acetic Acid
+	NOTE: make fresh working stock solutions of NaOH and Acetic Acid (0.5M stock: 10uL of Glacial Acetic Acid at 17.4M, and 338uL of H2O).
     - Add 10% reaction vol. of 1M NaOH (2 uL) to each reaction
     - Incubate at 70 °C for 12 minutes
     - Neutralize with 4 uL of 0.5M Acetic Acid; mix well
@@ -250,6 +251,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 11. Ligate 3’ Universal Adaptor: Second Ligation (ssDNA/ssDNA) with beads  
 	NOTE: 3Tr3 adaptor: 5’-/5Phos/NNN NNA GAT CGG AAG AGC ACA CG TCTG-/3SpC3/ 3’, 55% GC, 22bp, 5’-Phos and 3’-C3 spacer (or ddC, or dye). Make 40 uM stock.
 	
+	- Start a positive control reaction, 50 pmoles (0.5uL of 100uM stock) of TagDNA+ in 5uL sterile H20 in place of cDNA
     - Add 2 uL (80 pmoles) of 3Tr3 adaptor to cDNA 
     - Heat at 75°C for 3 min; Place on cold block on ice
     - Make ligation reaction master mix (can be prepared ahead of time, at RT):
@@ -273,8 +275,8 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Quick spin (low speed centrifuge, to get everything to bottom of tube)
     - Incubate overnight at 22 °C
 
-12. Cleanup (2x SPRI) to remove adaptors
-    - Add 2x reaction volume SPRI beads (80uL) to the sample in new tubes, and mix up/down 10x
+12. Cleanup (2.5x SPRI) to remove adaptors
+    - Add 2.5x reaction volume SPRI beads (50uL) to the sample, and mix up/down 10x
     - Incubate at room temperature for 15min
     - Place on magnet for 5 min or until solution is clear
     - Pipette out and discard clear solution
