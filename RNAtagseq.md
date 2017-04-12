@@ -114,7 +114,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 
 1. Control quality and quantity of RNA with Agilent Bioanalyzer  
     - Check RNA quality by running on the Agilent Bioanalyzer  
-    - Place 0.5-5 ug of total RNA in a tube. For large numbers of samples, the input per sample could be reduced as to not exceed the maximum input of RiboZero (5ug) at step 5. Since about 25% of the input remains prior to adaptor ligation, less than 20ug total RNA per pool (end of step 4) is recommended. For smaller number of samples, higher input is recommended to ensure sufficient material remains after rRNA depletion.  
+    - Place 0.5-20 ug of total RNA in a tube. For large numbers of samples, the input per sample could be reduced as to not exceed the maximum binding capacity of Zymo columns (10ug) or input of RiboZero (5ug) at step 5. Since about 25% of the input remains prior to 2nd adaptor ligation (step 11), less than 20ug total RNA per pool (end of step 6) is recommended. For smaller number of samples, higher input is recommended to ensure sufficient material remains after rRNA depletion.  
     - Increase the volume to 30uL with Nuclease free water  
     - Add 2uL of SUPERase-IN (20U/uL)  
     - Final total volume = 32uL (25ng/uL)  
@@ -188,11 +188,12 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Incubate at 22°C (room temp) for 1 hour 30 minutes.
 
 6. Pool barcoded RNA: RLT buffer + Zymo column  
-    NOTE: At this point, multiple samples with distinct RNAtag adaptors will be pooled on the same spin column. Do not exceed 5ug RNA per pool, the maximum binding capacity of columns. Attempt to normalize the amounts (using your QC in step 4, or even 1) based on the amount of non-ribosomal RNA in each pool, or your other needs.  
+    NOTE: At this point, multiple samples with distinct RNAtag adaptors will be pooled on the same spin column. Do not exceed 10ug RNA per pool, the maximum binding capacity of columns. Attempt to normalize the amounts (using your QC in step 4, or even 1) based on the amount of non-ribosomal RNA in each pool, or your other needs.  
     - Add 60 uL of RLT buffer to each sample to inhibit ligase, and mix well (80 uL total)
+    - Carefully add reactions to be pooled to a single lo-bind 1.5mL tube.
     - Pooling and clean up using Zymo Clean & Concentrator-5 column - follow manufacturer’s *200nt* cut off protocol:
-        - Add 2x reaction vol (160 uL=2x 80 uL) of 1:1 binding buffer: EtOH (100%) / reaction
-        - Carefully add reactions to be pooled to a single Zymo column.  
+        - Add 2x reaction vol (160 uL=2x 80 uL *per sample*) of 1:1 binding buffer: EtOH (100%) / reaction
+        - Add each pool to a single Zymo column.  
             NOTE: When pooling >700 uL onto Zymo column use a vacuum manifold then proceed to centrifugation steps according to the manual
         - Wash and spin 1 min 12,000 g, then discard flow-through, once with 400 uL RNA Prep buffer, once with 800 uL RNA Wash buffer, once with 400uL Wash buffer, spin another 1min with no buffer.
     - Elute 2 times with 16 uL nuclease free water for a total volume of 32 uL  
@@ -239,7 +240,7 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
 
 10. Cleanup reverse transcription (2x SPRI) to remove enzyme, primers, and reaction buffer
     - Add 14 uL of sterile water to each reaction for a final volume of 40 uL
-    - Transfer to new tubes (NaOH may start degrading tubes)
+    - (Unless you're using NaOH-resistant polypropylene, transfer to new tubes as NaOH may start degrading tubes)
     - Add 2x reaction volume SPRI beads (80uL) to the sample in new tubes, and mix up/down 10x
     - Incubate at room temperature for 15min
     - Place on magnet for 5 min or until solution is clear
@@ -275,17 +276,18 @@ The RNA-seqlopedia (http://rnaseq.uoregon.edu/) is a great background introducti
     - Quick spin (low speed centrifuge, to get everything to bottom of tube)
     - Incubate overnight at 22 °C
 
-12. Cleanup (2.5x SPRI) to remove adaptors
-    - Add 2.5x reaction volume SPRI beads (50uL) to the sample, and mix up/down 10x
+12. Cleanup (2x SPRI) to remove adaptors
+    - Bring reaction volume to 40uL by adding 20uL nuclease-free water.
+    - Add 2x reaction volume SPRI beads (80uL) to the sample, and mix up/down 10x
     - Incubate at room temperature for 15min
     - Place on magnet for 5 min or until solution is clear
     - Pipette out and discard clear solution
     - Wash: Add 200 uL fresh 80% EtOH without removing from magnet and incubate for 30 sec. Pipette off discard the EtOH. 
     - Repeat 80% EtOH wash, and let air dry for 3min
-    - Elute DNA by adding 30 uL RNase/DNase free water, transfer to new tube.
+    - Elute DNA by adding 33 uL nuclease-free water, transfer to new tube.
 
 13. 2nd Cleanup (1.5x SPRI) to remove the remaining adaptors
-    - Add 1.5x reaction volume SPRI beads (45 uL) to the sample in new tubes, and mix up/down 10x
+    - Add 1.5x reaction volume SPRI beads (50 uL) to the sample in new tubes, and mix up/down 10x
     - Incubate at room temperature for 15min
     - Place on magnet for 5 min or until solution is clear
     - Pipette out and discard clear solution
