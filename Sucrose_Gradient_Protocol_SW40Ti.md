@@ -36,7 +36,7 @@ David Weinberg's lab at UCSF, and BioComp instructions.
     HEPES, Triton. To 50mL gradient buffer stock, on ice, add just before use:
     
         - 1 tablet of Protease inhibitor
-        - 50uL of cycloheximide stock (100mg/mL)
+        - 100uL of cycloheximide stock (50mg/mL in DMSO)
         - 50uL of SuperAse-In stock (20U/uL)
         - 1mL Heparin stock (10mg/mL)
         - 100uL of DTT stock (1M)
