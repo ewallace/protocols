@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Edward Wallace" />
-  <meta name="date" content="2018-05-10" />
+  <meta name="date" content="2018-05-14" />
   <title>RT-qPCR for RNA quantification with SYBR dye</title>
   <style type="text/css">code{white-space: pre;}</style>
 </head>
@@ -13,11 +13,11 @@
 <div id="header">
 <h1 class="title">RT-qPCR for RNA quantification with SYBR dye</h1>
 <h2 class="author">Edward Wallace</h2>
-<h3 class="date">10 May 2018</h3>
+<h3 class="date">14 May 2018</h3>
 </div>
 <p>This protocol is for RT-qPCR for RNA quantification, using the Roche Transcriptor RT, the Agilent SYBR master mix and Roche Lightcycler instrument. The protocol originates with David Barrass from Jean Beggs' lab. It should work with minor tweaks with equivalent reagents and systems.</p>
 <h2 id="notes">Notes</h2>
-<p>Reaction volumes depend on plate size and instrument. 10µl reactions work for 96-well plates. 5µl (electronic pipette) down to 2uL work for 384-well plates (on the Lightcycler 480). 1µl works for 2536-well plates on the Lightcycler 1536.</p>
+<p>Reaction volumes depend on plate size and instrument. 10µl reactions work for 96-well plates, on Stratagene or Roche instruments. 5µl (electronic pipette) down to 2uL work for 384-well plates (on the Lightcycler 480). 1µl works for 1536-well plates on the Lightcycler 1536.</p>
 <h2 id="components">Components</h2>
 <ul>
 <li>Sample: RNA resuspended in ddH2O</li>
@@ -29,7 +29,7 @@
 <li>RNase-free H2O</li>
 <li>DNase (DNaseI RNase free 1U/µl, Promega), 10x DNase buffer</li>
 <li>RNase inhibitor (SuperAseIn, ThermoFisher)</li>
-<li>Reverse transcriptase (Transcriptor, Roche), 5x RT buffer</li>
+<li>Reverse transcriptase (Transcriptor, Roche; <em>or</em> Superscript IV, Thermo), 5x RT buffer</li>
 <li>PCR master mix (Brilliant III Ultra-Fast SYBR® Green QPCR Master Mix, Agilent)</li>
 <li>PCR tube strips, 0.2ml each, with lids</li>
 <li>Aerosol resistant (filter) pipette tips</li>
@@ -46,36 +46,36 @@
 <li>0.1µl RNase inhibitor</li>
 </ul></li>
 <li>37°C 1hour</li>
-<li>75°C 10minutes to deactivate the DNaseI</li>
+<li>75°C 10minutes to deactivate the DNaseI.</li>
 </ol>
 <h2 id="reverse-transcription">Reverse Transcription</h2>
 <ol style="list-style-type: decimal">
 <li>Add 2.5µl RT primer mix (2.5µM each)</li>
 <li>Transfer 5µl (5µg of RNA) of this to 2 new 0.2mL tubes. One for +RT, one for -RT.</li>
-<li>Denature the RNA at 70°C for 5 minutes, then in to iced water</li>
+<li>Denature the RNA at 70°C for 5 minutes, then in to iced water.</li>
 <li>Make RT master mix, per sample:
 <ul>
 <li>2µl 5 x First strand synthesis buffer</li>
 <li>0.75µl 10mM dNTP mix</li>
 <li>1.5µl H2O</li>
 <li>0.25µl RNase inhibitor</li>
-<li>0.5µl Transcriptor, or H2O for a no-RT control</li>
+<li>0.5µl Transcriptor, <em>or</em> H2O for a -RT control</li>
 </ul></li>
 <li>Add 5µl of RT master mix to the denatured RNA; this brings the volume up to 10 µl</li>
 <li>55°C 1-2 hours</li>
-<li>Add 180µl of H2O to the first strand cDNA to dilute the buffer prior the qPCR</li>
+<li>Add 180µl of H2O to the first strand cDNA to dilute the buffer prior the qPCR.</li>
 </ol>
 <h2 id="quantitative-pcr">Quantitative PCR</h2>
-<p>Perform +RT reactions in triplicate; -RT reactions can be in single because usually a problem with -RT will show up in many samples.</p>
+<p>Perform +RT reactions in triplicate; -RT reactions can be single because usually a problem with -RT will show up in many samples.</p>
 <ol style="list-style-type: decimal">
 <li>Make the qPCR mix for each primer pair, for each well:
 <ul>
-<li>2µl 2x SyBr Green QPCR mix</li>
-<li>0.5µl primer pair mix (4µM each).</li>
+<li>1.6µl 2x SyBr Green QPCR mix</li>
+<li>0.4µl primer pair mix (4µM each).</li>
 </ul></li>
-<li>Add 2.5µl of QPCR mix and 2.5µl of the diluted cDNA to each well of the 384 well plate.</li>
+<li>Add 2µl of QPCR mix and 2µl of the diluted cDNA to each well of the 384 well plate.</li>
 <li>Spin down, mix by rattling plate, spin down again</li>
-<li>Place in PCR machine and run PCR program:-
+<li>Place in PCR machine and run amended Agilent 2-step PCR program:-
 <ul>
 <li>Taq activation:
 <ul>
@@ -84,7 +84,7 @@
 <li>40 cycles of amplification:
 <ul>
 <li>95°C 5sec</li>
-<li>60°C 10sec with fluorescence reading</li>
+<li>60°C 10sec with green fluorescence reading</li>
 </ul></li>
 <li>Melt curve
 <ul>
