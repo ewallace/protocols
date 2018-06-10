@@ -16,14 +16,19 @@ This protocol is for RT-qPCR for RNA quantification, using the Roche Transcripto
 
 ## Notes ##
 
-Reaction volumes depend on plate size and instrument. 10µl reactions work for 96-well plates, on Stratagene or Roche instruments. 5µl (electronic pipette) down to 2uL work for 384-well plates (on the Lightcycler 480). 1µl works for 1536-well plates on the Lightcycler 1536.
+Reaction volumes depend on plate size and instrument. 10µl reactions work for 96-well plates, on Stratagene or Roche instruments. 5µl (electronic pipette) down to 2uL works in our hands for 384-well plates on the Lightcycler 480. 1µl works for 1536-well plates on the Lightcycler 1536. Loading a 1536-well plate with the Labcyte Echo Liquid handler has been tested by Labcyte to work down at 0.5uL or 0.25uL volume on the LC1536 (Application Note G101).
+
+Perform +RT reactions in triplicate; -RT reactions can be single because usually a problem with -RT will show up in many sample/probe combinations.
+
+For the qPCR plate, it is best to have each row contain a single probe (or sample), and each column a single sample (or probe), so you can load in parallel with an multichannel pipette. We use an Integra Voyager on repeat-dispense setting; fast dispensing just near the edge of the well gives nice reproducible results.
 
 ## Components ##
 
 - Sample: RNA resuspended in ddH2O 
 - Primers and primer mixes:
-    - 2.5uM mix of *all* reverse primers for RT
     - 4µM mix of *each* primer pair for qPCR
+    - EITHER: 2.5µM mix of *all* reverse primers for RT (2.5µM each)
+    - OR: 5µM Random primer mix for RT (e.g. NEB S1330) - CHECK CONCENTRATION
 - RNase-free H2O
 - DNase (DNaseI RNase free 1U/µl, Promega),  10x DNase buffer
 - RNase inhibitor (SuperAseIn, ThermoFisher)
@@ -49,7 +54,7 @@ Reaction volumes depend on plate size and instrument. 10µl reactions work for 9
 
 ## Reverse Transcription ##
 
-1.	Add 2.5µl RT primer mix (2.5µM each)
+1.	Add 2.5µl RT primer mix 
 2.	Transfer 5µl (5µg of RNA) of this to 2 new 0.2mL tubes. One for +RT, one for -RT.
 3.	Denature the RNA at 70°C for 5 minutes, then in to iced water.
 4.	Make RT master mix, per sample:
@@ -62,14 +67,12 @@ Reaction volumes depend on plate size and instrument. 10µl reactions work for 9
 6.	55°C 1-2 hours
 7.	Add 180µl of H2O to the first strand cDNA to dilute the buffer prior the qPCR.
 
-## Quantitative PCR ##
-
-Perform +RT reactions in triplicate; -RT reactions can be single because usually a problem with -RT will show up in many samples.
+## Quantitative PCR (4µL reaction for 384-well plate)##
 
 1.	Make the qPCR mix for each primer pair, for each well:
     - 1.6µl   2x SyBr Green QPCR mix
     - 0.4µl primer pair mix (4µM each).
-2.	Add 2µl of QPCR mix and 2µl of the diluted cDNA to each well of the 384 well plate.
+2.	Add 2µl of qPCR mix and 2µl of the diluted cDNA to each well of the 384 well plate.
 3.	Spin down, mix by rattling plate, spin down again 
 4.	Place in PCR machine and run amended Agilent 2-step PCR program:-
     - Taq activation:

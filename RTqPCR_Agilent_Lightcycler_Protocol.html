@@ -17,14 +17,17 @@
 </div>
 <p>This protocol is for RT-qPCR for RNA quantification, using the Roche Transcriptor RT, the Agilent SYBR master mix and Roche Lightcycler instrument. The protocol originates with David Barrass from Jean Beggs' lab. It should work with minor tweaks with equivalent reagents and systems.</p>
 <h2 id="notes">Notes</h2>
-<p>Reaction volumes depend on plate size and instrument. 10µl reactions work for 96-well plates, on Stratagene or Roche instruments. 5µl (electronic pipette) down to 2uL work for 384-well plates (on the Lightcycler 480). 1µl works for 1536-well plates on the Lightcycler 1536.</p>
+<p>Reaction volumes depend on plate size and instrument. 10µl reactions work for 96-well plates, on Stratagene or Roche instruments. 5µl (electronic pipette) down to 2uL works in our hands for 384-well plates on the Lightcycler 480. 1µl works for 1536-well plates on the Lightcycler 1536. Loading a 1536-well plate with the Labcyte Echo Liquid handler has been tested by Labcyte to work down at 0.5uL or 0.25uL volume on the LC1536 (Application Note G101).</p>
+<p>Perform +RT reactions in triplicate; -RT reactions can be single because usually a problem with -RT will show up in many sample/probe combinations.</p>
+<p>For the qPCR plate, it is best to have each row contain a single probe (or sample), and each column a single sample (or probe), so you can load in parallel with an multichannel pipette. We use an Integra Voyager on repeat-dispense setting; fast dispensing just near the edge of the well gives nice reproducible results.</p>
 <h2 id="components">Components</h2>
 <ul>
 <li>Sample: RNA resuspended in ddH2O</li>
 <li>Primers and primer mixes:
 <ul>
-<li>2.5uM mix of <em>all</em> reverse primers for RT</li>
 <li>4µM mix of <em>each</em> primer pair for qPCR</li>
+<li>EITHER: 2.5µM mix of <em>all</em> reverse primers for RT (2.5µM each)</li>
+<li>OR: 5µM Random primer mix for RT (e.g. NEB S1330) - CHECK CONCENTRATION</li>
 </ul></li>
 <li>RNase-free H2O</li>
 <li>DNase (DNaseI RNase free 1U/µl, Promega), 10x DNase buffer</li>
@@ -50,7 +53,7 @@
 </ol>
 <h2 id="reverse-transcription">Reverse Transcription</h2>
 <ol style="list-style-type: decimal">
-<li>Add 2.5µl RT primer mix (2.5µM each)</li>
+<li>Add 2.5µl RT primer mix</li>
 <li>Transfer 5µl (5µg of RNA) of this to 2 new 0.2mL tubes. One for +RT, one for -RT.</li>
 <li>Denature the RNA at 70°C for 5 minutes, then in to iced water.</li>
 <li>Make RT master mix, per sample:
@@ -65,15 +68,14 @@
 <li>55°C 1-2 hours</li>
 <li>Add 180µl of H2O to the first strand cDNA to dilute the buffer prior the qPCR.</li>
 </ol>
-<h2 id="quantitative-pcr">Quantitative PCR</h2>
-<p>Perform +RT reactions in triplicate; -RT reactions can be single because usually a problem with -RT will show up in many samples.</p>
+<h2 id="quantitative-pcr-4µl-reaction-for-384-well-plate">Quantitative PCR (4µL reaction for 384-well plate)</h2>
 <ol style="list-style-type: decimal">
 <li>Make the qPCR mix for each primer pair, for each well:
 <ul>
 <li>1.6µl 2x SyBr Green QPCR mix</li>
 <li>0.4µl primer pair mix (4µM each).</li>
 </ul></li>
-<li>Add 2µl of QPCR mix and 2µl of the diluted cDNA to each well of the 384 well plate.</li>
+<li>Add 2µl of qPCR mix and 2µl of the diluted cDNA to each well of the 384 well plate.</li>
 <li>Spin down, mix by rattling plate, spin down again</li>
 <li>Place in PCR machine and run amended Agilent 2-step PCR program:-
 <ul>
