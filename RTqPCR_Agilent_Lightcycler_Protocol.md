@@ -28,7 +28,7 @@ For the qPCR plate, it is best to have each row contain a single probe (or sampl
 - Primers and primer mixes:
     - 4µM mix of *each* primer pair for qPCR
     - EITHER: 2.5µM mix of *all* reverse primers for RT (2.5µM each)
-    - OR: 5µM Random primer mix for RT (e.g. NEB S1330) - CHECK CONCENTRATION
+    - OR: 60µM Random Primer mix (35 µM hexamers, 25 µM dT23VN) for RT (e.g. NEB S1330)
 - RNase-free H2O
 - DNase (DNaseI RNase free 1U/µl, Promega),  10x DNase buffer
 - RNase inhibitor (SuperAseIn, ThermoFisher)
@@ -64,7 +64,7 @@ For the qPCR plate, it is best to have each row contain a single probe (or sampl
     - 0.25µl RNase inhibitor
     - 0.5µl Transcriptor, *or* H2O for a -RT control
 5.	Add 5µl of RT master mix to the denatured RNA; this brings the volume up to 10 µl
-6.	55°C 1-2 hours
+6.	EITHER 55°C 1-2 hours if using Reverse Primers OR 25°C for 5 minutes followed by 55°C for 1 hour if using Random Primer Mix.
 7.	Add 180µl of H2O to the first strand cDNA to dilute the buffer prior the qPCR.
 
 ## Quantitative PCR (4µL reaction for 384-well plate)##
