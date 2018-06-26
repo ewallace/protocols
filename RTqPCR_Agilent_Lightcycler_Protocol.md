@@ -1,7 +1,7 @@
 ---
 title: "RT-qPCR for RNA quantification with SYBR dye"
 author: "Edward Wallace"
-date: "14 May 2018"
+date: "14 June 2018"
 nickname: RT-qPCR
 tags: [RNA, qPCR]
 output: html_document
@@ -11,7 +11,7 @@ fontsize: 12pt
 papersize: a4
 ---
 
-This protocol is for RT-qPCR for RNA quantification, using the Roche Transcriptor RT, the Agilent SYBR master mix and Roche Lightcycler instrument. The protocol originates with David Barrass from Jean Beggs' lab. It should work with minor tweaks with equivalent reagents and systems. 
+This protocol is for RT-qPCR for RNA quantification, using the Superscript IV RT, the Agilent SYBR master mix and Roche Lightcycler instrument. The protocol originates with David Barrass from Jean Beggs' lab. It should work with minor tweaks with equivalent reagents and systems. 
 
 
 ## Notes ##
@@ -21,6 +21,10 @@ Reaction volumes depend on plate size and instrument. 10µl reactions work for 9
 Perform +RT reactions in triplicate; -RT reactions can be single because usually a problem with -RT will show up in many sample/probe combinations.
 
 For the qPCR plate, it is best to have each row contain a single probe (or sample), and each column a single sample (or probe), so you can load in parallel with an multichannel pipette. We use an Integra Voyager on repeat-dispense setting; fast dispensing just near the edge of the well gives nice reproducible results.
+
+We used Roche Transcriptor RT prior to Superscript IV, and had good performance with both.
+
+A mix of specific reverse primers gives best specificity and was tested extensively by D. Barrass and others for different splice isoforms in yeast. The random primer mix from NEB is more flexible as it allows qPCR for any primer set from the same RT mix, not just those in the primer mix used for RT.
 
 ## Components ##
 
