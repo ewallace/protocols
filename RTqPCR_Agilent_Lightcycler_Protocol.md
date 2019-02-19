@@ -93,7 +93,7 @@ A mix of specific reverse primers gives best specificity and was tested extensiv
     - From the navigator page select your experiment and export data:
         - in native .ixo format
         - full data in plain-text .txt format
-    - From the analysis page, go to "Ct values, fit points", click calculate, and export the whole table in plain-text format.
+    - From the analysis page, go to "Ct values, fit points", calculate Ct values, then export the whole Ct table in plain-text format.
 
 \newpage
 
@@ -105,7 +105,12 @@ Primer design for qPCR is crucial and it is important to follow best practices (
 1. Identify the regions of RNA you want to detect, usually the coding sequence of a messenger RNA. It is best practice to create a snapgene map with the genomic sequence context and relevant features marked. *Beware introns* - check that your primers detect exactly the molecules (spliced or not) that you need them to. 
 2. Place the regions you would like to detect in a fasta-formatted plain-text file, with a short informative title for each sequence. Save this with the .fasta extension.
 3. Open a primer design tool. We use IDT's PrimerQuest (https://www.idtdna.com/primerquest; or go to Sciquest online ordering and then "Punch-out" to log in to the IDT website), and have also had success with Thermo's Oligoperfect (https://apps.thermofisher.com/apps/oligoperfect/).
-4. Paste your fasta-format sequences in the box. Choose your design as "qPCR 2 primers intercalating dyes", and adjust other parameters as necessary. (We prefer 80bp to 120bp amplicons.)
+4. Paste your fasta-format sequences in the box. Choose your design as "qPCR 2 primers intercalating dyes", and adjust other parameters as necessary. We start with:
+    - 50 mM Na+, 200 nM Primer DNA, 3 mM Mg++, 0.8mM dNTP
+    - Tm°C: Min 59, Opt 62, Max 65
+    - % GC: Min 35, Opt 50, Max 65
+    - Primer Size: Min 17, Opt 22, Max 30
+    - Amplicon Length: Min 80, Opt 100, Max 120
 5. Choose 2-3 primer sets for each region. Download the assay sequences and check their correctness on snapgene. Order them.
 
 ## Primer validation ##
